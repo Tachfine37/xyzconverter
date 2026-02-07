@@ -6,33 +6,85 @@ import { analytics } from '@/lib/analytics'
 
 const categories = [
     {
-        title: "Image Tools",
-        description: "Optimize and convert images locally.",
+        title: "HEIC Conversions",
+        icon: "📱",
+        categoryLink: "/images/heic",
+        description: "Convert iPhone photos to other formats.",
         items: [
             { path: '/heic-to-jpg', icon: FileImage, label: 'HEIC to JPG' },
             { path: '/heic-to-png', icon: FileImage, label: 'HEIC to PNG' },
+            { path: '/heic-to-pdf', icon: FileText, label: 'HEIC to PDF' },
+        ]
+    },
+    {
+        title: "PNG Conversions",
+        icon: "🟦",
+        categoryLink: "/images/png",
+        description: "Convert PNG images to other formats.",
+        items: [
+            { path: '/png-to-jpg', icon: FileImage, label: 'PNG to JPG' },
+            { path: '/png-to-webp', icon: FileType, label: 'PNG to WebP' },
+            { path: '/png-to-pdf', icon: FileText, label: 'PNG to PDF' },
+        ]
+    },
+    {
+        title: "JPG / JPEG Conversions",
+        icon: "🟥",
+        categoryLink: "/images/jpg",
+        description: "Convert JPG images to other formats.",
+        items: [
+            { path: '/jpg-to-png', icon: FileImage, label: 'JPG to PNG' },
+            { path: '/jpg-to-webp', icon: FileType, label: 'JPG to WebP' },
+            { path: '/jpg-to-pdf', icon: FileText, label: 'JPG to PDF' },
+        ]
+    },
+    {
+        title: "WebP Conversions",
+        icon: "🌐",
+        categoryLink: "/images/webp",
+        description: "Convert WebP images to compatible formats.",
+        items: [
+            { path: '/webp-to-jpg', icon: FileImage, label: 'WebP to JPG' },
+            { path: '/webp-to-png', icon: FileImage, label: 'WebP to PNG' },
+        ]
+    },
+    {
+        title: "SVG Conversions",
+        icon: "🧾",
+        categoryLink: "/images/svg",
+        description: "Convert vector graphics to raster formats.",
+        items: [
+            { path: '/svg-to-png', icon: FileImage, label: 'SVG to PNG' },
+            { path: '/svg-to-jpg', icon: FileImage, label: 'SVG to JPG' },
+        ]
+    },
+    {
+        title: "Image Tools",
+        icon: "🛠️",
+        description: "Edit and optimize your images.",
+        items: [
             { path: '/resize-image', icon: FileImage, label: 'Image Resizer' },
-            { path: '/jpg-to-webp', icon: FileType, label: 'JPG to WEBP' },
-            { from: 'png', to: 'webp', path: '/png-to-webp', icon: FileType, label: 'PNG to WEBP' },
-            { from: 'webp', to: 'jpg', path: '/webp-to-jpg', icon: FileType, label: 'WEBP to JPG' },
+            { path: '/compress-image', icon: FileImage, label: 'Image Compressor' },
         ]
     },
     {
         title: "PDF & Document Tools",
+        icon: "📄",
         description: "Manage documents safely.",
         items: [
-            { from: 'pdf', to: 'pdf', path: '/merge-pdf', icon: FileText, label: 'Merge PDFs' },
-            { from: 'pdf', to: 'pdf', path: '/split-pdf', icon: FileText, label: 'Split PDF' },
-            { from: 'image', to: 'pdf', path: '/image-to-pdf', icon: FileText, label: 'Image to PDF' },
-            { from: 'png', to: 'pdf', path: '/png-to-pdf', icon: FileText, label: 'PNG to PDF' },
-            { from: 'heic', to: 'pdf', path: '/heic-to-pdf', icon: FileText, label: 'HEIC to PDF' },
+            { path: '/merge-pdf', icon: FileText, label: 'Merge PDFs' },
+            { path: '/split-pdf', icon: FileText, label: 'Split PDF' },
+            { path: '/pdf-to-jpg', icon: FileText, label: 'PDF to JPG' },
+            { path: '/pdf-to-png', icon: FileText, label: 'PDF to PNG' },
         ]
     },
     {
         title: "Developer & Data Tools",
+        icon: "💻",
         description: "Utilities for developers.",
         items: [
-            { from: 'json', to: 'csv', path: '/json-to-csv', icon: Database, label: 'JSON to CSV' },
+            { path: '/json-to-csv', icon: Database, label: 'JSON to CSV' },
+            { path: '/csv-to-json', icon: Database, label: 'CSV to JSON' },
             { path: '/data-tools', icon: Database, label: 'Data Converter' },
         ]
     }
@@ -57,8 +109,17 @@ export function AllTools() {
                 {categories.map((category) => (
                     <div key={category.title} className="space-y-6">
                         <div className="border-b pb-4">
-                            <h2 className="text-2xl font-semibold tracking-tight">{category.title}</h2>
-                            <p className="text-sm text-muted-foreground">{category.description}</p>
+                            <div className="flex items-center gap-3">
+                                {category.icon && <span className="text-2xl">{category.icon}</span>}
+                                {category.categoryLink ? (
+                                    <Link to={category.categoryLink} className="text-2xl font-semibold tracking-tight hover:text-primary transition-colors">
+                                        {category.title}
+                                    </Link>
+                                ) : (
+                                    <h2 className="text-2xl font-semibold tracking-tight">{category.title}</h2>
+                                )}
+                            </div>
+                            <p className="text-sm text-muted-foreground mt-1">{category.description}</p>
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                             {category.items.map((conv) => {

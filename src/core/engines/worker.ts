@@ -32,8 +32,7 @@ self.onmessage = async (e: MessageEvent<WorkerMessage>) => {
 }
 
 async function processConversion(request: ConversionRequest): Promise<ConversionResponse> {
-    const { file, toFormat, quality = 0.8 } = request
-    let sourceBlob: Blob = file
+    const { file, toFormat, quality = 0.8, scale = 1 } = request
 
     // Report starting
     self.postMessage({
@@ -41,36 +40,95 @@ async function processConversion(request: ConversionRequest): Promise<Conversion
         payload: { id: request.id, status: 'processing', progress: 10 }
     } satisfies WorkerResponse)
 
-    // Step 1: Handle HEIC decoding if needed
-    if (file.type === 'image/heic' || file.name.toLowerCase().endsWith('.heic')) {
+    let sourceBlob: Blob = file
+    const fileName = (file as File).name?.toLowerCase() || ''
+    const fileType = (file as File).type || ''
+
+    // Handle SVG files - need special processing
+    const isSvg = fileType === 'image/svg+xml' || fileName.endsWith('.svg')
+    if (isSvg) {
         try {
-            // Load script from public folder, bypassing bundler
-            // Use variable to prevent Rollup from trying to bundle it
-            const scriptPath = '/scripts/heic2any.js'
-            await import(/* @vite-ignore */ scriptPath)
+            // Read SVG content as text
+            const svgText = await sourceBlob.text()
 
-            // heic2any attaches to global scope in some builds, or we might get it from import
-            const globalHeic2Any = (self as any).heic2any
-            if (!globalHeic2Any) throw new Error('heic2any not loaded')
+            // Parse SVG to get dimensions
+            const parser = new DOMParser()
+            const svgDoc = parser.parseFromString(svgText, 'image/svg+xml')
+            const svgElement = svgDoc.documentElement
 
-            const result = await globalHeic2Any({
-                blob: file,
-                toType: 'image/jpeg',
-                quality: quality
+            // Get intrinsic dimensions from SVG
+            let width = 300 // default
+            let height = 150 // default
+
+            const viewBox = svgElement.getAttribute('viewBox')
+            if (viewBox) {
+                const parts = viewBox.split(/\s+|,/)
+                if (parts.length >= 4) {
+                    width = parseFloat(parts[2]) || width
+                    height = parseFloat(parts[3]) || height
+                }
+            }
+
+            const svgWidth = svgElement.getAttribute('width')
+            const svgHeight = svgElement.getAttribute('height')
+            if (svgWidth && !svgWidth.includes('%')) {
+                width = parseFloat(svgWidth) || width
+            }
+            if (svgHeight && !svgHeight.includes('%')) {
+                height = parseFloat(svgHeight) || height
+            }
+
+            // Apply scale factor
+            const scaledWidth = Math.round(width * scale)
+            const scaledHeight = Math.round(height * scale)
+
+            // Create a blob URL and render via fetch + createImageBitmap
+            // We need to encode SVG properly for rendering
+            const svgBlob = new Blob([svgText], { type: 'image/svg+xml' })
+            const bitmap = await createImageBitmap(svgBlob)
+
+            const canvas = new OffscreenCanvas(scaledWidth, scaledHeight)
+            const ctx = canvas.getContext('2d')
+            if (!ctx) throw new Error('Could not get OffscreenCanvas context')
+
+            // Draw scaled bitmap
+            ctx.drawImage(bitmap, 0, 0, scaledWidth, scaledHeight)
+
+            self.postMessage({
+                type: 'STATUS',
+                payload: { id: request.id, status: 'processing', progress: 70 }
+            } satisfies WorkerResponse)
+
+            let mimeType = 'image/png'
+            if (toFormat === 'jpg') mimeType = 'image/jpeg'
+            if (toFormat === 'webp') mimeType = 'image/webp'
+
+            const resultBlob = await canvas.convertToBlob({
+                type: mimeType,
+                quality: toFormat === 'png' ? undefined : quality
             })
-            sourceBlob = Array.isArray(result) ? result[0] : result
+
+            return {
+                id: request.id,
+                status: 'completed',
+                progress: 100,
+                result: resultBlob
+            }
         } catch (err) {
-            console.error('HEIC conversion failed', err)
-            throw new Error('HEIC conversion failed: ' + (err as Error).message)
+            console.error('SVG conversion failed', err)
+            throw new Error('SVG conversion failed: ' + (err as Error).message)
         }
     }
+
+    // Note: JFIF files are treated as JPEG - the same format internally
+    // No special handling needed, they will be processed by the standard image conversion path
 
     self.postMessage({
         type: 'STATUS',
         payload: { id: request.id, status: 'processing', progress: 30 }
     } satisfies WorkerResponse)
 
-    // Step 2: Handle PDF Conversion
+    // Handle PDF Conversion
     if (toFormat === 'pdf') {
         try {
             // Load jsPDF from public folder
@@ -126,7 +184,7 @@ async function processConversion(request: ConversionRequest): Promise<Conversion
         }
     }
 
-    // Step 3: Handle Image Conversion (WebP, JPG, PNG)
+    // Handle Image Conversion (WebP, JPG, PNG)
     try {
         const bitmap = await createImageBitmap(sourceBlob)
         const canvas = new OffscreenCanvas(bitmap.width, bitmap.height)
@@ -155,3 +213,4 @@ async function processConversion(request: ConversionRequest): Promise<Conversion
         throw new Error('Image conversion failed: ' + (err as Error).message)
     }
 }
+

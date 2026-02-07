@@ -29,30 +29,51 @@ export function getActionsForFile(file: File): FileAction[] {
     const name = file.name.toLowerCase()
     const actions: FileAction[] = []
 
-    // Image files
-    if (type.startsWith('image/') || name.endsWith('.heic')) {
+    // Image files (including SVG, JFIF, HEIC)
+    const isImage = type.startsWith('image/') ||
+        name.endsWith('.heic') ||
+        name.endsWith('.jfif') ||
+        name.endsWith('.svg')
+
+    if (isImage) {
         // Conversion options
         const imageConversions: ConversionOption[] = []
 
         if (type === 'image/png' || name.endsWith('.png')) {
             imageConversions.push(
                 { format: 'jpg', label: 'Convert to JPG', description: 'Best for photos' },
-                { format: 'webp', label: 'Convert to WebP', description: 'Smaller file size' }
+                { format: 'webp', label: 'Convert to WebP', description: 'Smaller file size' },
+                { format: 'pdf', label: 'Convert to PDF', description: 'Document format' }
             )
         } else if (type === 'image/jpeg' || type === 'image/jpg' || name.endsWith('.jpg') || name.endsWith('.jpeg')) {
             imageConversions.push(
                 { format: 'png', label: 'Convert to PNG', description: 'Lossless quality' },
-                { format: 'webp', label: 'Convert to WebP', description: 'Smaller file size' }
+                { format: 'webp', label: 'Convert to WebP', description: 'Smaller file size' },
+                { format: 'pdf', label: 'Convert to PDF', description: 'Document format' }
             )
         } else if (name.endsWith('.heic')) {
             imageConversions.push(
                 { format: 'jpg', label: 'Convert to JPG', description: 'Universal format' },
-                { format: 'png', label: 'Convert to PNG', description: 'Lossless quality' }
+                { format: 'png', label: 'Convert to PNG', description: 'Lossless quality' },
+                { format: 'pdf', label: 'Convert to PDF', description: 'Document format' }
             )
         } else if (type === 'image/webp' || name.endsWith('.webp')) {
             imageConversions.push(
                 { format: 'jpg', label: 'Convert to JPG', description: 'Universal format' },
                 { format: 'png', label: 'Convert to PNG', description: 'Lossless quality' }
+            )
+        } else if (name.endsWith('.jfif')) {
+            // JFIF is essentially JPEG, offer conversion to other formats
+            imageConversions.push(
+                { format: 'jpg', label: 'Convert to JPG', description: 'Standard JPEG' },
+                { format: 'png', label: 'Convert to PNG', description: 'Lossless quality' },
+                { format: 'webp', label: 'Convert to WebP', description: 'Smaller file size' }
+            )
+        } else if (type === 'image/svg+xml' || name.endsWith('.svg')) {
+            // SVG can be rasterized to other formats
+            imageConversions.push(
+                { format: 'png', label: 'Convert to PNG', description: 'Lossless raster' },
+                { format: 'jpg', label: 'Convert to JPG', description: 'Best for photos' }
             )
         }
 
@@ -67,41 +88,65 @@ export function getActionsForFile(file: File): FileAction[] {
             })
         }
 
-        // Other image actions
-        actions.push(
-            {
-                id: 'resize',
-                type: 'resize',
-                label: 'Resize',
-                description: 'Change dimensions',
+        // Compress action for all images (except SVG)
+        if (!name.endsWith('.svg')) {
+            actions.push({
+                id: 'compress',
+                type: 'compress',
+                label: 'Compress',
+                description: 'Reduce file size',
                 isPrimary: false
-            },
-            {
-                id: 'crop',
-                type: 'crop',
-                label: 'Crop',
-                description: 'Trim image',
-                isPrimary: false
-            },
-            {
-                id: 'rotate',
-                type: 'rotate',
-                label: 'Rotate & Flip',
-                description: 'Adjust orientation',
-                isPrimary: false
-            }
-        )
+            })
+        }
+
+        // Other image actions (not applicable to SVG)
+        if (!name.endsWith('.svg')) {
+            actions.push(
+                {
+                    id: 'resize',
+                    type: 'resize',
+                    label: 'Resize',
+                    description: 'Change dimensions',
+                    isPrimary: false
+                },
+                {
+                    id: 'crop',
+                    type: 'crop',
+                    label: 'Crop',
+                    description: 'Trim image',
+                    isPrimary: false
+                },
+                {
+                    id: 'rotate',
+                    type: 'rotate',
+                    label: 'Rotate & Flip',
+                    description: 'Adjust orientation',
+                    isPrimary: false
+                }
+            )
+        }
     }
 
     // PDF files
     if (type === 'application/pdf' || name.endsWith('.pdf')) {
         actions.push(
             {
+                id: 'pdf-to-images',
+                type: 'convert',
+                label: 'Convert to Images',
+                description: 'Extract pages as JPG/PNG',
+                isPrimary: true,
+                conversionOptions: [
+                    { format: 'jpg', label: 'Convert to JPG', description: 'One image per page' },
+                    { format: 'png', label: 'Convert to PNG', description: 'Lossless quality' }
+                ]
+            },
+            {
                 id: 'merge',
                 type: 'merge',
                 label: 'Merge PDFs',
                 description: 'Combine multiple PDFs',
-                isPrimary: true
+                isPrimary: false
             },
             {
                 id: 'compress',

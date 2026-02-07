@@ -63,6 +63,8 @@ export function Merge() {
                         onFilesDropped={handleFilesDropped}
                         isConverting={isMerging}
                         accept={{ 'application/pdf': ['.pdf'] }}
+                        label="Upload your PDFs"
+                        formats={['PDF']}
                     />
 
                     {/* File List */}

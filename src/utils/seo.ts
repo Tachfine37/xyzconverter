@@ -58,6 +58,21 @@ export const ROUTE_SEO: Record<string, SEOConfig> = {
     '/png-to-webp': {
         title: 'Convert PNG to WEBP - Transparent & Lightweight | xyzconverter',
         description: 'Convert PNG images to WEBP format. Keep transparency while reducing file size by up to 30%. Fast, private, and free.',
+    },
+    '/pdf-to-jpg': {
+        title: 'Convert PDF to JPG Online - Free & Secure | xyzconverter',
+        description: 'Convert PDF documents to JPG images instantly. Extract all pages as high-quality JPG files. No upload required - 100% client-side processing.',
+        keywords: 'pdf to jpg, pdf to jpeg, convert pdf to image, pdf to jpg converter, extract pdf pages, pdf to image online',
+    },
+    '/pdf-to-png': {
+        title: 'Convert PDF to PNG Online - Lossless Quality | xyzconverter',
+        description: 'Convert PDF to PNG with perfect lossless quality. Extract all pages as high-resolution PNG images. Free, secure, and works entirely in your browser.',
+        keywords: 'pdf to png, convert pdf to png, pdf to png converter, pdf image extraction, lossless pdf conversion',
+    },
+    '/pdf-to-webp': {
+        title: 'Convert PDF to WebP - Modern Image Format | xyzconverter',
+        description: 'Convert PDF to WebP for smaller file sizes with excellent quality. Modern image format with better compression than JPG. 100% client-side.',
+        keywords: 'pdf to webp, convert pdf to webp, pdf webp converter, modern image format, pdf optimization',
     }
 }
 

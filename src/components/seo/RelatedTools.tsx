@@ -169,5 +169,83 @@ export const RELATED_TOOLS_MAP: Record<string, RelatedTool[]> = {
             description: 'Browse all available conversion tools',
             category: 'image'
         }
+    ],
+    '/pdf-to-jpg': [
+        {
+            name: 'PDF to PNG',
+            path: '/pdf-to-png',
+            description: 'Lossless quality PNG extraction',
+            category: 'pdf'
+        },
+        {
+            name: 'PDF to WebP',
+            path: '/pdf-to-webp',
+            description: 'Smaller file size with modern format',
+            category: 'pdf'
+        },
+        {
+            name: 'Split PDF',
+            path: '/split-pdf',
+            description: 'Extract specific pages from PDF',
+            category: 'pdf'
+        },
+        {
+            name: 'Merge PDFs',
+            path: '/merge-pdf',
+            description: 'Combine multiple PDFs into one',
+            category: 'pdf'
+        }
+    ],
+    '/pdf-to-png': [
+        {
+            name: 'PDF to JPG',
+            path: '/pdf-to-jpg',
+            description: 'Universal JPG format extraction',
+            category: 'pdf'
+        },
+        {
+            name: 'PDF to WebP',
+            path: '/pdf-to-webp',
+            description: 'Modern format with better compression',
+            category: 'pdf'
+        },
+        {
+            name: 'Split PDF',
+            path: '/split-pdf',
+            description: 'Extract pages from PDF documents',
+            category: 'pdf'
+        },
+        {
+            name: 'Merge PDFs',
+            path: '/merge-pdf',
+            description: 'Combine PDFs together',
+            category: 'pdf'
+        }
+    ],
+    '/pdf-to-webp': [
+        {
+            name: 'PDF to JPG',
+            path: '/pdf-to-jpg',
+            description: 'Standard JPG format extraction',
+            category: 'pdf'
+        },
+        {
+            name: 'PDF to PNG',
+            path: '/pdf-to-png',
+            description: 'Lossless PNG quality',
+            category: 'pdf'
+        },
+        {
+            name: 'Split PDF',
+            path: '/split-pdf',
+            description: 'Extract specific pages',
+            category: 'pdf'
+        },
+        {
+            name: 'Merge PDFs',
+            path: '/merge-pdf',
+            description: 'Combine multiple PDFs',
+            category: 'pdf'
+        }
     ]
 }

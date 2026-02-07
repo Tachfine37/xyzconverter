@@ -9,9 +9,11 @@ interface SmartDropzoneProps {
     onFilesDropped: (files: File[]) => void
     isConverting: boolean
     accept: Record<string, string[]>
+    label?: string
+    formats?: string[]
 }
 
-export function SmartDropzone({ onFilesDropped, isConverting, accept }: SmartDropzoneProps) {
+export function SmartDropzone({ onFilesDropped, isConverting, accept, label = 'Upload your images', formats = ['HEIC', 'PNG', 'WEBP'] }: SmartDropzoneProps) {
     const onDrop = useCallback((acceptedFiles: File[], rejectedFiles: FileRejection[]) => {
         if (rejectedFiles.length > 0) {
             const error = rejectedFiles[0].errors[0]
@@ -31,7 +33,7 @@ export function SmartDropzone({ onFilesDropped, isConverting, accept }: SmartDro
         onDrop,
         accept,
         disabled: isConverting,
-        maxSize: 10 * 1024 * 1024, // 10MB limit
+        maxSize: 10 * 1024 * 1024, // 10MB limit,
     } as DropzoneOptions)
 
     return (
@@ -51,18 +53,19 @@ export function SmartDropzone({ onFilesDropped, isConverting, accept }: SmartDro
                     </div>
                     <div className="space-y-1">
                         <h3 className="font-semibold text-lg tracking-tight">
-                            {isDragActive ? "Drop it like it's hot!" : "Upload your images"}
+                            {isDragActive ? "Drop it like it's hot!" : label}
                         </h3>
                         <p className="text-sm text-muted-foreground">
                             Drag & drop files or click to browse • Batch supported
                         </p>
                     </div>
                     <div className="flex gap-2 justify-center text-xs text-muted-foreground/75 font-mono">
-                        <span className="bg-muted px-1.5 py-0.5 rounded">HEIC</span>
-                        <span className="text-muted-foreground/50">•</span>
-                        <span className="bg-muted px-1.5 py-0.5 rounded">PNG</span>
-                        <span className="text-muted-foreground/50">•</span>
-                        <span className="bg-muted px-1.5 py-0.5 rounded">WEBP</span>
+                        {formats.map((format, idx) => (
+                            <>
+                                <span key={format} className="bg-muted px-1.5 py-0.5 rounded">{format}</span>
+                                {idx < formats.length - 1 && <span className="text-muted-foreground/50">•</span>}
+                            </>
+                        ))}
                     </div>
                 </div>
             </Card>

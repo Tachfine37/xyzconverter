@@ -234,3 +234,33 @@ export const PDF_FAQ = [
         answer: 'We support PNG, JPG, JPEG, HEIC, WEBP, and other common image formats. Simply drag and drop your images, and they\'ll be converted to PDF instantly.'
     }
 ]
+
+/**
+ * Common FAQ questions for PDF to Image conversions
+ */
+export const PDF_TO_IMAGE_FAQ = [
+    {
+        question: 'How do I convert PDF to JPG?',
+        answer: 'Upload your PDF file, and each page will be automatically converted to a high-quality JPG image. For multi-page PDFs, all images are bundled into a ZIP file for easy download.'
+    },
+    {
+        question: 'Is PDF to JPG conversion free?',
+        answer: 'Yes, completely free with no limits. All conversion happens in your browser, so there are no server costs or restrictions.'
+    },
+    {
+        question: 'What happens to my PDF files?',
+        answer: 'Your files never leave your device. All conversion happens locally in your browser using JavaScript. No files are uploaded to any server.'
+    },
+    {
+        question: 'Can I convert multi-page PDFs?',
+        answer: 'Yes! Multi-page PDFs are fully supported. Each page is converted to a separate image, and all images are automatically packaged into a ZIP file.'
+    },
+    {
+        question: 'What image quality can I expect?',
+        answer: 'Images are rendered at 2x scale for high quality. JPG quality is set to 90%, and PNG is lossless. The output is suitable for professional use.'
+    },
+    {
+        question: 'Can I convert PDF to PNG or WebP?',
+        answer: 'Yes! You can convert PDF to JPG, PNG, or WebP format. PNG offers lossless quality, while WebP provides smaller file sizes with excellent quality.'
+    }
+]

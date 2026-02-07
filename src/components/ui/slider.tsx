@@ -8,6 +8,7 @@ interface SliderProps {
     step?: number
     onValueChange?: (value: number[]) => void
     className?: string
+    disabled?: boolean
 }
 
 const Slider = React.forwardRef<HTMLInputElement, SliderProps>(

@@ -67,8 +67,17 @@ export function useConversion() {
         setIsConverting(false)
     }, [])
 
-    const convertFiles = useCallback((files: File[], toFormat: ConversionFormat = 'jpg') => {
-        if (!workerRef.current) return
+    const convertFiles = useCallback(async (files: File[], toFormat: ConversionFormat = 'jpg') => {
+        console.log('[use-conversion] convertFiles called', {
+            filesCount: files.length,
+            toFormat,
+            workerExists: !!workerRef.current
+        })
+
+        if (!workerRef.current) {
+            console.error('[use-conversion] Worker not initialized!')
+            return
+        }
 
         const newItems: QueueItem[] = files.map(file => ({
             id: crypto.randomUUID(),
@@ -77,20 +86,60 @@ export function useConversion() {
             progress: 0
         }))
 
+        console.log('[use-conversion] Setting queue', { newItems })
         setQueue(newItems)
 
-        // Send messages to worker
-        newItems.forEach(item => {
+        // Pre-convert HEIC files in main thread (heic2any needs DOM)
+        for (const item of newItems) {
+            let fileToConvert = item.file
+
+            if (item.file.type === 'image/heic' || item.file.name.toLowerCase().endsWith('.heic')) {
+                console.log('[use-conversion] HEIC file detected, pre-converting...')
+                try {
+                    // Load heic2any library dynamically
+                    if (!(window as any).heic2any) {
+                        const script = document.createElement('script')
+                        script.src = '/scripts/heic2any.js'
+                        await new Promise((resolve, reject) => {
+                            script.onload = resolve
+                            script.onerror = reject
+                            document.head.appendChild(script)
+                        })
+                    }
+
+                    const heic2any = (window as any).heic2any
+                    const result = await heic2any({
+                        blob: item.file,
+                        toType: 'image/jpeg',
+                        quality: 0.8
+                    })
+
+                    fileToConvert = Array.isArray(result) ? result[0] : result
+                    console.log('[use-conversion] HEIC pre-conversion complete')
+                } catch (err) {
+                    console.error('[use-conversion] HEIC pre-conversion failed', err)
+                    // Continue with original file, let worker handle the error
+                }
+            }
+
+            // Send to worker
+            console.log('[use-conversion] Sending to worker', {
+                id: item.id,
+                fileName: fileToConvert.name || item.file.name,
+                toFormat,
+                fileSize: fileToConvert.size
+            })
+
             workerRef.current?.postMessage({
                 type: 'CONVERT',
                 payload: {
                     id: item.id,
-                    file: item.file,
+                    file: fileToConvert,
                     toFormat,
                     quality: 0.8
                 }
             } satisfies WorkerMessage)
-        })
+        }
 
         analytics.track('convert_batch_start', { count: files.length, format: toFormat })
     }, [])

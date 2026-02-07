@@ -124,6 +124,8 @@ export function PdfSplitter() {
                     onFilesDropped={handleFilesDropped}
                     accept={{ 'application/pdf': ['.pdf'] }}
                     isConverting={false}
+                    label="Upload your PDF"
+                    formats={['PDF']}
                 />
             ) : (
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
