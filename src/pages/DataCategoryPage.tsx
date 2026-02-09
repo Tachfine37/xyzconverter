@@ -17,6 +17,8 @@ export interface DataCategoryPageProps {
     title: string
     description: string
     longDescription: string
+    metaTitle?: string
+    metaDescription?: string
     conversions: DataConversionItem[]
     slug: string
     useCases?: string[]
@@ -28,12 +30,17 @@ export function DataCategoryPage({
     title,
     description,
     longDescription,
+    metaTitle,
+    metaDescription,
     conversions,
     slug,
     useCases,
 }: DataCategoryPageProps) {
     // Use SEO hook for comprehensive meta tags
-    usePageSEO()
+    usePageSEO({
+        title: metaTitle || title,
+        description: metaDescription || description,
+    })
 
     useEffect(() => {
         analytics.pageView(`data-category-${slug}`)
