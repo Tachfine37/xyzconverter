@@ -79,13 +79,53 @@ const categories = [
         ]
     },
     {
-        title: "Developer & Data Tools",
-        icon: "💻",
-        description: "Utilities for developers.",
+        title: "JSON Tools",
+        icon: "📋",
+        categoryLink: "/data/json",
+        description: "Convert and work with JSON data.",
         items: [
             { path: '/json-to-csv', icon: Database, label: 'JSON to CSV' },
+            { path: '/data-tools', icon: Database, label: 'JSON Formatter' },
+        ]
+    },
+    {
+        title: "CSV Tools",
+        icon: "📊",
+        categoryLink: "/data/csv",
+        description: "Convert and validate CSV files.",
+        items: [
             { path: '/csv-to-json', icon: Database, label: 'CSV to JSON' },
-            { path: '/data-tools', icon: Database, label: 'Data Converter' },
+            { path: '/data-tools', icon: Database, label: 'CSV Validator' },
+        ]
+    },
+    {
+        title: "YAML Tools",
+        icon: "📄",
+        categoryLink: "/data/yaml",
+        description: "Convert and validate YAML configuration files.",
+        items: [
+            { path: '/data-tools', icon: Database, label: 'YAML to JSON' },
+            { path: '/data-tools', icon: Database, label: 'YAML to XML' },
+        ]
+    },
+    {
+        title: "XML Tools",
+        icon: "🏷️",
+        categoryLink: "/data/xml",
+        description: "Convert and validate XML data.",
+        items: [
+            { path: '/data-tools', icon: Database, label: 'XML to JSON' },
+            { path: '/data-tools', icon: Database, label: 'XML to YAML' },
+        ]
+    },
+    {
+        title: "Base64 Tools",
+        icon: "🔐",
+        categoryLink: "/data/base64",
+        description: "Encode and decode Base64 data.",
+        items: [
+            { path: '/data-tools', icon: Database, label: 'Text to Base64' },
+            { path: '/data-tools', icon: Database, label: 'Base64 to Text' },
         ]
     }
 ]

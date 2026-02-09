@@ -73,6 +73,32 @@ export const ROUTE_SEO: Record<string, SEOConfig> = {
         title: 'Convert PDF to WebP - Modern Image Format | xyzconverter',
         description: 'Convert PDF to WebP for smaller file sizes with excellent quality. Modern image format with better compression than JPG. 100% client-side.',
         keywords: 'pdf to webp, convert pdf to webp, pdf webp converter, modern image format, pdf optimization',
+    },
+    // Data Category Pages
+    '/data/json': {
+        title: 'JSON Converter & Tools - Convert, Format, Validate | xyzconverter',
+        description: 'Free JSON converter and formatter. Convert JSON to CSV, validate JSON syntax, format and minify JSON data. Perfect for developers and data analysts. 100% client-side processing.',
+        keywords: 'json converter, json to csv, json formatter, json validator, json minifier, json beautifier, json tools, api data converter',
+    },
+    '/data/csv': {
+        title: 'CSV Converter & Tools - Convert, Validate CSV Files | xyzconverter',
+        description: 'Free CSV converter and validator. Convert CSV to JSON, validate CSV structure, and transform spreadsheet data. Works with Excel and Google Sheets. Privacy-first, client-side only.',
+        keywords: 'csv converter, csv to json, csv validator, excel converter, spreadsheet converter, csv tools, data conversion',
+    },
+    '/data/yaml': {
+        title: 'YAML Converter & Tools - Convert, Validate YAML Config | xyzconverter',
+        description: 'Free YAML converter for DevOps and developers. Convert YAML to JSON or XML, validate YAML syntax, format configuration files. Perfect for Kubernetes, Docker Compose, CI/CD. 100% private.',
+        keywords: 'yaml converter, yaml to json, yaml to xml, yaml validator, kubernetes yaml, docker compose converter, yaml formatter, devops tools',
+    },
+    '/data/xml': {
+        title: 'XML Converter & Tools - Convert, Validate XML Data | xyzconverter',
+        description: 'Free XML converter and validator. Convert XML to JSON or YAML, validate XML structure, format XML documents. Perfect for SOAP APIs and legacy systems. Client-side processing only.',
+        keywords: 'xml converter, xml to json, xml to yaml, xml validator, soap converter, xml formatter, xml parser, xml tools',
+    },
+    '/data/base64': {
+        title: 'Base64 Encoder & Decoder - Free Online Tool | xyzconverter',
+        description: 'Free Base64 encoder and decoder. Encode text to Base64, decode Base64 to text, validate Base64 strings. Perfect for data URIs, API authentication, email encoding. 100% secure and private.',
+        keywords: 'base64 encoder, base64 decoder, base64 converter, encode base64, decode base64, base64 validator, data uri, base64 tools',
     }
 }
 

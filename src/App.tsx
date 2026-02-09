@@ -19,6 +19,12 @@ import { PngCategory } from './pages/categories/PngCategory'
 import { JpgCategory } from './pages/categories/JpgCategory'
 import { WebpCategory } from './pages/categories/WebpCategory'
 import { SvgCategory } from './pages/categories/SvgCategory'
+// Data Category Pages
+import { JsonCategory } from './pages/data-categories/JsonCategory'
+import { CsvCategory } from './pages/data-categories/CsvCategory'
+import { YamlCategory } from './pages/data-categories/YamlCategory'
+import { XmlCategory } from './pages/data-categories/XmlCategory'
+import { Base64Category } from './pages/data-categories/Base64Category'
 
 function App() {
   return (
@@ -40,6 +46,13 @@ function App() {
           <Route path="/images/jpg" element={<JpgCategory />} />
           <Route path="/images/webp" element={<WebpCategory />} />
           <Route path="/images/svg" element={<SvgCategory />} />
+
+          {/* Data Category Pages */}
+          <Route path="/data/json" element={<JsonCategory />} />
+          <Route path="/data/csv" element={<CsvCategory />} />
+          <Route path="/data/yaml" element={<YamlCategory />} />
+          <Route path="/data/xml" element={<XmlCategory />} />
+          <Route path="/data/base64" element={<Base64Category />} />
 
           {/* SEO Routes - HEIC */}
           <Route path="/heic-to-jpg" element={<Converter />} />
