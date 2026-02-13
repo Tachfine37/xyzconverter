@@ -131,6 +131,35 @@ export const CONVERSION_CONTENT: Record<string, ConversionSEOContent> = {
         ]
     },
 
+    '/heic-to-pdf': {
+        title: 'Convert HEIC Photos to PDF Documents',
+        description: 'Turn your iPhone HEIC photos into professional PDF documents instantly. Whether you\'re archiving photos, creating a portfolio, or preparing documents for printing, our HEIC to PDF converter handles it all locally in your browser. No uploads needed—your files never leave your device.',
+        features: [
+            '100% client-side processing - HEIC photos never leave your device',
+            'High-quality PDF output - preserves image resolution',
+            'Batch conversion - convert multiple HEIC files at once',
+            'A4 page fitting - images are automatically scaled to fit',
+            'Works offline - no internet required after page load',
+            'Free forever - no watermarks, no accounts, no hidden fees'
+        ],
+        howItWorks: {
+            title: 'How to Convert HEIC to PDF',
+            steps: [
+                'Drag and drop your HEIC files from iPhone or iPad',
+                'HEIC is decoded locally, then converted to a PDF page',
+                'Images are automatically scaled to fit an A4 page',
+                'Download your PDF document instantly'
+            ]
+        },
+        benefits: [
+            'Professional documents - turn iPhone photos into shareable PDFs',
+            'Easy archiving - combine photos into organized documents',
+            'Privacy-first - no cloud uploads, no tracking, no data collection',
+            'Lightning fast - powered by local browser processing',
+            'Universal format - PDF works on every device and platform'
+        ]
+    },
+
     '/jpg-to-webp': {
         title: 'Optimize Images by Converting JPG to WEBP',
         description: 'WEBP is a next-generation image format that offers 30-40% better compression than JPG while maintaining similar visual quality. Perfect for web developers looking to speed up their sites and reduce bandwidth costs. Our converter processes everything locally with no server uploads.',

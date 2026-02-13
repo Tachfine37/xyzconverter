@@ -152,13 +152,10 @@ export function Header() {
 
     return (
         <header className="w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
-            <div className="container max-w-6xl mx-auto h-16 flex items-center justify-between px-4">
+            <div className="container max-w-6xl mx-auto h-20 flex items-center justify-between px-4">
                 {/* Logo Area */}
-                <Link to="/" className="flex items-center gap-2 hover:opacity-90 transition-opacity" onClick={closeMenu}>
-                    <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-primary-foreground font-bold shadow-sm">
-                        X
-                    </div>
-                    <span className="font-bold text-xl tracking-tight">xyzconverter</span>
+                <Link to="/" className="group transition-all duration-300 hover:brightness-110" onClick={closeMenu}>
+                    <span className="text-xl md:text-2xl font-semibold tracking-tight bg-gradient-to-r from-blue-500 to-violet-600 bg-clip-text text-transparent">XYZCONVERTER</span>
                 </Link>
 
                 {/* Desktop Nav */}
@@ -200,12 +197,9 @@ export function Header() {
             {/* Mobile Menu Overlay - Portaled to body to avoid containing block issues with backdrop-filter */}
             {isMobileMenuOpen && createPortal(
                 <div className="fixed inset-0 z-[100] bg-background md:hidden flex flex-col animate-in slide-in-from-right-full duration-300">
-                    <div className="container max-w-6xl mx-auto h-16 flex items-center justify-between px-4 border-b">
-                        <Link to="/" className="flex items-center gap-2" onClick={closeMenu}>
-                            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-primary-foreground font-bold shadow-sm">
-                                X
-                            </div>
-                            <span className="font-bold text-xl tracking-tight">xyzconverter</span>
+                    <div className="container max-w-6xl mx-auto h-20 flex items-center justify-between px-4 border-b">
+                        <Link to="/" className="group transition-all duration-300" onClick={closeMenu}>
+                            <span className="text-lg font-semibold tracking-tight bg-gradient-to-r from-blue-500 to-violet-600 bg-clip-text text-transparent">XYZCONVERTER</span>
                         </Link>
                         <button
                             className="p-2 -mr-2 text-foreground hover:bg-accent hover:text-accent-foreground rounded-md transition-colors"

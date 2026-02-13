@@ -9,7 +9,7 @@ import { SEOContentBlock } from "@/components/seo/SEOContentBlock"
 import { FAQSection } from "@/components/seo/FAQSection"
 import { RelatedTools, RELATED_TOOLS_MAP } from "@/components/seo/RelatedTools"
 import { CONVERSION_CONTENT } from "@/utils/seo-content"
-import { HEIC_FAQ, WEBP_FAQ, PDF_FAQ, PDF_TO_IMAGE_FAQ } from "@/utils/structured-data"
+import { HEIC_FAQ, WEBP_FAQ, PDF_FAQ, PDF_TO_IMAGE_FAQ, HEIC_TO_PDF_FAQ } from "@/utils/structured-data"
 import { convertPdfToImages } from '@/utils/pdf-to-images'
 import { createZipFromBlobs } from '@/utils/zip-utils'
 import { Button } from '@/components/ui/button'
@@ -169,9 +169,11 @@ export function Converter() {
 
     // Determine which FAQ to show based on conversion type
     const getFAQForConversion = () => {
+        if (location.pathname.startsWith('/pdf-to-')) return PDF_TO_IMAGE_FAQ
+        if (location.pathname === '/heic-to-pdf') return HEIC_TO_PDF_FAQ
+        if (targetFormat === 'pdf') return PDF_FAQ
         if (location.pathname.includes('heic')) return HEIC_FAQ
         if (location.pathname.includes('webp')) return WEBP_FAQ
-        if (location.pathname.startsWith('/pdf-to-')) return PDF_TO_IMAGE_FAQ
         if (location.pathname.includes('pdf')) return PDF_FAQ
         return null
     }
@@ -267,7 +269,9 @@ export function Converter() {
                                     ? 'Upload your PDF'
                                     : sourceFormat === 'svg'
                                         ? 'Upload your SVG'
-                                        : undefined
+                                        : sourceFormat === 'heic'
+                                            ? 'Upload your HEIC files'
+                                            : undefined
                             }
                             formats={
                                 sourceFormat === 'pdf'
@@ -276,7 +280,9 @@ export function Converter() {
                                         ? ['SVG']
                                         : sourceFormat === 'jfif'
                                             ? ['JFIF']
-                                            : undefined
+                                            : sourceFormat === 'heic'
+                                                ? ['HEIC']
+                                                : undefined
                             }
                         />
                     ) : (

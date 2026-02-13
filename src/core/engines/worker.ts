@@ -131,9 +131,12 @@ async function processConversion(request: ConversionRequest): Promise<Conversion
     // Handle PDF Conversion
     if (toFormat === 'pdf') {
         try {
-            // Load jsPDF from public folder
-            const scriptPath = '/scripts/jspdf.js'
-            await import(/* @vite-ignore */ scriptPath)
+            // Load jsPDF from public folder (module workers can't use importScripts)
+            if (!(self as any).jspdf && !(self as any).jsPDF) {
+                const resp = await fetch('/scripts/jspdf.js')
+                const code = await resp.text()
+                eval(code)
+            }
 
             // jsPDF UMD attaches to self.jspdf or self.jsPDF
             const jsPDFClass = (self as any).jspdf?.jsPDF || (self as any).jsPDF

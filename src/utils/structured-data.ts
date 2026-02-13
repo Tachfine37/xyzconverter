@@ -236,6 +236,32 @@ export const PDF_FAQ = [
 ]
 
 /**
+ * Common FAQ questions for HEIC to PDF conversions
+ */
+export const HEIC_TO_PDF_FAQ = [
+    {
+        question: 'How do I convert HEIC to PDF?',
+        answer: 'Simply drag and drop your HEIC files into the converter. Your iPhone photos are decoded locally in your browser, then converted into a high-quality PDF document. No uploads, no accounts needed.'
+    },
+    {
+        question: 'Is HEIC to PDF conversion secure?',
+        answer: 'Absolutely. All conversions happen entirely in your browser using JavaScript. Your HEIC photos are never uploaded to any server, ensuring complete privacy and security.'
+    },
+    {
+        question: 'Can I convert multiple HEIC files to one PDF?',
+        answer: 'Yes! You can upload multiple HEIC files and each will be converted to PDF. Each image is automatically scaled to fit an A4 page for professional-looking results.'
+    },
+    {
+        question: 'Will I lose quality when converting HEIC to PDF?',
+        answer: 'The converter uses high-quality settings by default (90% JPEG quality). Your HEIC photos are decoded at full resolution, then embedded in the PDF at optimal quality.'
+    },
+    {
+        question: 'Does HEIC to PDF work offline?',
+        answer: 'Yes, after loading the page once, the converter works entirely offline. All HEIC decoding and PDF generation happens locally in your browser.'
+    }
+]
+
+/**
  * Common FAQ questions for PDF to Image conversions
  */
 export const PDF_TO_IMAGE_FAQ = [
