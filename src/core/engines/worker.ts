@@ -32,7 +32,7 @@ self.onmessage = async (e: MessageEvent<WorkerMessage>) => {
 }
 
 async function processConversion(request: ConversionRequest): Promise<ConversionResponse> {
-    const { file, toFormat, quality = 0.8, scale = 1 } = request
+    const { file, toFormat, quality = 0.8 } = request
 
     // Report starting
     self.postMessage({
@@ -41,8 +41,6 @@ async function processConversion(request: ConversionRequest): Promise<Conversion
     } satisfies WorkerResponse)
 
     let sourceBlob: Blob = file
-    const fileName = (file as File).name?.toLowerCase() || ''
-    const fileType = (file as File).type || ''
 
     // Note: SVG files are now pre-converted to PNG in the main thread before reaching the worker
     // Note: JFIF files are treated as JPEG - the same format internally
