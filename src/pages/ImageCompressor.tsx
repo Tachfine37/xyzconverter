@@ -401,7 +401,7 @@ export function ImageCompressor() {
                             </div>
 
                             {/* Action Buttons */}
-                            <div className="flex gap-3 pt-2">
+                            <div className="flex flex-col sm:flex-row gap-3 pt-2">
                                 <Button
                                     onClick={handleDownload}
                                     disabled={!state.compressedBlob || state.isProcessing}
@@ -410,7 +410,7 @@ export function ImageCompressor() {
                                     <Download className="w-4 h-4 mr-2" />
                                     Download
                                 </Button>
-                                <Button variant="outline" onClick={handleReset}>
+                                <Button variant="outline" onClick={handleReset} className="sm:flex-none">
                                     <RotateCcw className="w-4 h-4 mr-2" />
                                     Reset
                                 </Button>

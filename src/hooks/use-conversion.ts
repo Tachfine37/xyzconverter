@@ -90,6 +90,7 @@ export function useConversion() {
         setQueue(newItems)
 
         // Pre-convert HEIC files in main thread (heic2any needs DOM)
+        // Pre-convert SVG files in main thread (SVG rendering needs DOM)
         for (const item of newItems) {
             let fileToConvert = item.file
 
@@ -118,6 +119,50 @@ export function useConversion() {
                     console.log('[use-conversion] HEIC pre-conversion complete')
                 } catch (err) {
                     console.error('[use-conversion] HEIC pre-conversion failed', err)
+                    // Continue with original file, let worker handle the error
+                }
+            }
+
+            // Pre-convert SVG to PNG in main thread (workers can't render SVG)
+            if (item.file.type === 'image/svg+xml' || item.file.name.toLowerCase().endsWith('.svg')) {
+                console.log('[use-conversion] SVG file detected, pre-converting to PNG...')
+                try {
+                    const svgText = await item.file.text()
+
+                    // Create an image element to load the SVG
+                    const img = document.createElement('img')
+                    const svgBlob = new Blob([svgText], { type: 'image/svg+xml' })
+                    const url = URL.createObjectURL(svgBlob)
+
+                    await new Promise((resolve, reject) => {
+                        img.onload = resolve
+                        img.onerror = reject
+                        img.src = url
+                    })
+
+                    // Create canvas and draw the SVG
+                    const canvas = document.createElement('canvas')
+                    canvas.width = img.naturalWidth || 300
+                    canvas.height = img.naturalHeight || 150
+                    const ctx = canvas.getContext('2d')
+                    if (!ctx) throw new Error('Could not get canvas context')
+
+                    ctx.drawImage(img, 0, 0)
+                    URL.revokeObjectURL(url)
+
+                    // Convert canvas to PNG blob
+                    const pngBlob = await new Promise<Blob>((resolve, reject) => {
+                        canvas.toBlob((blob) => {
+                            if (blob) resolve(blob)
+                            else reject(new Error('Failed to convert canvas to blob'))
+                        }, 'image/png')
+                    })
+
+                    // Create a File object from the blob
+                    fileToConvert = new File([pngBlob], item.file.name.replace(/\.svg$/i, '.png'), { type: 'image/png' })
+                    console.log('[use-conversion] SVG pre-conversion to PNG complete')
+                } catch (err) {
+                    console.error('[use-conversion] SVG pre-conversion failed', err)
                     // Continue with original file, let worker handle the error
                 }
             }

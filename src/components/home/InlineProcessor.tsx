@@ -308,7 +308,7 @@ export function InlineProcessor({
                     )}
 
                     {/* Actions */}
-                    <div className="flex gap-3">
+                    <div className="flex flex-col sm:flex-row gap-3">
                         {isComplete && (
                             <Button
                                 size="lg"
@@ -324,7 +324,7 @@ export function InlineProcessor({
                         <Button
                             variant={isComplete ? 'outline' : 'secondary'}
                             size="lg"
-                            className={isComplete ? '' : 'flex-1'}
+                            className={isComplete ? 'sm:flex-none' : 'flex-1'}
                             onClick={handleReset}
                         >
                             <RotateCcw className="w-4 h-4 mr-2" />

@@ -235,12 +235,12 @@ export function Converter() {
                                         <p className="text-sm text-muted-foreground">
                                             File: <span className="font-medium text-foreground">{pdfConversionState.fileName}</span>
                                         </p>
-                                        <div className="flex gap-3">
+                                        <div className="flex flex-col sm:flex-row gap-3">
                                             <Button onClick={handlePdfDownload} className="flex-1">
                                                 <Download className="w-4 h-4 mr-2" />
                                                 Download {targetFormat?.toUpperCase()}
                                             </Button>
-                                            <Button onClick={handleReset} variant="outline">
+                                            <Button onClick={handleReset} variant="outline" className="sm:flex-none">
                                                 <RefreshCw className="w-4 h-4 mr-2" />
                                                 Convert Another
                                             </Button>
