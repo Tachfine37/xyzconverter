@@ -8,6 +8,8 @@ import { Label } from "@/components/ui/label"
 import { SmartDropzone } from '@/components/feature/smart-dropzone'
 import { toast } from "sonner"
 import { splitPdf, getPdfPageCount } from '@/utils/pdf-tools'
+import { SPLIT_PDF_FAQ } from "@/utils/structured-data"
+import { FAQSection } from "@/components/seo/FAQSection"
 
 // Simple radio group since we don't have Radix RadioGroup installed/created yet
 const RadioOption = ({
@@ -114,9 +116,11 @@ export function PdfSplitter() {
 
     return (
         <div className="container max-w-4xl mx-auto py-12 px-4 space-y-8">
-            <div className="text-center space-y-2">
-                <h1 className="text-4xl font-bold tracking-tight">Split PDF</h1>
-                <p className="text-muted-foreground">Extract pages from your PDF documents.</p>
+            <div className="text-center space-y-4">
+                <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-primary-700">Split PDF Files Online – Free & Secure PDF Splitter</h1>
+                <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+                    Easily <strong className="font-medium text-foreground">split PDF online</strong> with our <strong className="font-medium text-foreground">free PDF splitter</strong>. <strong className="font-medium text-foreground">Extract PDF pages</strong> instantly with <strong className="font-medium text-foreground">no upload required</strong>—100% <strong className="font-medium text-foreground">secure client-side processing</strong> ensures your documents never leave your device.
+                </p>
             </div>
 
             {!file ? (
@@ -212,6 +216,38 @@ export function PdfSplitter() {
                     </div>
                 </div>
             )}
+
+
+            {/* How to Split Section */}
+            <div className="py-12 border-t">
+                <div className="space-y-8">
+                    <div className="text-center space-y-2">
+                        <h2 className="text-3xl font-bold tracking-tight">How to Split PDF Files</h2>
+                        <p className="text-muted-foreground">Simple steps to extract pages from your PDF</p>
+                    </div>
+
+                    <div className="grid md:grid-cols-3 gap-8">
+                        <div className="bg-card p-6 rounded-xl border border-border/50 hover:border-primary/20 transition-colors shadow-sm text-center space-y-4">
+                            <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-xl mx-auto">1</div>
+                            <h3 className="font-semibold text-lg">Upload PDF</h3>
+                            <p className="text-muted-foreground">Select the PDF file you want to split or extract pages from.</p>
+                        </div>
+                        <div className="bg-card p-6 rounded-xl border border-border/50 hover:border-primary/20 transition-colors shadow-sm text-center space-y-4">
+                            <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-xl mx-auto">2</div>
+                            <h3 className="font-semibold text-lg">Select Pages</h3>
+                            <p className="text-muted-foreground">Choose specific page ranges to extract or split every page.</p>
+                        </div>
+                        <div className="bg-card p-6 rounded-xl border border-border/50 hover:border-primary/20 transition-colors shadow-sm text-center space-y-4">
+                            <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-xl mx-auto">3</div>
+                            <h3 className="font-semibold text-lg">Download Files</h3>
+                            <p className="text-muted-foreground">Download your simplified new PDF documents instantly.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {/* FAQ Section */}
+            <FAQSection faqs={SPLIT_PDF_FAQ} />
         </div>
     )
 }

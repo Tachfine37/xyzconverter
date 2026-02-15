@@ -6,6 +6,9 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { toast } from "sonner"
 import { convertData, type DataFormat } from '@/utils/data-tools'
+import { CONVERSION_CONTENT } from "@/utils/seo-content"
+import { DATA_TOOLS_FAQ } from "@/utils/structured-data"
+import { FAQSection } from "@/components/seo/FAQSection"
 
 const Textarea = (props: React.TextareaHTMLAttributes<HTMLTextAreaElement>) => (
     <textarea
@@ -67,9 +70,9 @@ export function DataConverter() {
             <main className="flex-1 container max-w-6xl mx-auto p-4 md:p-8 space-y-8">
                 <div className="flex flex-col md:flex-row items-center justify-between gap-4">
                     <div>
-                        <h1 className="text-3xl font-bold tracking-tight">Data Converter</h1>
-                        <p className="text-muted-foreground mt-1">
-                            Convert between JSON, YAML, XML, and Base64.
+                        <h1 className="text-3xl font-bold tracking-tight text-primary-700">Online Data Format Converter – JSON, YAML, XML & Base64 Tools</h1>
+                        <p className="text-muted-foreground mt-1 max-w-3xl leading-relaxed">
+                            Easily <strong className="font-medium text-foreground">convert JSON to YAML</strong>, <strong className="font-medium text-foreground">JSON to XML</strong>, or perform <strong className="font-medium text-foreground">XML to JSON</strong> conversions online. Includes a <strong className="font-medium text-foreground">Base64 encoder and decoder</strong>. This <strong className="font-medium text-foreground">browser-based tool</strong> ensures <strong className="font-medium text-foreground">no upload required</strong>—securely process your data locally.
                         </p>
                     </div>
                 </div>
@@ -154,7 +157,51 @@ export function DataConverter() {
                         </CardContent>
                     </Card>
                 </div>
-            </main>
-        </div>
+
+
+                {
+                    CONVERSION_CONTENT['/data-tools'] && (
+                        <div className="space-y-12 pt-8 border-t">
+                            {/* Supported Conversions */}
+                            <div className="space-y-8">
+                                <div className="text-center space-y-2">
+                                    <h2 className="text-3xl font-bold tracking-tight">Supported Data Conversions</h2>
+                                    <p className="text-muted-foreground">Versatile tools for developers</p>
+                                </div>
+
+                                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                                    {CONVERSION_CONTENT['/data-tools'].features?.map((feature, i) => (
+                                        <div key={i} className="flex gap-3 items-center p-4 rounded-lg bg-muted/30 border border-border/50">
+                                            <div className="w-2 h-2 rounded-full bg-primary shrink-0" />
+                                            <span className="font-medium">{feature}</span>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+
+                            {/* How It Works */}
+                            <div className="space-y-8">
+                                <div className="text-center space-y-2">
+                                    <h2 className="text-3xl font-bold tracking-tight">How It Works</h2>
+                                    <p className="text-muted-foreground">Simple steps to convert your data</p>
+                                </div>
+
+                                <div className="grid md:grid-cols-3 gap-8">
+                                    {CONVERSION_CONTENT['/data-tools'].howItWorks?.steps.map((step, i) => (
+                                        <div key={i} className="bg-card p-6 rounded-xl border border-border/50 hover:border-primary/20 transition-colors shadow-sm text-center space-y-4">
+                                            <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-xl mx-auto">{i + 1}</div>
+                                            <p className="font-medium">{step}</p>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+
+                            {/* FAQ Section */}
+                            <FAQSection faqs={DATA_TOOLS_FAQ} />
+                        </div>
+                    )
+                }
+            </main >
+        </div >
     )
 }

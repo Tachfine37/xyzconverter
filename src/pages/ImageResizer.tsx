@@ -12,6 +12,8 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { toast } from "sonner"
 import { processImage, getImageDimensions } from '@/utils/image-processing'
+import { FAQSection } from "@/components/seo/FAQSection"
+import { RESIZE_IMAGE_FAQ } from "@/utils/structured-data"
 
 type PresetCategory = 'social' | 'web' | 'print'
 
@@ -50,8 +52,9 @@ const PRESETS: Record<PresetCategory, Preset[]> = {
 
 export function ImageResizer() {
     usePageSEO({
-        title: 'Image Editor - Crop, Resize, Rotate Online',
-        description: 'Free online image editor. Crop, resize, rotate, and flip images locally. Privacy-first.'
+        title: 'Resize Image Online – Free Image Resizer Tool',
+        description: 'Resize image online with our free image resizer. Resize image without losing quality. Works in your browser with no upload required.',
+
     })
 
     const [file, setFile] = useState<File | null>(null)
@@ -265,9 +268,11 @@ export function ImageResizer() {
         <div className="min-h-screen bg-background text-foreground flex flex-col">
             <main className="flex-1 container max-w-6xl mx-auto p-4 md:p-8 space-y-8">
 
-                <div className="text-center space-y-2">
-                    <h1 className="text-3xl font-bold tracking-tight">Image Editor</h1>
-                    <p className="text-muted-foreground">Crop, resize, rotate, and optimize images locally.</p>
+                <div className="text-center space-y-4 mb-8">
+                    <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-primary-700">Resize Image Online – Free Image Resizer Tool</h1>
+                    <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed text-lg">
+                        <strong className="font-medium text-foreground">Resize image online</strong> with our <strong className="font-medium text-foreground">free image resizer</strong>. Resize image <strong className="font-medium text-foreground">without losing quality</strong>. <strong className="font-medium text-foreground">Works in your browser</strong> with <strong className="font-medium text-foreground">no upload required</strong>.
+                    </p>
                 </div>
 
                 {!file ? (
@@ -594,7 +599,34 @@ export function ImageResizer() {
                         </div>
                     </div>
                 )}
-            </main>
-        </div>
+
+                <div className="mt-16 space-y-16">
+                    {/* How to Resize Section */}
+                    <section className="bg-muted/30 rounded-2xl p-8 md:p-12">
+                        <h2 className="text-3xl font-bold text-center mb-12">How to Resize an Image Online</h2>
+                        <div className="grid md:grid-cols-3 gap-8">
+                            <div className="text-center space-y-4">
+                                <div className="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center text-xl font-bold mx-auto">1</div>
+                                <h3 className="font-semibold text-xl">Upload Image</h3>
+                                <p className="text-muted-foreground">Upload your JPG, PNG, or WebP image to the resizer tool.</p>
+                            </div>
+                            <div className="text-center space-y-4">
+                                <div className="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center text-xl font-bold mx-auto">2</div>
+                                <h3 className="font-semibold text-xl">Resize & Edit</h3>
+                                <p className="text-muted-foreground">Enter new dimensions or choose a preset. Crop if needed.</p>
+                            </div>
+                            <div className="text-center space-y-4">
+                                <div className="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center text-xl font-bold mx-auto">3</div>
+                                <h3 className="font-semibold text-xl">Download</h3>
+                                <p className="text-muted-foreground">Download your resized image instantly in high quality.</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* FAQ Section */}
+                    <FAQSection faqs={RESIZE_IMAGE_FAQ} title="Frequently Asked Questions" />
+                </div>
+            </main >
+        </div >
     )
 }

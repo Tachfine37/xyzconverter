@@ -40,12 +40,18 @@ export function Hero({ onFileUploaded }: HeroProps) {
             <div className="z-10 text-center max-w-4xl mx-auto space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
 
                 {/* Headlines */}
-                <div className="space-y-4">
-                    <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
-                        File Converter
+                <div className="space-y-6">
+                    <h1 className="text-3xl md:text-5xl font-bold tracking-tight px-2">
+                        Free Online File Converter – Convert PDF, JPG, PNG, SVG & More
                     </h1>
-                    <p className="text-xl md:text-2xl text-gray-400 font-light">
-                        Convert your files to any format
+                    {/* Mobile Intro (Short) */}
+                    <p className="text-base text-gray-300 font-light max-w-4xl mx-auto leading-relaxed md:hidden">
+                        XYZConverter is your ultimate browser-based file converter. Convert files online instantly and securely directly on your device with no upload required.
+                    </p>
+
+                    {/* Desktop Intro (Full) */}
+                    <p className="hidden md:block text-base md:text-lg text-gray-300 font-light max-w-4xl mx-auto leading-relaxed">
+                        XYZConverter is your ultimate browser-based file converter, expertly designed to help you convert files online instantly without ever compromising your privacy. Experience truly secure file conversion where all complex processing happens directly on your device—with absolutely no upload required to any remote server. This unique client-side approach ensures your sensitive data remains 100% confidential while delivering fast file conversion speeds that traditional server-based tools simply cannot match. Whether you need to convert PDF to JPG for easy sharing, transform documents, or convert images online across formats like PNG, WebP, SVG, and HEIC, our versatile tool handles it all seamlessly. Say goodbye to frustrating file size limits, mandatory registration forms, and long waiting times. With XYZConverter, you get a powerful, professional-grade solution that works perfectly on both desktop and mobile devices. It is the safest, most efficient way to manage your digital workflow, letting you convert, compress, and edit files with ease. Try the best free tool to convert files online today and enjoy immediate, high-quality results with zero privacy risks.
                     </p>
                 </div>
 
@@ -93,6 +99,13 @@ export function Hero({ onFileUploaded }: HeroProps) {
                             )}
                         </div>
                     </div>
+                </div>
+
+                {/* Mobile SEO Text (Below Upload) */}
+                <div className="md:hidden text-center space-y-4 px-2 pt-8 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-200">
+                    <p className="text-sm text-gray-400 font-light leading-relaxed">
+                        XYZConverter is your ultimate browser-based file converter, expertly designed to help you convert files online instantly without ever compromising your privacy. Experience truly secure file conversion where all complex processing happens directly on your device—with absolutely no upload required to any remote server. This unique client-side approach ensures your sensitive data remains 100% confidential while delivering fast file conversion speeds that traditional server-based tools simply cannot match. Whether you need to convert PDF to JPG for easy sharing, transform documents, or convert images online across formats like PNG, WebP, SVG, and HEIC, our versatile tool handles it all seamlessly. Say goodbye to frustrating file size limits, mandatory registration forms, and long waiting times. With XYZConverter, you get a powerful, professional-grade solution that works perfectly on both desktop and mobile devices. It is the safest, most efficient way to manage your digital workflow, letting you convert, compress, and edit files with ease. Try the best free tool to convert files online today and enjoy immediate, high-quality results with zero privacy risks.
+                    </p>
                 </div>
 
                 {/* Trust Signals */}

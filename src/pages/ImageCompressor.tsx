@@ -4,6 +4,8 @@ import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { Slider } from '@/components/ui/slider'
 import { analytics } from '@/lib/analytics'
+import { FAQSection } from "@/components/seo/FAQSection"
+import { COMPRESS_IMAGE_FAQ } from "@/utils/structured-data"
 
 interface CompressionState {
     originalFile: File | null
@@ -50,7 +52,8 @@ export function ImageCompressor() {
     const debounceRef = useRef<NodeJS.Timeout | null>(null)
 
     useEffect(() => {
-        document.title = 'Image Compressor - xyzconverter'
+        document.title = 'Image Compressor Online – Reduce File Size Free | xyzconverter'
+        updateMeta('description', 'Compress image online with our free image compressor. Reduce image size without losing quality. Works in your browser with no upload required.')
         analytics.pageView('compress-image')
     }, [])
 
@@ -251,12 +254,10 @@ export function ImageCompressor() {
         <div className="min-h-screen bg-background text-foreground flex flex-col items-center p-4 md:py-12">
             <div className="max-w-4xl w-full space-y-8">
                 {/* Header */}
-                <div className="text-center space-y-2">
-                    <h1 className="text-4xl font-bold tracking-tight text-primary-700">
-                        Image Compressor
-                    </h1>
-                    <p className="text-muted-foreground">
-                        Reduce file size while maintaining quality. 100% client-side processing.
+                <div className="text-center space-y-4 mb-8">
+                    <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-primary-700">Image Compressor Online – Reduce File Size Free</h1>
+                    <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed text-lg">
+                        <strong className="font-medium text-foreground">Compress image online</strong> with our <strong className="font-medium text-foreground">free image compressor</strong>. Reduce file size <strong className="font-medium text-foreground">without losing quality</strong>. <strong className="font-medium text-foreground">Works in your browser</strong> with <strong className="font-medium text-foreground">no upload required</strong>.
                     </p>
                 </div>
 
@@ -433,6 +434,43 @@ export function ImageCompressor() {
                     </div>
                 )}
             </div>
+
+            <div className="max-w-4xl w-full mt-16 space-y-16">
+                {/* How to Compress Section */}
+                <section className="bg-muted/30 rounded-2xl p-8 md:p-12">
+                    <h2 className="text-3xl font-bold text-center mb-12">How to Compress an Image Online</h2>
+                    <div className="grid md:grid-cols-3 gap-8">
+                        <div className="text-center space-y-4">
+                            <div className="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center text-xl font-bold mx-auto">1</div>
+                            <h3 className="font-semibold text-xl">Upload Image</h3>
+                            <p className="text-muted-foreground">Drag and drop your JPG, PNG, or WebP file into the compressor.</p>
+                        </div>
+                        <div className="text-center space-y-4">
+                            <div className="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center text-xl font-bold mx-auto">2</div>
+                            <h3 className="font-semibold text-xl">Adjust Quality</h3>
+                            <p className="text-muted-foreground">Use the slider to balance file size and image quality.</p>
+                        </div>
+                        <div className="text-center space-y-4">
+                            <div className="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center text-xl font-bold mx-auto">3</div>
+                            <h3 className="font-semibold text-xl">Download</h3>
+                            <p className="text-muted-foreground">Save your optimized image instantly to your device.</p>
+                        </div>
+                    </div>
+                </section>
+
+                {/* FAQ Section */}
+                <FAQSection faqs={COMPRESS_IMAGE_FAQ} title="Frequently Asked Questions" />
+            </div>
         </div>
     )
+}
+
+function updateMeta(name: string, content: string) {
+    let tag = document.querySelector(`meta[name="${name}"]`)
+    if (!tag) {
+        tag = document.createElement('meta')
+        tag.setAttribute('name', name)
+        document.head.appendChild(tag)
+    }
+    tag.setAttribute('content', content)
 }

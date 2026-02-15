@@ -6,6 +6,9 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { toast } from "sonner"
 import { convertJsonToCsv, convertCsvToJson } from '@/utils/json-csv'
+import { CONVERSION_CONTENT } from "@/utils/seo-content"
+import { JSON_TO_CSV_FAQ } from "@/utils/structured-data"
+import { FAQSection } from "@/components/seo/FAQSection"
 
 const Textarea = (props: React.TextareaHTMLAttributes<HTMLTextAreaElement>) => (
     <textarea
@@ -123,16 +126,25 @@ export function JsonConverter() {
             <main className="flex-1 container max-w-6xl mx-auto p-4 md:p-8 space-y-8">
                 <div className="flex flex-col md:flex-row items-center justify-between gap-4">
                     <div>
-                        <h1 className="text-3xl font-bold tracking-tight">
-                            {isJsonToCsv ? 'JSON to CSV' : 'CSV to JSON'} Converter
-                        </h1>
-                        <p className="text-muted-foreground mt-1">
-                            {isJsonToCsv
-                                ? 'Convert flattened JSON arrays to CSV for Excel/Sheets.'
-                                : 'Convert CSV data to structured JSON arrays.'}
-                        </p>
+                        {isJsonToCsv ? (
+                            <>
+                                <h1 className="text-3xl font-bold tracking-tight">Convert JSON to CSV Online – Free JSON to CSV Converter for Excel</h1>
+                                <p className="text-muted-foreground mt-1 max-w-2xl">
+                                    Easily <strong className="font-medium text-foreground">convert JSON arrays to CSV</strong> with our <strong className="font-medium text-foreground">free JSON to CSV converter</strong>. <strong className="font-medium text-foreground">Works in your browser</strong> with <strong className="font-medium text-foreground">no upload required</strong>—securely process your data locally.
+                                </p>
+                            </>
+                        ) : (
+                            <>
+                                <h1 className="text-3xl font-bold tracking-tight">
+                                    CSV to JSON Converter
+                                </h1>
+                                <p className="text-muted-foreground mt-1">
+                                    Convert CSV data to structured JSON arrays.
+                                </p>
+                            </>
+                        )}
                     </div>
-                    <Button variant="outline" onClick={toggleMode} className="gap-2">
+                    <Button variant="outline" onClick={toggleMode} className="gap-2 shrink-0">
                         <ArrowRightLeft className="w-4 h-4" />
                         Switch to {isJsonToCsv ? 'CSV -> JSON' : 'JSON -> CSV'}
                     </Button>
@@ -208,6 +220,47 @@ export function JsonConverter() {
                         Convert {isJsonToCsv ? 'to CSV' : 'to JSON'}
                     </Button>
                 </div>
+
+                {isJsonToCsv && CONVERSION_CONTENT['/json-to-csv'] && (
+                    <div className="space-y-12 pt-8 border-t">
+                        {/* How to Section */}
+                        <div className="space-y-8">
+                            <div className="text-center space-y-2">
+                                <h2 className="text-3xl font-bold tracking-tight">How to Convert JSON to CSV</h2>
+                                <p className="text-muted-foreground">Simple steps to transform your data</p>
+                            </div>
+
+                            <div className="grid md:grid-cols-3 gap-8">
+                                {CONVERSION_CONTENT['/json-to-csv'].howItWorks?.steps.map((step, i) => (
+                                    <div key={i} className="bg-card p-6 rounded-xl border border-border/50 hover:border-primary/20 transition-colors shadow-sm text-center space-y-4">
+                                        <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-xl mx-auto">{i + 1}</div>
+                                        <p className="font-medium">{step}</p>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+
+                        {/* Why Use Section */}
+                        <div className="space-y-8">
+                            <div className="text-center space-y-2">
+                                <h2 className="text-3xl font-bold tracking-tight">Why Use Our Converter</h2>
+                                <p className="text-muted-foreground">Fast, secure, and developer-friendly</p>
+                            </div>
+
+                            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                                {CONVERSION_CONTENT['/json-to-csv'].benefits?.map((benefit, i) => (
+                                    <div key={i} className="flex gap-3 items-start p-4 rounded-lg bg-muted/30">
+                                        <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
+                                        <span className="text-sm">{benefit}</span>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+
+                        {/* FAQ Section */}
+                        <FAQSection faqs={JSON_TO_CSV_FAQ} />
+                    </div>
+                )}
             </main>
         </div>
     )

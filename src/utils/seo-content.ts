@@ -16,8 +16,8 @@ interface ConversionSEOContent {
 
 export const CONVERSION_CONTENT: Record<string, ConversionSEOContent> = {
     '/heic-to-jpg': {
-        title: 'What is HEIC to JPG Conversion?',
-        description: 'HEIC (High Efficiency Image Container) is the default photo format on modern iPhones and iPads. While HEIC offers excellent compression and quality, it\'s not universally supported. Converting HEIC to JPG ensures your photos work on any device, platform, or website. Our converter processes everything locally in your browser—no uploads, complete privacy, and instant results.',
+        title: 'Convert HEIC to JPG Online – Free HEIC to JPG Converter',
+        description: 'Easily convert HEIC to JPG online with our free HEIC converter. Perfect for iPhone photos. Works in your browser with no upload required–secure, private, and fast.',
         features: [
             '100% client-side processing - your photos never leave your device',
             'Batch conversion - convert multiple HEIC files at once',
@@ -29,60 +29,107 @@ export const CONVERSION_CONTENT: Record<string, ConversionSEOContent> = {
         howItWorks: {
             title: 'How to Convert HEIC to JPG',
             steps: [
-                'Drag and drop your HEIC files or click to browse',
-                'Our conversion engine processes files instantly in your browser',
-                'Download individual JPG files or all at once',
-                'Delete the originals if needed - all processing is local and private'
+                'Drag and drop your HEIC/HEIF photos',
+                'The converter processes files instantly in your browser',
+                'Download your JPG images individually or as a ZIP'
             ]
         },
         benefits: [
-            'Universal compatibility - JPG works on all devices and platforms',
-            'Smaller file sizes - easier to share via email or messaging',
-            'Privacy-first - no cloud uploads, no tracking, no data collection',
-            'Lightning fast - powered by WebAssembly for maximum performance',
-            'Open source - transparent and trustworthy code'
+            'Convert iPhone HEIC photos to widely supported JPG',
+            '100% private - photos never leave your device',
+            'Batch convert multiple files at once',
+            'No file size limits'
+        ]
+    },
+    '/heic-to-png': {
+        title: 'Convert HEIC to PNG Online – Free HEIC to PNG Converter',
+        description: 'Easily convert HEIC to PNG online with our free HEIC converter. High-quality, lossless conversion for iPhone photos. Works in your browser with no upload required.',
+        features: [
+            'Lossless PNG quality - preserve every detail',
+            '100% client-side processing - your photos never leave your device',
+            'Batch conversion - convert multiple HEIC files at once',
+            'No file size limits - convert photos of any resolution',
+            'Works offline - no internet required after page load',
+            'Free forever - no watermarks, no accounts'
+        ],
+        howItWorks: {
+            title: 'How to Convert HEIC to PNG',
+            steps: [
+                'Drag and drop your HEIC/HEIF photos',
+                'The converter processes files instantly in your browser',
+                'Download your PNG images individually or as a ZIP'
+            ]
+        },
+        benefits: [
+            'Convert iPhone HEIC photos to lossless PNG',
+            'Maintain highest possible image quality',
+            '100% private - photos never leave your device',
+            'Batch convert multiple files'
         ]
     },
 
     '/webp-to-jpg': {
-        title: 'Convert WEBP to JPG for Better Compatibility',
-        description: 'WEBP is a modern image format developed by Google that offers superior compression. However, not all software and platforms support WEBP files. Converting WEBP to JPG ensures your images are viewable everywhere—from older photo viewers to social media platforms. Our tool handles the conversion entirely in your browser with zero uploads.',
+        title: 'Convert WebP to JPG Online – Free WebP to JPG Converter',
+        description: 'Easily convert WebP images to JPG online with our free WebP to JPG converter. Make your WebP images compatible with all devices. Works in your browser with no upload required.',
         features: [
-            'Privacy-first architecture - files stay on your device',
-            'Batch processing - convert dozens of images simultaneously',
-            'Quality control - adjust compression to balance size and quality',
-            'Instant preview - see the converted image before downloading',
-            'Cross-platform - works on Windows, Mac, Linux, iOS, and Android',
-            'No installation required - runs directly in your browser'
+            'Convert WebP to universally supported JPG',
+            'Batch processing - convert multiple files at once',
+            'High-quality JPG output',
+            '100% client-side processing - files never leave your device',
+            'Free and unlimited'
         ],
         howItWorks: {
-            title: 'How to Convert WEBP to JPG',
+            title: 'How to Convert WebP to JPG',
             steps: [
-                'Upload one or more WEBP images (drag and drop supported)',
-                'Conversion happens automatically using browser APIs',
-                'Review quality and file size in the preview',
-                'Download your high-quality JPG images'
+                'Drag and drop your WebP images',
+                'The converter processes files instantly in your browser',
+                'Download your JPG images compatible with any software'
             ]
         },
         benefits: [
-            'Better compatibility with older devices and software',
-            'Easier sharing on social media and messaging apps',
-            'No server uploads - complete privacy and security',
-            'Free and unlimited - convert as many files as you need',
-            'Reliable quality - tested with millions of conversions'
+            'Universal compatibility - JPG opens everywhere',
+            'Easy sharing - no more "unsupported format" errors',
+            'Privacy-first - local processing',
+            'Fast and free - no waiting, no costs'
+        ]
+    },
+
+    '/webp-to-png': {
+        title: 'Convert WebP to PNG Online – Free WebP to PNG Converter',
+        description: 'Easily convert WebP to PNG online with our free WebP to PNG converter. Perfect for lossless quality and compatibility. Works in your browser with no upload required.',
+        features: [
+            'Convert WebP to lossless PNG',
+            'Batch processing - convert multiple files at once',
+            'High-quality output',
+            '100% client-side processing - files never leave your device',
+            'Free and unlimited'
+        ],
+        howItWorks: {
+            title: 'How to Convert WebP to PNG',
+            steps: [
+                'Drag and drop your WebP images',
+                'The converter processes files instantly in your browser',
+                'Download your PNG images individually or as a ZIP'
+            ]
+        },
+        benefits: [
+            'Lossless quality - keep every detail',
+            'Transparency support - perfect for graphics',
+            'Privacy-first - local processing',
+            'Fast and free - instant conversion'
         ]
     },
 
     '/png-to-pdf': {
-        title: 'Convert PNG Images to PDF Documents',
-        description: 'Need to turn PNG images into a professional PDF document? Our PNG to PDF converter makes it easy. Whether you\'re creating a photo album, archiving documents, or preparing files for printing, you can merge multiple PNG images into a single multi-page PDF. Everything processes locally in your browser for maximum privacy.',
+        title: 'Convert PNG to PDF Online – Free PNG to PDF Converter',
+        description: 'Easily convert PNG images to PDF online with our free PNG to PDF converter. Merge multiple PNGs into a single professional document. Works in your browser with no upload required.',
         features: [
-            'Multi-page PDFs - combine multiple PNGs into one document',
-            'Custom page order - rearrange images before conversion',
-            'Quality preservation - maintain original image resolution',
-            'Adjustable page size - A4, Letter, or custom dimensions',
-            'No file uploads - 100% client-side processing',
-            'Fast and reliable - instant conversion with pdf-lib'
+            'Merge multiple PNGs into one PDF',
+            'Adjust page size (A4, Letter, Auto)',
+            'Reorder pages easily - drag and drop',
+            '100% client-side processing - files never leave your device',
+            'High-quality PDF output',
+            'Free and unlimited'
         ],
         howItWorks: {
             title: 'How to Convert PNG to PDF',
@@ -102,38 +149,38 @@ export const CONVERSION_CONTENT: Record<string, ConversionSEOContent> = {
         ]
     },
 
-    '/heic-to-png': {
-        title: 'Convert HEIC to PNG with Transparency',
-        description: 'PNG format offers lossless compression and transparency support, making it ideal for graphics, logos, and high-quality photos. Converting HEIC to PNG ensures your iPhone photos maintain maximum quality while gaining universal compatibility. Our converter processes everything locally—no uploads, no privacy concerns.',
+    '/jpg-to-pdf': {
+        title: 'Convert JPG to PDF Online – Free JPG to PDF Converter',
+        description: 'Easily convert JPG images to PDF online with our free JPG to PDF converter. Merge multiple JPGs into a single professional document. Works in your browser with no upload required.',
         features: [
-            'Lossless conversion - preserve maximum image quality',
-            'Transparency support - PNG alpha channel maintained',
-            'Batch conversion - process multiple files at once',
-            'Privacy-first - files never leave your device',
-            'High-resolution support - works with any image size',
-            'Free and open - no accounts or subscriptions'
+            'Merge multiple JPGs into one PDF',
+            'Adjust page size (A4, Letter, Auto)',
+            'Reorder pages easily - drag and drop',
+            '100% client-side processing - files never leave your device',
+            'High-quality PDF output',
+            'Free and unlimited'
         ],
         howItWorks: {
-            title: 'How to Convert HEIC to PNG',
+            title: 'How to Convert JPG to PDF',
             steps: [
-                'Upload your HEIC files from iPhone or iPad',
-                'Conversion runs automatically in your browser',
-                'Preview the PNG output quality',
-                'Download your high-quality PNG images'
+                'Select or drag multiple JPG images to upload',
+                'Arrange them in your preferred order',
+                'Choose page size and orientation settings',
+                'Download your completed PDF document'
             ]
         },
         benefits: [
-            'Better quality than JPG - lossless compression',
-            'Transparency support - perfect for graphics',
-            'Universal compatibility - works everywhere',
-            'No privacy risks - 100% local processing',
-            'Unlimited conversions - completely free'
+            'Create professional documents from images',
+            'Easy sharing - PDF is universally supported',
+            'Preservation - PDF maintains quality for long-term storage',
+            'Privacy guaranteed - no server-side processing',
+            'Free and unlimited use'
         ]
     },
 
     '/heic-to-pdf': {
-        title: 'Convert HEIC Photos to PDF Documents',
-        description: 'Turn your iPhone HEIC photos into professional PDF documents instantly. Whether you\'re archiving photos, creating a portfolio, or preparing documents for printing, our HEIC to PDF converter handles it all locally in your browser. No uploads needed—your files never leave your device.',
+        title: 'Convert HEIC to PDF Online – Free HEIC to PDF Converter',
+        description: 'Easily convert HEIC to PDF online with our free HEIC converter. Perfect for iPhone photos. Works in your browser with no upload required—secure, private, and fast.',
         features: [
             '100% client-side processing - HEIC photos never leave your device',
             'High-quality PDF output - preserves image resolution',
@@ -161,33 +208,34 @@ export const CONVERSION_CONTENT: Record<string, ConversionSEOContent> = {
     },
 
     '/jpg-to-webp': {
-        title: 'Optimize Images by Converting JPG to WEBP',
-        description: 'WEBP is a next-generation image format that offers 30-40% better compression than JPG while maintaining similar visual quality. Perfect for web developers looking to speed up their sites and reduce bandwidth costs. Our converter processes everything locally with no server uploads.',
+        title: 'Convert JPG to WebP Online – Free JPG to WebP Converter',
+        description: 'Easily convert JPG to WebP online with our free JPG to WebP converter. Reduce file size by up to 80% while preserving quality. Works in your browser with no upload required—secure, private, and fast.',
         features: [
-            'Significant file size reduction - up to 40% smaller',
-            'Quality preservation - maintains visual fidelity',
-            'Batch optimization - convert multiple images at once',
-            'Privacy guaranteed - no file uploads required',
-            'Adjustable quality - fine-tune compression settings',
-            'Free and unlimited - no restrictions'
+            'Significant file size reduction',
+            'High-quality WebP output',
+            'Batch processing - convert multiple files at once',
+            '100% client-side processing - files never leave your device',
+            'Adjustable quality settings',
+            'Free and unlimited'
         ],
         howItWorks: {
-            title: 'How to Convert JPG to WEBP',
+            title: 'How to Convert JPG to WebP',
             steps: [
-                'Upload JPG images you want to optimize',
-                'Adjust quality settings if desired (default: 85%)',
-                'Conversion processes instantly in browser',
-                'Download optimized WEBP files'
+                'Drag and drop your JPG images',
+                'Adjust quality settings if needed',
+                'The converter processes files instantly in your browser',
+                'Download your optimized WebP images'
             ]
         },
         benefits: [
-            'Faster website loading - improved Core Web Vitals',
-            'Lower bandwidth costs - smaller file sizes',
-            'Better SEO - faster sites rank higher',
+            'Smaller file sizes - faster website loading',
+            'Better SEO - improved Core Web Vitals',
+            'Modern format - supported by all modern browsers',
             'Privacy-first - all processing is local',
-            'Developer-friendly - perfect for web optimization'
+            'Free forever - no limits'
         ]
     },
+
 
     '/merge-pdf': {
         title: 'Merge Multiple PDF Files into One',
@@ -203,10 +251,9 @@ export const CONVERSION_CONTENT: Record<string, ConversionSEOContent> = {
         howItWorks: {
             title: 'How to Merge PDFs',
             steps: [
-                'Upload two or more PDF files',
-                'Drag to reorder PDFs in your preferred sequence',
-                'Click "Merge PDFs" to combine them',
-                'Download your merged PDF document'
+                'Upload multiple PDF files',
+                'Arrange them in your preferred order',
+                'Download your merged PDF instantly'
             ]
         },
         benefits: [
@@ -232,10 +279,9 @@ export const CONVERSION_CONTENT: Record<string, ConversionSEOContent> = {
         howItWorks: {
             title: 'How to Convert PDF to JPG',
             steps: [
-                'Upload your PDF file (drag and drop supported)',
-                'Each page is rendered at 2x scale for quality',
-                'Pages are converted to JPG format (90% quality)',
-                'Download single image or ZIP archive with all pages'
+                'Upload your PDF file',
+                'The converter extracts pages as high-quality JPGs',
+                'Download your images instantly'
             ]
         },
         benefits: [
@@ -262,9 +308,8 @@ export const CONVERSION_CONTENT: Record<string, ConversionSEOContent> = {
             title: 'How to Convert PDF to PNG',
             steps: [
                 'Select your PDF document',
-                'Pages are rendered to canvas at high resolution',
-                'Converted to lossless PNG format',
-                'Download images or ZIP file with all pages'
+                'The converter extracts pages as high-quality PNGs',
+                'Download your images instantly'
             ]
         },
         benefits: [
@@ -306,14 +351,15 @@ export const CONVERSION_CONTENT: Record<string, ConversionSEOContent> = {
     },
 
     '/png-to-jpg': {
-        title: 'Convert PNG to JPG - Reduce File Size',
-        description: 'Convert PNG images to JPG format for smaller file sizes and broader compatibility. Perfect for photos where lossless quality is not necessary. Our converter processes everything locally in your browser - no uploads, complete privacy.',
+        title: 'Convert PNG to JPG Online – Free PNG to JPG Converter',
+        description: 'Easily convert PNG to JPG online with our free PNG to JPG converter. Reduce file size while maintaining great quality. Works in your browser with no upload required—secure, private, and fast.',
         features: [
-            'Significant size reduction - JPG is much smaller than PNG',
-            'Quality control - adjust compression level',
-            'Batch conversion - process multiple files at once',
-            'Privacy-first - files never leave your device',
-            'Free and unlimited use'
+            'Significant file size reduction',
+            'Flatten transparent images to white background',
+            'Batch processing - convert multiple files at once',
+            'High-quality JPG output',
+            '100% client-side processing - files never leave your device',
+            'Free and unlimited'
         ],
         howItWorks: {
             title: 'How to Convert PNG to JPG',
@@ -333,23 +379,51 @@ export const CONVERSION_CONTENT: Record<string, ConversionSEOContent> = {
         ]
     },
 
+    '/png-to-webp': {
+        title: 'Convert PNG to WebP Online – Free PNG to WebP Converter',
+        description: 'Easily convert PNG to WebP online with our free PNG to WebP converter. Reduce file size by up to 80% while preserving transparency. Works in your browser with no upload required—secure, private, and fast.',
+        features: [
+            'Significant file size reduction',
+            'Preserve transparency (alpha channel)',
+            'Batch processing - convert multiple files at once',
+            'High-quality WebP output',
+            '100% client-side processing - files never leave your device',
+            'Free and unlimited'
+        ],
+        howItWorks: {
+            title: 'How to Convert PNG to WebP',
+            steps: [
+                'Drag and drop your PNG files',
+                'The converter processes files instantly in your browser',
+                'Download your WebP images individually or as a ZIP'
+            ]
+        },
+        benefits: [
+            'Smaller file sizes - faster website loading',
+            'Transparency support - perfect for web graphics',
+            'Modern format - supported by all modern browsers',
+            'Privacy-first - all processing is local',
+            'Free forever - no limits'
+        ]
+    },
+
     '/jpg-to-png': {
-        title: 'Convert JPG to PNG - Lossless Quality',
-        description: 'Convert JPG images to PNG format for lossless quality and transparency support. Ideal for graphics, logos, and images requiring transparent backgrounds. All processing happens locally in your browser.',
+        title: 'Convert JPG to PNG Online – Free JPG to PNG Converter',
+        description: 'Easily convert JPG to PNG online with our free JPG to PNG converter. Lossless quality and transparency support. Works in your browser with no upload required—secure, private, and fast.',
         features: [
             'Lossless conversion - no quality degradation',
             'Transparency support - PNG alpha channel',
-            'High-resolution output - maintains original quality',
-            'Privacy-first - 100% client-side processing',
-            'Batch conversion support'
+            'High-resolution output',
+            '100% client-side processing - files never leave your device',
+            'Batch conversion support',
+            'Free and unlimited'
         ],
         howItWorks: {
             title: 'How to Convert JPG to PNG',
             steps: [
-                'Select or drag JPG images to upload',
-                'Automatic conversion to PNG format',
-                'Preview lossless output',
-                'Download high-quality PNG files'
+                'Drag and drop your JPG images',
+                'The converter processes files instantly in your browser',
+                'Download your high-quality PNG images'
             ]
         },
         benefits: [
@@ -361,33 +435,7 @@ export const CONVERSION_CONTENT: Record<string, ConversionSEOContent> = {
         ]
     },
 
-    '/webp-to-png': {
-        title: 'Convert WEBP to PNG - Lossless Quality',
-        description: 'Convert WEBP images to PNG for maximum compatibility and lossless quality. Perfect for when you need transparency support or maximum image fidelity. All processing is done locally in your browser.',
-        features: [
-            'Lossless conversion - preserves all image data',
-            'Transparency support - maintains alpha channel',
-            'Universal compatibility - PNG works everywhere',
-            'Privacy guaranteed - no file uploads',
-            'Instant processing - no waiting'
-        ],
-        howItWorks: {
-            title: 'How to Convert WEBP to PNG',
-            steps: [
-                'Upload your WEBP files',
-                'Automatic lossless conversion',
-                'Preview the PNG output',
-                'Download your files'
-            ]
-        },
-        benefits: [
-            'Maximum quality - lossless PNG format',
-            'Full compatibility - works on all devices',
-            'Transparency preserved - alpha channel intact',
-            'Private and secure - local processing only',
-            'Free and unlimited'
-        ]
-    },
+
 
     '/jfif-to-jpg': {
         title: 'Convert JFIF to JPG - Standard JPEG Format',
@@ -443,14 +491,16 @@ export const CONVERSION_CONTENT: Record<string, ConversionSEOContent> = {
         ]
     },
 
+
+
     '/svg-to-png': {
-        title: 'Convert SVG to PNG - Rasterize Vector Graphics',
-        description: 'Convert SVG vector graphics to PNG raster images. Perfect for using vector logos and icons in contexts that do not support SVG. Choose your output resolution for crisp results at any size.',
+        title: 'Convert SVG to PNG Online – Free SVG to PNG Converter',
+        description: 'Easily convert SVG to PNG high resolution with our free SVG to PNG converter. Rasterize your vector graphics for web and apps. Works in your browser with no upload required.',
         features: [
-            'High-quality rasterization - crisp output',
-            'Transparent background - PNG alpha support',
-            'Custom resolution - 1x, 2x, or 3x scale',
-            'Privacy-first - local browser processing',
+            'High-resolution rasterization',
+            'Preserve transparency',
+            'Batch processing - convert multiple files at once',
+            '100% client-side processing - files never leave your device',
             'Free and unlimited'
         ],
         howItWorks: {
@@ -472,14 +522,14 @@ export const CONVERSION_CONTENT: Record<string, ConversionSEOContent> = {
     },
 
     '/svg-to-jpg': {
-        title: 'Convert SVG to JPG - Vector to Photo Format',
-        description: 'Convert SVG vector graphics to JPG format. Ideal for using vector designs in contexts requiring photo formats. Note: JPG does not support transparency, so backgrounds will be filled.',
+        title: 'Convert SVG to JPG Online – Free SVG to JPG Converter',
+        description: 'Easily convert SVG to JPG online with our free SVG to JPG converter. Perfect for converting vectors to images for compatibility. Works in your browser with no upload required.',
         features: [
-            'Quick conversion - SVG to JPG in seconds',
-            'Quality control - adjust compression level',
-            'Custom resolution support',
-            'Local processing - your files stay private',
-            'Batch conversion capable'
+            'High-quality SVG to JPG conversion',
+            'Batch processing - convert multiple files at once',
+            'Custom background color (white by default)',
+            '100% client-side processing - files never leave your device',
+            'Free and unlimited'
         ],
         howItWorks: {
             title: 'How to Convert SVG to JPG',
@@ -491,41 +541,15 @@ export const CONVERSION_CONTENT: Record<string, ConversionSEOContent> = {
             ]
         },
         benefits: [
-            'Broad compatibility - JPG works everywhere',
-            'Smaller files - compressed format',
-            'Easy sharing - universal format support',
+            'Universal compatibility - JPG works everywhere',
+            'Smaller file sizes - efficient compression',
+            'Easy sharing - standard photo format',
             'Private - client-side only',
             'Free forever'
         ]
     },
 
-    '/jpg-to-pdf': {
-        title: 'Convert JPG to PDF - Create Documents from Photos',
-        description: 'Convert JPG images to PDF documents. Perfect for creating printable documents, archiving photos, or sharing multiple images as a single file. All processing happens in your browser.',
-        features: [
-            'High-quality PDF output - preserves image resolution',
-            'Multiple images support - combine into one PDF',
-            'Custom page sizing - A4, Letter, or auto-fit',
-            'Privacy guaranteed - no file uploads',
-            'Free and unlimited'
-        ],
-        howItWorks: {
-            title: 'How to Convert JPG to PDF',
-            steps: [
-                'Upload one or more JPG images',
-                'Automatic conversion to PDF',
-                'Preview the document',
-                'Download your PDF'
-            ]
-        },
-        benefits: [
-            'Professional documents - from simple photos',
-            'Easy sharing - PDF is universal',
-            'Print-ready - high-quality output',
-            'Secure - local processing only',
-            'Free to use'
-        ]
-    },
+
 
     '/compress-image': {
         title: 'Image Compressor - Reduce File Size Without Quality Loss',
@@ -552,6 +576,83 @@ export const CONVERSION_CONTENT: Record<string, ConversionSEOContent> = {
             'Keep quality - smart compression preserves details',
             'Private - files never leave your device',
             'Free and unlimited'
+        ]
+    },
+    '/split-pdf': {
+        title: 'Split PDF Files Online – Free & Secure PDF Splitter',
+        description: 'Easily split PDF online with our free PDF splitter. Extract PDF pages instantly with no upload required—100% secure client-side processing ensures your documents never leave your device.',
+        features: [
+            'Extract specific pages - choose ranges or single pages',
+            'Burst mode - split every page into a separate file',
+            'Secure processing - files never leave your device',
+            'Fast and reliable - split large PDFs locally',
+            'Free forever - no limits or fees'
+        ],
+        howItWorks: {
+            title: 'How to Split PDF Files',
+            steps: [
+                'Upload your PDF file',
+                'Select pages to extract or split',
+                'Download your new PDF files'
+            ]
+        },
+        benefits: [
+            'Extract exactly what you need - save only relevant pages',
+            'Easy organization - separate large documents',
+            'Privacy-first - no cloud uploads',
+            'Instant results - no waiting for processing',
+            'Free to use - unlimited splits'
+        ]
+    },
+    '/json-to-csv': {
+        title: 'Convert JSON to CSV Online – Free JSON to CSV Converter for Excel',
+        description: 'Easily convert JSON arrays to CSV with our free JSON to CSV converter. Works in your browser with no upload required—securely process your data locally.',
+        features: [
+            'Convert formatted JSON to CSV instantly',
+            'Flattens nested objects automatically',
+            'Works with Excel, Sheets, and other tools',
+            '100% private - data never leaves your browser',
+            'Handle large JSON files with ease'
+        ],
+        howItWorks: {
+            title: 'How to Convert JSON to CSV',
+            steps: [
+                'Paste or upload your JSON code',
+                'The converter automatically flattens arrays to CSV',
+                'Copy or download your CSV file'
+            ]
+        },
+        benefits: [
+            'Convert complex JSON to Excel-ready CSV',
+            '100% private - runs in browser',
+            'Fast handling of large datasets',
+            'No file size limits'
+        ]
+    },
+    '/data-tools': {
+        title: 'Online Data Format Converter – JSON, YAML, XML & Base64 Tools',
+        description: 'Easily convert JSON to YAML, JSON to XML, or perform XML to JSON conversions online. Includes a Base64 encoder and decoder. This browser-based tool ensures no upload required—securely process your data locally.',
+        features: [
+            'JSON ↔ YAML Conversion',
+            'JSON ↔ XML Conversion',
+            'Base64 Encode / Decode',
+            'Live Preview',
+            'Syntax Highlighting'
+        ],
+        howItWorks: {
+            title: 'How It Works',
+            steps: [
+                'Paste or upload your data',
+                'Select input and output formats',
+                'Copy or download resulted data'
+            ]
+        },
+        benefits: [
+            'Browser-based tool - no installation',
+            'No upload required - private & secure',
+            'Instant conversion - real-time results',
+            'Supports multiple formats - JSON, YAML, XML, Base64',
+            'Developer friendly - clean output'
         ]
     }
 }

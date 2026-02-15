@@ -174,6 +174,270 @@ export function injectStructuredData(schema: SchemaOrgBase | SchemaOrgBase[]) {
 }
 
 /**
+ * Specific FAQ questions for HEIC to JPG
+ */
+export const HEIC_TO_JPG_FAQ = [
+    {
+        question: 'How do I convert HEIC to JPG?',
+        answer: 'Simply drag and drop your HEIC or HEIF photos into the upload box. Our free online converter will instantly process them and provide high-quality JPG images for download.'
+    },
+    {
+        question: 'Is it free to use?',
+        answer: 'Yes, our HEIC to JPG converter is completely free. You can convert unlimited photos without any hidden costs, watermarks, or registration requirements.'
+    },
+    {
+        question: 'Is it safe?',
+        answer: 'Yes, absolutely. We use client-side processing technology, which means your photos never leave your computer. The conversion happens right in your browser, ensuring 100% privacy.'
+    },
+    {
+        question: 'Can I convert multiple photos?',
+        answer: 'Yes! You can upload and convert multiple HEIC files at once. Our tool handles batch conversions efficiently, saving you time.'
+    }
+]
+
+/**
+ * Specific FAQ questions for HEIC to PNG
+ */
+export const HEIC_TO_PNG_FAQ = [
+    {
+        question: 'How do I convert HEIC to PNG?',
+        answer: 'Simply drag and drop your HEIC photos into the converter. Our tool will instantly process them and provide high-quality PNG images for download.'
+    },
+    {
+        question: 'Is PNG better than JPG for HEIC?',
+        answer: 'PNG is a lossless format, meaning it preserves all image data without compression artifacts. This makes it better for editing or archiving, though the file sizes will be larger than JPG.'
+    },
+    {
+        question: 'Is it free and secure?',
+        answer: 'Yes, our tool is 100% free and secure. We use client-side processing, so your photos never leave your browser and are never uploaded to any server.'
+    }
+]
+
+/**
+ * Specific FAQ questions for PNG to JPG
+ */
+export const PNG_TO_JPG_FAQ = [
+    {
+        question: 'How do I convert PNG to JPG?',
+        answer: 'Simply upload your PNG images to the converter. They will be instantly converted to JPG format, which you can then download.'
+    },
+    {
+        question: 'What happens to transparent backgrounds?',
+        answer: 'JPG does not support transparency. When converting from PNG to JPG, transparent areas will automatically be replaced with a white background.'
+    },
+    {
+        question: 'Is it free and secure?',
+        answer: 'Yes, our tool is 100% free and secure. Conversions happen locally in your browser, so your files are never uploaded to any server.'
+    }
+]
+
+/**
+ * Specific FAQ questions for PNG to WebP
+ */
+export const PNG_TO_WEBP_FAQ = [
+    {
+        question: 'How do I convert PNG to WebP?',
+        answer: 'Drag and drop your PNG images into the tool. They will be instantly converted to WebP format, offering smaller file sizes with high quality.'
+    },
+    {
+        question: 'Does WebP support transparency?',
+        answer: 'Yes! WebP fully supports transparency (alpha channel), just like PNG. You can convert transparent PNGs to WebP without losing the transparent background.'
+    },
+    {
+        question: 'Is it free and secure?',
+        answer: 'Completely. Our converter runs entirely in your browser, so your images are never uploaded to a server. It is free to use with no limits.'
+    }
+]
+
+/**
+ * Specific FAQ questions for PNG to PDF
+ */
+export const PNG_TO_PDF_FAQ = [
+    {
+        question: 'How do I convert PNG to PDF?',
+        answer: 'Upload one or more PNG images to the converter. You can arrange them in your preferred order and download them as a single PDF document.'
+    },
+    {
+        question: 'Can I merge multiple PNGs into one PDF?',
+        answer: 'Yes! Our tool is designed to combine multiple PNG images into a single PDF file. You can drag and drop multiple files at once.'
+    },
+    {
+        question: 'Is it free and secure?',
+        answer: 'Absolutely. The conversion happens entirely in your browser, so your files are never uploaded to any server. It is completely free to use.'
+    }
+]
+
+/**
+ * Specific FAQ questions for JPG to PNG
+ */
+export const JPG_TO_PNG_FAQ = [
+    {
+        question: 'How do I convert JPG to PNG?',
+        answer: 'Simply upload your JPG images to the tool. They will be instantly converted to PNG format, which is perfect for editing and maintaining quality.'
+    },
+    {
+        question: 'Does converting JPG to PNG improve quality?',
+        answer: 'Converting to PNG prevents further quality loss if you plan to edit the image, as PNG is a lossless format. However, it cannot restore detail that was already lost in the original JPG compression.'
+    },
+    {
+        question: 'Is it free and secure?',
+        answer: 'Yes, our tool is 100% free and secure. We use client-side processing, so your photos never leave your browser and are never uploaded to any server.'
+    }
+]
+
+/**
+ * Specific FAQ questions for JPG to WebP
+ */
+export const JPG_TO_WEBP_FAQ = [
+    {
+        question: 'How do I convert JPG to WebP?',
+        answer: 'Upload your JPG images to the converter. They will be transformed into WebP format, which offers superior compression and quality.'
+    },
+    {
+        question: 'Why convert JPG to WebP?',
+        answer: 'WebP images are significantly smaller than JPGs while maintaining the same quality. This makes your website load faster and improves your SEO/Core Web Vitals scores.'
+    },
+    {
+        question: 'Is it free and secure?',
+        answer: 'Yes. Our converter is free to use and processes all files locally in your browser, ensuring your images remain private.'
+    }
+]
+
+/**
+ * Specific FAQ questions for JPG to PDF
+ */
+export const JPG_TO_PDF_FAQ = [
+    {
+        question: 'How do I convert JPG to PDF?',
+        answer: 'Upload one or more JPG images to the converter. You can arrange them in your preferred order and download them as a single PDF document.'
+    },
+    {
+        question: 'Can I merge multiple JPGs into one PDF?',
+        answer: 'Yes! Our tool is designed to combine multiple JPG images into a single PDF file. You can drag and drop multiple files at once.'
+    },
+    {
+        question: 'Is it free and secure?',
+        answer: 'Absolutely. The conversion happens entirely in your browser, so your files are never uploaded to any server. It is completely free to use.'
+    }
+]
+
+/**
+ * Specific FAQ questions for WebP to JPG
+ */
+export const WEBP_TO_JPG_FAQ = [
+    {
+        question: 'How do I convert WebP to JPG?',
+        answer: 'Upload your WebP images to the converter. They will be instantly converted to JPG format, making them compatible with all devices and software.'
+    },
+    {
+        question: 'Why convert WebP to JPG?',
+        answer: 'While WebP is efficient for the web, some older image viewers and editors do not support it. Converting to JPG ensures your images can be opened and edited everywhere.'
+    },
+    {
+        question: 'Is it free and secure?',
+        answer: 'Yes, our tool is 100% free and secure. We use client-side processing, so your photos never leave your browser and are never uploaded to any server.'
+    }
+]
+
+/**
+ * Specific FAQ questions for WebP to PNG
+ */
+export const WEBP_TO_PNG_FAQ = [
+    {
+        question: 'How do I convert WebP to PNG?',
+        answer: 'Upload your WebP images to the converter. They will be instantly converted to PNG format, preserving quality and transparency.'
+    },
+    {
+        question: 'Why convert WebP to PNG?',
+        answer: 'PNG is a lossless format that is widely supported. Converting WebP to PNG ensures maximum compatibility and quality retention, especially for images with text or transparency.'
+    },
+    {
+        question: 'Is it free and secure?',
+        answer: 'Yes, our tool is 100% free and secure. We use client-side processing, so your photos never leave your browser and are never uploaded to any server.'
+    }
+]
+
+/**
+ * Specific FAQ questions for SVG to PNG
+ */
+export const SVG_TO_PNG_FAQ = [
+    {
+        question: 'How do I convert SVG to PNG?',
+        answer: 'Upload your SVG file to the converter. It will be automatically rasterized into a high-quality PNG image.'
+    },
+    {
+        question: 'Why convert SVG to PNG?',
+        answer: 'While SVG is great for vectors, many applications and websites require raster images like PNG. Converting ensures your graphics can be used specifically where vectors aren\'t supported.'
+    },
+    {
+        question: 'Does it support transparency?',
+        answer: 'Yes! Our converter preserves the transparency of your SVG files in the output PNG.'
+    }
+]
+
+/**
+ * Specific FAQ questions for SVG to JPG
+ */
+export const SVG_TO_JPG_FAQ = [
+    {
+        question: 'How do I convert SVG to JPG?',
+        answer: 'Upload your SVG file to the converter. It will be automatically rasterized into a high-quality JPG image.'
+    },
+    {
+        question: 'Why convert SVG to JPG?',
+        answer: 'JPG is the most widely supported image format. Converting SVG to JPG ensures your images can be viewed on any device, shared on social media, or used in documents that don\'t support vectors.'
+    },
+    {
+        question: 'What happens to transparent backgrounds?',
+        answer: 'Since JPG does not support transparency, any transparent areas in your SVG will seamlessly become a white background in the resulting JPG.'
+    }
+]
+
+/**
+ * Specific FAQ questions for Image Resizer
+ */
+export const RESIZE_IMAGE_FAQ = [
+    {
+        question: 'How do I resize an image without losing quality?',
+        answer: 'Our tool uses advanced algorithms to resize your images while maintaining the highest possible quality. When scaling down, detail is preserved. When scaling up, we use smart interpolation to minimize pixelation.'
+    },
+    {
+        question: 'Is this image resizer free?',
+        answer: 'Yes, our image resizer is 100% free to use. There are no limits on the number of images you can resize and no hidden costs.'
+    },
+    {
+        question: 'Does resizing reduce file size?',
+        answer: 'Yes, resizing an image to smaller dimensions significantly reduces its file size. You can also adjust the quality setting to further compress the image.'
+    },
+    {
+        question: 'Are my images secure?',
+        answer: 'Absolutely. All processing happens locally in your browser. Your images are never uploaded to our servers, ensuring complete privacy and security.'
+    }
+]
+
+/**
+ * Specific FAQ questions for Image Compressor
+ */
+export const COMPRESS_IMAGE_FAQ = [
+    {
+        question: 'How do I compress an image without losing quality?',
+        answer: 'Our advanced compression algorithms reduce file size by removing unnecessary metadata and optimizing image data. You can adjust the quality level to find the perfect balance between file size and visual fidelity.'
+    },
+    {
+        question: 'Is this image compressor free?',
+        answer: 'Yes, our image compressor is completely free to use. You can compress as many images as you need without any daily limits or hidden fees.'
+    },
+    {
+        question: 'Which formats are supported?',
+        answer: 'We support compression for all major image formats including JPG, PNG, and WebP. The tool automatically detects the best compression method for your file type.'
+    },
+    {
+        question: 'Are my images secure?',
+        answer: 'Security is our top priority. All compression is performed locally in your browser, meaning your images are never uploaded to our servers or seen by anyone else.'
+    }
+]
+
+/**
  * Common FAQ questions for HEIC conversions
  */
 export const HEIC_FAQ = [
@@ -258,6 +522,114 @@ export const HEIC_TO_PDF_FAQ = [
     {
         question: 'Does HEIC to PDF work offline?',
         answer: 'Yes, after loading the page once, the converter works entirely offline. All HEIC decoding and PDF generation happens locally in your browser.'
+    }
+]
+
+/**
+ * Specific FAQ questions for Data Tools
+ */
+export const DATA_TOOLS_FAQ = [
+    {
+        question: 'What formats are supported?',
+        answer: 'We support conversion between JSON, YAML, XML, and Base64. You can convert from any of these formats to any other.'
+    },
+    {
+        question: 'Is my data secure?',
+        answer: 'Yes, your data is 100% secure. All conversions happen locally in your browser using JavaScript. We never upload your data to any server.'
+    },
+    {
+        question: 'Is it free?',
+        answer: 'Yes, this data converter tool is completely free to use for unlimited conversions. There are no hidden fees or subscriptions.'
+    }
+]
+
+/**
+ * Specific FAQ questions for JSON to CSV
+ */
+export const JSON_TO_CSV_FAQ = [
+    {
+        question: 'Is this JSON to CSV tool free?',
+        answer: 'Yes, our JSON converter is completely free. You can convert unlimited JSON data to CSV format without any fees or registration.'
+    },
+    {
+        question: 'Does it support large JSON files?',
+        answer: 'Yes! Since the conversion happens entirely in your browser using JavaScript, you can process very large JSON files instantly without waiting for server uploads.'
+    },
+    {
+        question: 'Is my data secure?',
+        answer: 'Absolutely. We use client-side processing, which means your sensitive data never leaves your computer. It is converted locally in your browser and is never stored on our servers.'
+    }
+]
+
+/**
+ * Specific FAQ questions for PDF Splitter
+ */
+export const SPLIT_PDF_FAQ = [
+    {
+        question: 'Is this PDF splitter free?',
+        answer: 'Yes, our PDF splitter is completely free to use. You can extract pages from as many PDF documents as you need without any restrictions or hidden costs.'
+    },
+    {
+        question: 'Are my files secure?',
+        answer: 'Your privacy is 100% guaranteed. All PDF splitting happens locally in your browser, meaning your files are never uploaded to our servers or accessed by anyone else.'
+    },
+    {
+        question: 'Can I split large PDF files?',
+        answer: 'Absolutely. Because the process runs entirely on your device, you can split large PDF files quickly without worrying about file size limits or slow upload times.'
+    }
+]
+
+/**
+ * Specific FAQ questions for PDF Merger
+ */
+export const MERGE_PDF_FAQ = [
+    {
+        question: 'Is this PDF merger free?',
+        answer: 'Yes, our PDF merger is completely free to use. You can combine as many PDF files as you want without any cost, watermarks, or hidden fees.'
+    },
+    {
+        question: 'Are my files secure?',
+        answer: 'Your security is guaranteed. We use client-side processing, which means your files are merged directly in your browser and never uploaded to any server. Your documents remain private on your device.'
+    },
+    {
+        question: 'Can I merge large PDF files?',
+        answer: 'Yes! Since processing happens on your device, you are not limited by server upload caps. You can merge large PDF files quickly and efficiently, depending only on your device\'s performance.'
+    }
+]
+
+/**
+ * Specific FAQ questions for PDF to PNG conversions
+ */
+export const PDF_TO_PNG_FAQ = [
+    {
+        question: 'Is this PDF to PNG converter free?',
+        answer: 'Yes, completely free. You can convert unlimited PDF pages to PNG formatting without any costs, watermarks, or registration requirements.'
+    },
+    {
+        question: 'Are my files secure?',
+        answer: 'Your privacy is our priority. Since all conversions happen locally in your web browser, your files are never uploaded to our servers or seen by anyone else.'
+    },
+    {
+        question: 'Can I convert multi-page PDFs?',
+        answer: 'Absolutely. The tool automatically separates multi-page PDF documents into individual PNG images, which you can download as a single ZIP file for convenience.'
+    }
+]
+
+/**
+ * Specific FAQ questions for PDF to JPG conversions
+ */
+export const PDF_TO_JPG_FAQ = [
+    {
+        question: 'Is this PDF to JPG converter free?',
+        answer: 'Yes, our PDF to JPG converter is 100% free with no limits. You can convert as many PDF pages to JPG images as you need without any cost or registration.'
+    },
+    {
+        question: 'Are my files secure?',
+        answer: 'Absolutely. We use advanced client-side technology to process your files directly in your browser. Your PDF documents never leave your device and are never uploaded to any server, guaranteeing complete privacy.'
+    },
+    {
+        question: 'Can I convert multi-page PDFs?',
+        answer: 'Yes! Our tool automatically detects multi-page PDFs and converts each page into a high-quality separate JPG image. You can then download them all at once.'
     }
 ]
 

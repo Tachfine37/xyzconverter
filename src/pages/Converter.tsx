@@ -9,7 +9,7 @@ import { SEOContentBlock } from "@/components/seo/SEOContentBlock"
 import { FAQSection } from "@/components/seo/FAQSection"
 import { RelatedTools, RELATED_TOOLS_MAP } from "@/components/seo/RelatedTools"
 import { CONVERSION_CONTENT } from "@/utils/seo-content"
-import { HEIC_FAQ, WEBP_FAQ, PDF_FAQ, PDF_TO_IMAGE_FAQ, HEIC_TO_PDF_FAQ } from "@/utils/structured-data"
+import { HEIC_FAQ, WEBP_FAQ, PDF_FAQ, PDF_TO_IMAGE_FAQ, HEIC_TO_PDF_FAQ, PDF_TO_JPG_FAQ, PDF_TO_PNG_FAQ, HEIC_TO_JPG_FAQ, HEIC_TO_PNG_FAQ, PNG_TO_JPG_FAQ, PNG_TO_WEBP_FAQ, PNG_TO_PDF_FAQ, JPG_TO_PNG_FAQ, JPG_TO_WEBP_FAQ, JPG_TO_PDF_FAQ, WEBP_TO_JPG_FAQ, WEBP_TO_PNG_FAQ, SVG_TO_PNG_FAQ, SVG_TO_JPG_FAQ } from "@/utils/structured-data"
 import { convertPdfToImages } from '@/utils/pdf-to-images'
 import { createZipFromBlobs } from '@/utils/zip-utils'
 import { Button } from '@/components/ui/button'
@@ -169,8 +169,22 @@ export function Converter() {
 
     // Determine which FAQ to show based on conversion type
     const getFAQForConversion = () => {
+        if (location.pathname === '/pdf-to-jpg') return PDF_TO_JPG_FAQ
+        if (location.pathname === '/pdf-to-png') return PDF_TO_PNG_FAQ
         if (location.pathname.startsWith('/pdf-to-')) return PDF_TO_IMAGE_FAQ
         if (location.pathname === '/heic-to-pdf') return HEIC_TO_PDF_FAQ
+        if (location.pathname === '/heic-to-jpg') return HEIC_TO_JPG_FAQ
+        if (location.pathname === '/heic-to-png') return HEIC_TO_PNG_FAQ
+        if (location.pathname === '/png-to-jpg') return PNG_TO_JPG_FAQ
+        if (location.pathname === '/png-to-webp') return PNG_TO_WEBP_FAQ
+        if (location.pathname === '/png-to-pdf') return PNG_TO_PDF_FAQ
+        if (location.pathname === '/jpg-to-png') return JPG_TO_PNG_FAQ
+        if (location.pathname === '/jpg-to-webp') return JPG_TO_WEBP_FAQ
+        if (location.pathname === '/jpg-to-pdf') return JPG_TO_PDF_FAQ
+        if (location.pathname === '/webp-to-jpg') return WEBP_TO_JPG_FAQ
+        if (location.pathname === '/webp-to-png') return WEBP_TO_PNG_FAQ
+        if (location.pathname === '/svg-to-png') return SVG_TO_PNG_FAQ
+        if (location.pathname === '/svg-to-jpg') return SVG_TO_JPG_FAQ
         if (targetFormat === 'pdf') return PDF_FAQ
         if (location.pathname.includes('heic')) return HEIC_FAQ
         if (location.pathname.includes('webp')) return WEBP_FAQ
@@ -188,12 +202,151 @@ export function Converter() {
             <main className="flex-1 flex flex-col items-center p-4">
                 <div className="max-w-2xl w-full space-y-8">
                     <div className="text-center space-y-2">
-                        <h1 className="text-4xl font-bold tracking-tight text-primary-700 capitalize">
-                            {effectiveConversion?.replace(/-/g, ' ')}
-                        </h1>
-                        <p className="text-muted-foreground">
-                            Upload {sourceFormat?.toUpperCase()} files and convert to {targetFormat?.toUpperCase()}
-                        </p>
+                        {location.pathname === '/pdf-to-jpg' ? (
+                            <>
+                                <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-primary-700">
+                                    Convert PDF to JPG Online – Free & Secure PDF to JPG Converter
+                                </h1>
+                                <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+                                    Easily <strong className="font-medium text-foreground">convert PDF to JPG online</strong> with our <strong className="font-medium text-foreground">free PDF to JPG converter</strong>. <strong className="font-medium text-foreground">No upload required</strong>—process your files locally and securely in your browser for the fastest results.
+                                </p>
+                            </>
+                        ) : location.pathname === '/pdf-to-png' ? (
+                            <>
+                                <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-primary-700">
+                                    Convert PDF to PNG Online – Free & Secure PDF to PNG Converter
+                                </h1>
+                                <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+                                    Easily <strong className="font-medium text-foreground">convert PDF to PNG online</strong> with our <strong className="font-medium text-foreground">free PDF to PNG converter</strong>. <strong className="font-medium text-foreground">No upload required</strong>—process your files locally and securely in your browser for the fastest results.
+                                </p>
+                            </>
+                        ) : location.pathname === '/heic-to-jpg' ? (
+                            <>
+                                <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-primary-700">
+                                    Convert HEIC to JPG Online – Free HEIC to JPG Converter
+                                </h1>
+                                <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+                                    Easily <strong className="font-medium text-foreground">convert HEIC to JPG online</strong> with our <strong className="font-medium text-foreground">free HEIC to JPG converter</strong>. Perfect for <strong className="font-medium text-foreground">iPhone photos</strong>. <strong className="font-medium text-foreground">Works in your browser</strong> with <strong className="font-medium text-foreground">no upload required</strong>—secure, private, and fast.
+                                </p>
+                            </>
+                        ) : location.pathname === '/heic-to-png' ? (
+                            <>
+                                <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-primary-700">
+                                    Convert HEIC to PNG Online – Free HEIC to PNG Converter
+                                </h1>
+                                <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+                                    Easily <strong className="font-medium text-foreground">convert HEIC to PNG online</strong> with our <strong className="font-medium text-foreground">free HEIC to PNG converter</strong>. <strong className="font-medium text-foreground">High-quality, lossless conversion</strong> for <strong className="font-medium text-foreground">iPhone photos</strong>. <strong className="font-medium text-foreground">Works in your browser</strong> with <strong className="font-medium text-foreground">no upload required</strong>.
+                                </p>
+                            </>
+                        ) : location.pathname === '/heic-to-pdf' ? (
+                            <>
+                                <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-primary-700">
+                                    Convert HEIC to PDF Online – Free HEIC to PDF Converter
+                                </h1>
+                                <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+                                    Easily <strong className="font-medium text-foreground">convert HEIC to PDF online</strong> with our <strong className="font-medium text-foreground">free HEIC to PDF converter</strong>. Perfect for <strong className="font-medium text-foreground">iPhone photos</strong>. <strong className="font-medium text-foreground">Works in your browser</strong> with <strong className="font-medium text-foreground">no upload required</strong>.
+                                </p>
+                            </>
+                        ) : location.pathname === '/png-to-jpg' ? (
+                            <>
+                                <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-primary-700">
+                                    Convert PNG to JPG Online – Free PNG to JPG Converter
+                                </h1>
+                                <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+                                    Easily <strong className="font-medium text-foreground">convert PNG to JPG online</strong> with our <strong className="font-medium text-foreground">free PNG to JPG converter</strong>. Perfect for <strong className="font-medium text-foreground">reducing file size</strong>. <strong className="font-medium text-foreground">Works in your browser</strong> with <strong className="font-medium text-foreground">no upload required</strong>.
+                                </p>
+                            </>
+                        ) : location.pathname === '/png-to-webp' ? (
+                            <>
+                                <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-primary-700">
+                                    Convert PNG to WebP Online – Free PNG to WebP Converter
+                                </h1>
+                                <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+                                    Easily <strong className="font-medium text-foreground">convert PNG to WebP online</strong> with our <strong className="font-medium text-foreground">free PNG to WebP converter</strong>. Perfect for <strong className="font-medium text-foreground">web optimization</strong>. <strong className="font-medium text-foreground">Works in your browser</strong> with <strong className="font-medium text-foreground">no upload required</strong>.
+                                </p>
+                            </>
+                        ) : location.pathname === '/png-to-pdf' ? (
+                            <>
+                                <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-primary-700">
+                                    Convert PNG to PDF Online – Free PNG to PDF Converter
+                                </h1>
+                                <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+                                    Easily <strong className="font-medium text-foreground">convert PNG to PDF online</strong> with our <strong className="font-medium text-foreground">free PNG to PDF converter</strong>. Perfect for <strong className="font-medium text-foreground">creating documents</strong>. <strong className="font-medium text-foreground">Works in your browser</strong> with <strong className="font-medium text-foreground">no upload required</strong>.
+                                </p>
+                            </>
+                        ) : location.pathname === '/jpg-to-png' ? (
+                            <>
+                                <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-primary-700">
+                                    Convert JPG to PNG Online – Free JPG to PNG Converter
+                                </h1>
+                                <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+                                    Easily <strong className="font-medium text-foreground">convert JPG to PNG online</strong> with our <strong className="font-medium text-foreground">free JPG to PNG converter</strong>. Perfect for <strong className="font-medium text-foreground">lossless editing</strong>. <strong className="font-medium text-foreground">Works in your browser</strong> with <strong className="font-medium text-foreground">no upload required</strong>.
+                                </p>
+                            </>
+                        ) : location.pathname === '/jpg-to-webp' ? (
+                            <>
+                                <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-primary-700">
+                                    Convert JPG to WebP Online – Free JPG to WebP Converter
+                                </h1>
+                                <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+                                    Easily <strong className="font-medium text-foreground">convert JPG to WebP online</strong> with our <strong className="font-medium text-foreground">free JPG to WebP converter</strong>. Perfect for <strong className="font-medium text-foreground">web optimization</strong>. <strong className="font-medium text-foreground">Works in your browser</strong> with <strong className="font-medium text-foreground">no upload required</strong>.
+                                </p>
+                            </>
+                        ) : location.pathname === '/jpg-to-pdf' ? (
+                            <>
+                                <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-primary-700">
+                                    Convert JPG to PDF Online – Free JPG to PDF Converter
+                                </h1>
+                                <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+                                    Easily <strong className="font-medium text-foreground">convert JPG to PDF online</strong> with our <strong className="font-medium text-foreground">free JPG to PDF converter</strong>. Perfect for <strong className="font-medium text-foreground">creating documents</strong>. <strong className="font-medium text-foreground">Works in your browser</strong> with <strong className="font-medium text-foreground">no upload required</strong>.
+                                </p>
+                            </>
+                        ) : location.pathname === '/webp-to-jpg' ? (
+                            <>
+                                <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-primary-700">
+                                    Convert WebP to JPG Online – Free WebP to JPG Converter
+                                </h1>
+                                <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+                                    Easily <strong className="font-medium text-foreground">convert WebP to JPG online</strong> with our <strong className="font-medium text-foreground">free WebP to JPG converter</strong>. Perfect for <strong className="font-medium text-foreground">compatibility</strong>. <strong className="font-medium text-foreground">Works in your browser</strong> with <strong className="font-medium text-foreground">no upload required</strong>.
+                                </p>
+                            </>
+                        ) : location.pathname === '/webp-to-png' ? (
+                            <>
+                                <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-primary-700">
+                                    Convert WebP to PNG Online – Free WebP to PNG Converter
+                                </h1>
+                                <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+                                    Easily <strong className="font-medium text-foreground">convert WebP to PNG online</strong> with our <strong className="font-medium text-foreground">free WebP to PNG converter</strong>. Perfect for <strong className="font-medium text-foreground">lossless conversion</strong>. <strong className="font-medium text-foreground">Works in your browser</strong> with <strong className="font-medium text-foreground">no upload required</strong>.
+                                </p>
+                            </>
+                        ) : location.pathname === '/svg-to-png' ? (
+                            <>
+                                <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-primary-700">
+                                    Convert SVG to PNG Online – Free SVG to PNG Converter
+                                </h1>
+                                <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+                                    Easily <strong className="font-medium text-foreground">convert SVG to PNG online</strong> with our <strong className="font-medium text-foreground">free SVG to PNG converter</strong>. Perfect for <strong className="font-medium text-foreground">converting vectors to images</strong>. <strong className="font-medium text-foreground">Works in your browser</strong> with <strong className="font-medium text-foreground">no upload required</strong>.
+                                </p>
+                            </>
+                        ) : location.pathname === '/svg-to-jpg' ? (
+                            <>
+                                <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-primary-700">
+                                    Convert SVG to JPG Online – Free SVG to JPG Converter
+                                </h1>
+                                <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+                                    Easily <strong className="font-medium text-foreground">convert SVG to JPG online</strong> with our <strong className="font-medium text-foreground">free SVG to JPG converter</strong>. Perfect for <strong className="font-medium text-foreground">compatibility</strong>. <strong className="font-medium text-foreground">Works in your browser</strong> with <strong className="font-medium text-foreground">no upload required</strong>.
+                                </p>
+                            </>
+                        ) : (
+                            <>
+                                <h1 className="text-4xl font-bold tracking-tight text-primary-700 capitalize">
+                                    {effectiveConversion?.replace(/-/g, ' ')}
+                                </h1>
+                                <p className="text-muted-foreground">
+                                    Upload {sourceFormat?.toUpperCase()} files and convert to {targetFormat?.toUpperCase()}
+                                </p>
+                            </>
+                        )}
                     </div>
 
                     {/* Show PDF conversion result if PDF to image */}
