@@ -1,129 +1,141 @@
+import { Suspense, lazy } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { Home } from './pages/Home'
-import { Converter } from './pages/Converter'
-import { Merge } from './pages/Merge'
-import { JsonConverter } from './pages/JsonConverter'
-import { HowItWorks } from './pages/HowItWorks'
-import { Privacy } from './pages/Privacy'
-import { Terms } from './pages/Terms'
-import { About } from './pages/About'
-import { DataConverter } from './pages/DataConverter'
-import { ImageResizer } from './pages/ImageResizer'
-import { ImageCompressor } from './pages/ImageCompressor'
-import { PdfSplitter } from './pages/PdfSplitter'
 import { Layout } from './components/layout/Layout'
-import { AllTools } from './pages/AllTools'
-import { QrGenerator } from './pages/QrGenerator'
-import { QrScanner } from './pages/QrScanner'
-import { WordCounter } from './pages/WordCounter'
-import { CharacterCounter } from './pages/CharacterCounter'
-import { CaseConverter } from './pages/CaseConverter'
-import { RemoveExtraSpaces } from './pages/RemoveExtraSpaces'
-import { SlugGenerator } from './pages/SlugGenerator'
-import { PasswordGenerator } from './pages/PasswordGenerator'
+import { LoadingSpinner } from './components/ui/loading-spinner'
+
+// Lazy load pages
+const Home = lazy(() => import('./pages/Home').then(module => ({ default: module.Home })))
+const Converter = lazy(() => import('./pages/Converter').then(module => ({ default: module.Converter })))
+const Merge = lazy(() => import('./pages/Merge').then(module => ({ default: module.Merge })))
+const JsonConverter = lazy(() => import('./pages/JsonConverter').then(module => ({ default: module.JsonConverter })))
+const HowItWorks = lazy(() => import('./pages/HowItWorks').then(module => ({ default: module.HowItWorks })))
+const Privacy = lazy(() => import('./pages/Privacy').then(module => ({ default: module.Privacy })))
+const Terms = lazy(() => import('./pages/Terms').then(module => ({ default: module.Terms })))
+const About = lazy(() => import('./pages/About').then(module => ({ default: module.About })))
+const DataConverter = lazy(() => import('./pages/DataConverter').then(module => ({ default: module.DataConverter })))
+const ImageResizer = lazy(() => import('./pages/ImageResizer').then(module => ({ default: module.ImageResizer })))
+const ImageCompressor = lazy(() => import('./pages/ImageCompressor').then(module => ({ default: module.ImageCompressor })))
+const PdfSplitter = lazy(() => import('./pages/PdfSplitter').then(module => ({ default: module.PdfSplitter })))
+const AllTools = lazy(() => import('./pages/AllTools').then(module => ({ default: module.AllTools })))
+const QrGenerator = lazy(() => import('./pages/QrGenerator').then(module => ({ default: module.QrGenerator })))
+const QrScanner = lazy(() => import('./pages/QrScanner').then(module => ({ default: module.QrScanner })))
+const WordCounter = lazy(() => import('./pages/WordCounter').then(module => ({ default: module.WordCounter })))
+const CharacterCounter = lazy(() => import('./pages/CharacterCounter').then(module => ({ default: module.CharacterCounter })))
+const CaseConverter = lazy(() => import('./pages/CaseConverter').then(module => ({ default: module.CaseConverter })))
+const RemoveExtraSpaces = lazy(() => import('./pages/RemoveExtraSpaces').then(module => ({ default: module.RemoveExtraSpaces })))
+const SlugGenerator = lazy(() => import('./pages/SlugGenerator').then(module => ({ default: module.SlugGenerator })))
+const PasswordGenerator = lazy(() => import('./pages/PasswordGenerator').then(module => ({ default: module.PasswordGenerator })))
+
 // Image Category Pages
-import { HeicCategory } from './pages/categories/HeicCategory'
-import { PngCategory } from './pages/categories/PngCategory'
-import { JpgCategory } from './pages/categories/JpgCategory'
-import { WebpCategory } from './pages/categories/WebpCategory'
-import { SvgCategory } from './pages/categories/SvgCategory'
+const HeicCategory = lazy(() => import('./pages/categories/HeicCategory').then(module => ({ default: module.HeicCategory })))
+const PngCategory = lazy(() => import('./pages/categories/PngCategory').then(module => ({ default: module.PngCategory })))
+const JpgCategory = lazy(() => import('./pages/categories/JpgCategory').then(module => ({ default: module.JpgCategory })))
+const WebpCategory = lazy(() => import('./pages/categories/WebpCategory').then(module => ({ default: module.WebpCategory })))
+const SvgCategory = lazy(() => import('./pages/categories/SvgCategory').then(module => ({ default: module.SvgCategory })))
+
 // Data Category Pages
-import { JsonCategory } from './pages/data-categories/JsonCategory'
-import { CsvCategory } from './pages/data-categories/CsvCategory'
-import { YamlCategory } from './pages/data-categories/YamlCategory'
-import { XmlCategory } from './pages/data-categories/XmlCategory'
-import { Base64Category } from './pages/data-categories/Base64Category'
+const JsonCategory = lazy(() => import('./pages/data-categories/JsonCategory').then(module => ({ default: module.JsonCategory })))
+const CsvCategory = lazy(() => import('./pages/data-categories/CsvCategory').then(module => ({ default: module.CsvCategory })))
+const YamlCategory = lazy(() => import('./pages/data-categories/YamlCategory').then(module => ({ default: module.YamlCategory })))
+const XmlCategory = lazy(() => import('./pages/data-categories/XmlCategory').then(module => ({ default: module.XmlCategory })))
+const Base64Category = lazy(() => import('./pages/data-categories/Base64Category').then(module => ({ default: module.Base64Category })))
 
 function App() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route element={<Layout />}>
-          <Route path="/" element={<Home />} />
-          <Route path="/tools" element={<AllTools />} />
+      <Suspense fallback={
+        <div className="flex items-center justify-center min-h-screen">
+          <LoadingSpinner size={48} />
+        </div>
+      }>
+        <Routes>
+          <Route element={<Layout />}>
+            <Route path="/" element={<Home />} />
+            <Route path="/tools" element={<AllTools />} />
 
-          {/* Static Pages */}
-          <Route path="/how-it-works" element={<HowItWorks />} />
-          <Route path="/privacy" element={<Privacy />} />
-          <Route path="/terms" element={<Terms />} />
-          <Route path="/about" element={<About />} />
+            {/* Static Pages */}
+            <Route path="/how-it-works" element={<HowItWorks />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/terms" element={<Terms />} />
+            <Route path="/about" element={<About />} />
 
-          {/* Image Category Pages */}
-          <Route path="/images/heic" element={<HeicCategory />} />
-          <Route path="/images/png" element={<PngCategory />} />
-          <Route path="/images/jpg" element={<JpgCategory />} />
-          <Route path="/images/webp" element={<WebpCategory />} />
-          <Route path="/images/svg" element={<SvgCategory />} />
+            {/* Image Category Pages */}
+            <Route path="/images/heic" element={<HeicCategory />} />
+            <Route path="/images/png" element={<PngCategory />} />
+            <Route path="/images/jpg" element={<JpgCategory />} />
+            <Route path="/images/webp" element={<WebpCategory />} />
+            <Route path="/images/svg" element={<SvgCategory />} />
 
-          {/* Data Category Pages */}
-          <Route path="/data/json" element={<JsonCategory />} />
-          <Route path="/data/csv" element={<CsvCategory />} />
-          <Route path="/data/yaml" element={<YamlCategory />} />
-          <Route path="/data/xml" element={<XmlCategory />} />
-          <Route path="/data/base64" element={<Base64Category />} />
+            {/* Data Category Pages */}
+            <Route path="/data/json" element={<JsonCategory />} />
+            <Route path="/data/csv" element={<CsvCategory />} />
+            <Route path="/data/yaml" element={<YamlCategory />} />
+            <Route path="/data/xml" element={<XmlCategory />} />
+            <Route path="/data/base64" element={<Base64Category />} />
 
-          {/* SEO Routes - HEIC */}
-          <Route path="/heic-to-jpg" element={<Converter />} />
-          <Route path="/heic-to-png" element={<Converter />} />
-          <Route path="/heic-to-pdf" element={<Converter />} />
+            {/* SEO Routes - HEIC */}
+            <Route path="/heic-to-jpg" element={<Converter />} />
+            <Route path="/heic-to-png" element={<Converter />} />
+            <Route path="/heic-to-pdf" element={<Converter />} />
 
-          {/* Image Format Conversions */}
-          <Route path="/png-to-jpg" element={<Converter />} />
-          <Route path="/jpg-to-png" element={<Converter />} />
-          <Route path="/webp-to-jpg" element={<Converter />} />
-          <Route path="/webp-to-png" element={<Converter />} />
-          <Route path="/png-to-pdf" element={<Converter />} />
-          <Route path="/jpg-to-pdf" element={<Converter />} />
-          <Route path="/image-to-pdf" element={<Converter />} />
+            {/* Image Format Conversions */}
+            <Route path="/png-to-jpg" element={<Converter />} />
+            <Route path="/jpg-to-png" element={<Converter />} />
+            <Route path="/webp-to-jpg" element={<Converter />} />
+            <Route path="/webp-to-png" element={<Converter />} />
+            <Route path="/png-to-pdf" element={<Converter />} />
+            <Route path="/jpg-to-pdf" element={<Converter />} />
+            <Route path="/image-to-pdf" element={<Converter />} />
 
-          {/* JFIF Conversions */}
-          <Route path="/jfif-to-jpg" element={<Converter />} />
-          <Route path="/jfif-to-png" element={<Converter />} />
+            {/* JFIF Conversions */}
+            <Route path="/jfif-to-jpg" element={<Converter />} />
+            <Route path="/jfif-to-png" element={<Converter />} />
 
-          {/* SVG Conversions */}
-          <Route path="/svg-to-png" element={<Converter />} />
-          <Route path="/svg-to-jpg" element={<Converter />} />
+            {/* SVG Conversions */}
+            <Route path="/svg-to-png" element={<Converter />} />
+            <Route path="/svg-to-jpg" element={<Converter />} />
 
-          {/* WebP Optimization Tools */}
-          <Route path="/jpg-to-webp" element={<Converter />} />
-          <Route path="/png-to-webp" element={<Converter />} />
+            {/* WebP Optimization Tools */}
+            <Route path="/jpg-to-webp" element={<Converter />} />
+            <Route path="/png-to-webp" element={<Converter />} />
 
-          {/* PDF Tools */}
-          <Route path="/merge-pdf" element={<Merge />} />
-          <Route path="/split-pdf" element={<PdfSplitter />} />
+            {/* PDF Tools */}
+            <Route path="/merge-pdf" element={<Merge />} />
+            <Route path="/split-pdf" element={<PdfSplitter />} />
 
-          {/* PDF to Image Conversions */}
-          <Route path="/pdf-to-jpg" element={<Converter />} />
-          <Route path="/pdf-to-png" element={<Converter />} />
-          <Route path="/pdf-to-webp" element={<Converter />} />
-
-
-          {/* Data Tools */}
-          <Route path="/json-to-csv" element={<JsonConverter />} />
-          <Route path="/csv-to-json" element={<JsonConverter />} />
-          <Route path="/data-tools" element={<DataConverter />} />
+            {/* PDF to Image Conversions */}
+            <Route path="/pdf-to-jpg" element={<Converter />} />
+            <Route path="/pdf-to-png" element={<Converter />} />
+            <Route path="/pdf-to-webp" element={<Converter />} />
 
 
-          {/* QR Tools */}
-          <Route path="/qr-generator" element={<QrGenerator />} />
-          <Route path="/qr-scanner" element={<QrScanner />} />
+            {/* Data Tools */}
+            <Route path="/json-to-csv" element={<JsonConverter />} />
+            <Route path="/csv-to-json" element={<JsonConverter />} />
+            <Route path="/data-tools" element={<DataConverter />} />
 
-          {/* Text Tools */}
-          <Route path="/word-counter" element={<WordCounter />} />
-          <Route path="/character-counter" element={<CharacterCounter />} />
-          <Route path="/case-converter" element={<CaseConverter />} />
-          <Route path="/remove-extra-spaces" element={<RemoveExtraSpaces />} />
-          <Route path="/slug-generator" element={<SlugGenerator />} />
-          <Route path="/password-generator" element={<PasswordGenerator />} />
 
-          {/* Image Tools */}
-          <Route path="/resize-image" element={<ImageResizer />} />
-          <Route path="/compress-image" element={<ImageCompressor />} />
+            {/* QR Tools */}
+            <Route path="/qr-generator" element={<QrGenerator />} />
+            <Route path="/qr-scanner" element={<QrScanner />} />
 
-          {/* Fallback/Legacy Route */}
-          <Route path="/convert/:conversion" element={<Converter />} />
-        </Route>
-      </Routes>
+            {/* Text Tools */}
+            <Route path="/word-counter" element={<WordCounter />} />
+            <Route path="/character-counter" element={<CharacterCounter />} />
+            <Route path="/case-converter" element={<CaseConverter />} />
+            <Route path="/remove-extra-spaces" element={<RemoveExtraSpaces />} />
+            <Route path="/slug-generator" element={<SlugGenerator />} />
+            <Route path="/password-generator" element={<PasswordGenerator />} />
+
+            {/* Image Tools */}
+            <Route path="/resize-image" element={<ImageResizer />} />
+            <Route path="/compress-image" element={<ImageCompressor />} />
+
+            {/* Fallback/Legacy Route */}
+            <Route path="/convert/:conversion" element={<Converter />} />
+          </Route>
+        </Routes>
+      </Suspense>
     </BrowserRouter>
   )
 }
