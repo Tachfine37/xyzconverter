@@ -74,14 +74,25 @@ export function DropdownMenu({ trigger, items, className }: DropdownMenuProps) {
             {isOpen && (
                 <div className="absolute top-full left-0 mt-2 w-48 bg-background border rounded-lg shadow-lg py-2 z-50 animate-in fade-in slide-in-from-top-2 duration-200">
                     {items.map((item) => (
-                        <Link
-                            key={item.href}
-                            to={item.href}
-                            className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors"
-                            onClick={() => setIsOpen(false)}
-                        >
-                            {item.label}
-                        </Link>
+                        item.href.endsWith('.html') ? (
+                            <a
+                                key={item.href}
+                                href={item.href}
+                                className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors"
+                                onClick={() => setIsOpen(false)}
+                            >
+                                {item.label}
+                            </a>
+                        ) : (
+                            <Link
+                                key={item.href}
+                                to={item.href}
+                                className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors"
+                                onClick={() => setIsOpen(false)}
+                            >
+                                {item.label}
+                            </Link>
+                        )
                     ))}
                 </div>
             )}

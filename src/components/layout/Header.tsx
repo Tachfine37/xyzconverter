@@ -76,6 +76,20 @@ export function Header() {
         { label: 'PDF to PNG', href: '/pdf-to-png' },
     ]
 
+    const qrToolsItems = [
+        { label: 'QR Generator', href: '/qr-generator' },
+        { label: 'QR Scanner', href: '/qr-scanner' },
+    ]
+
+    const textToolsItems = [
+        { label: 'Word Counter', href: '/word-counter' },
+        { label: 'Character Counter', href: '/character-counter' },
+        { label: 'Case Converter', href: '/case-converter' },
+        { label: 'Remove Extra Spaces', href: '/remove-extra-spaces' },
+        { label: 'Slug Generator', href: '/slug-generator' },
+        { label: 'Password Generator', href: '/password-generator' },
+    ]
+
 
     // Data tools grouped by format
     const dataGroups: MenuGroup[] = [
@@ -168,6 +182,10 @@ export function Header() {
 
                     <DropdownMenu trigger="PDF Tools" items={pdfToolsItems} />
 
+                    <DropdownMenu trigger="QR Tools" items={qrToolsItems} />
+
+                    <DropdownMenu trigger="Text Tools" items={textToolsItems} />
+
                     <MegaDropdownMenu trigger="Data Tools" groups={dataGroups} />
 
                     <Link to="/how-it-works" className="text-muted-foreground hover:text-foreground transition-colors">
@@ -240,7 +258,7 @@ export function Header() {
                                                 <div className="grid grid-cols-1 gap-2 pl-6">
                                                     {group.items.map((item) => (
                                                         <Link
-                                                            key={item.href}
+                                                            key={item.label + item.href}
                                                             to={item.href}
                                                             className="text-muted-foreground hover:text-primary block py-1"
                                                             onClick={closeMenu}
@@ -280,6 +298,56 @@ export function Header() {
                                 )}
                             </div>
 
+                            {/* QR Tools Accordion */}
+                            <div className="border-b border-border/50">
+                                <button
+                                    className="flex items-center justify-between w-full py-3 text-lg font-medium"
+                                    onClick={() => toggleAccordion('qr')}
+                                >
+                                    <span>QR Tools</span>
+                                    <ChevronDown className={`w-5 h-5 transition-transform ${activeAccordion === 'qr' ? 'rotate-180' : ''}`} />
+                                </button>
+                                {activeAccordion === 'qr' && (
+                                    <div className="pb-4 pl-4 space-y-2 animate-in slide-in-from-top-2">
+                                        {qrToolsItems.map((item) => (
+                                            <Link
+                                                key={item.href}
+                                                to={item.href}
+                                                className="block py-2 text-muted-foreground hover:text-primary"
+                                                onClick={closeMenu}
+                                            >
+                                                {item.label}
+                                            </Link>
+                                        ))}
+                                    </div>
+                                )}
+                            </div>
+
+                            {/* Text Tools Accordion */}
+                            <div className="border-b border-border/50">
+                                <button
+                                    className="flex items-center justify-between w-full py-3 text-lg font-medium"
+                                    onClick={() => toggleAccordion('text')}
+                                >
+                                    <span>Text Tools</span>
+                                    <ChevronDown className={`w-5 h-5 transition-transform ${activeAccordion === 'text' ? 'rotate-180' : ''}`} />
+                                </button>
+                                {activeAccordion === 'text' && (
+                                    <div className="pb-4 pl-4 space-y-2 animate-in slide-in-from-top-2">
+                                        {textToolsItems.map((item) => (
+                                            <Link
+                                                key={item.href}
+                                                to={item.href}
+                                                className="block py-2 text-muted-foreground hover:text-primary"
+                                                onClick={closeMenu}
+                                            >
+                                                {item.label}
+                                            </Link>
+                                        ))}
+                                    </div>
+                                )}
+                            </div>
+
                             {/* Data Tools Accordion */}
                             <div className="border-b border-border/50">
                                 <button
@@ -300,7 +368,7 @@ export function Header() {
                                                 <div className="grid grid-cols-1 gap-2 pl-6">
                                                     {group.items.map((item) => (
                                                         <Link
-                                                            key={item.href}
+                                                            key={item.label + item.href}
                                                             to={item.href}
                                                             className="text-muted-foreground hover:text-primary block py-1"
                                                             onClick={closeMenu}

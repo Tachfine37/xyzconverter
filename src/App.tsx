@@ -13,6 +13,14 @@ import { ImageCompressor } from './pages/ImageCompressor'
 import { PdfSplitter } from './pages/PdfSplitter'
 import { Layout } from './components/layout/Layout'
 import { AllTools } from './pages/AllTools'
+import { QrGenerator } from './pages/QrGenerator'
+import { QrScanner } from './pages/QrScanner'
+import { WordCounter } from './pages/WordCounter'
+import { CharacterCounter } from './pages/CharacterCounter'
+import { CaseConverter } from './pages/CaseConverter'
+import { RemoveExtraSpaces } from './pages/RemoveExtraSpaces'
+import { SlugGenerator } from './pages/SlugGenerator'
+import { PasswordGenerator } from './pages/PasswordGenerator'
 // Image Category Pages
 import { HeicCategory } from './pages/categories/HeicCategory'
 import { PngCategory } from './pages/categories/PngCategory'
@@ -94,6 +102,19 @@ function App() {
           <Route path="/json-to-csv" element={<JsonConverter />} />
           <Route path="/csv-to-json" element={<JsonConverter />} />
           <Route path="/data-tools" element={<DataConverter />} />
+
+
+          {/* QR Tools */}
+          <Route path="/qr-generator" element={<QrGenerator />} />
+          <Route path="/qr-scanner" element={<QrScanner />} />
+
+          {/* Text Tools */}
+          <Route path="/word-counter" element={<WordCounter />} />
+          <Route path="/character-counter" element={<CharacterCounter />} />
+          <Route path="/case-converter" element={<CaseConverter />} />
+          <Route path="/remove-extra-spaces" element={<RemoveExtraSpaces />} />
+          <Route path="/slug-generator" element={<SlugGenerator />} />
+          <Route path="/password-generator" element={<PasswordGenerator />} />
 
           {/* Image Tools */}
           <Route path="/resize-image" element={<ImageResizer />} />

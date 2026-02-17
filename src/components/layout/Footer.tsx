@@ -20,11 +20,14 @@ export function Footer() {
                     <div className="space-y-4">
                         <h3 className="font-semibold text-sm tracking-wider uppercase text-muted-foreground">Tools</h3>
                         <ul className="space-y-2 text-sm">
-                            <li><Link to="/heic-to-jpg" className="hover:text-primary transition-colors">HEIC to JPG</Link></li>
-                            <li><Link to="/merge-pdf" className="hover:text-primary transition-colors">Merge PDFs</Link></li>
-                            <li><Link to="/json-to-csv" className="hover:text-primary transition-colors">JSON to CSV</Link></li>
-                            <li><Link to="/image-to-pdf" className="hover:text-primary transition-colors">Image to PDF</Link></li>
-                            <li><Link to="/jpg-to-webp" className="hover:text-primary transition-colors">JPG to WebP</Link></li>
+                            <li><Link to="/qr-generator" className="hover:text-primary transition-colors">QR Generator</Link></li>
+                            <li><Link to="/qr-scanner" className="hover:text-primary transition-colors">QR Scanner</Link></li>
+                            <li><Link to="/word-counter" className="hover:text-primary transition-colors">Word Counter</Link></li>
+                            <li><Link to="/character-counter" className="hover:text-primary transition-colors">Character Counter</Link></li>
+                            <li><Link to="/case-converter" className="hover:text-primary transition-colors">Case Converter</Link></li>
+                            <li><Link to="/remove-extra-spaces" className="hover:text-primary transition-colors">Remove Extra Spaces</Link></li>
+                            <li><Link to="/slug-generator" className="hover:text-primary transition-colors">Slug Generator</Link></li>
+                            <li><Link to="/password-generator" className="hover:text-primary transition-colors">Password Generator</Link></li>
                         </ul>
                     </div>
 
