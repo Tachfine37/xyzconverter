@@ -54,9 +54,8 @@ export function MegaDropdownMenu({ trigger, groups, className }: MegaDropdownMen
         }, 150)
     }
 
-    // Split groups into format conversions and tools
-    const formatGroups = groups.filter(g => g.title !== 'Image Tools')
-    const toolsGroup = groups.find(g => g.title === 'Image Tools')
+    // Generic handling for groups
+    const defaultIcon = "📄"
 
     return (
         <div
@@ -82,19 +81,19 @@ export function MegaDropdownMenu({ trigger, groups, className }: MegaDropdownMen
 
             {isOpen && (
                 <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 bg-background border rounded-xl shadow-xl py-4 px-2 z-50 animate-in fade-in slide-in-from-top-2 duration-200 min-w-[600px]">
-                    {/* Format Groups Grid */}
-                    <div className="grid grid-cols-3 gap-4 px-2">
-                        {formatGroups.map((group) => (
-                            <div key={group.title} className="space-y-2">
+                    {/* Groups Grid */}
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-6 p-4">
+                        {groups.map((group) => (
+                            <div key={group.title} className="space-y-3">
                                 <Link
                                     to={group.href || '#'}
                                     className="flex items-center gap-2 text-sm font-semibold text-foreground hover:text-primary transition-colors px-2 py-1"
                                     onClick={() => setIsOpen(false)}
                                 >
-                                    {group.icon && <span>{group.icon}</span>}
-                                    {group.title}
+                                    <span className="text-lg">{group.icon || defaultIcon}</span>
+                                    <span>{group.title}</span>
                                 </Link>
-                                <div className="space-y-0.5">
+                                <div className="space-y-1">
                                     {group.items.map((item) => (
                                         <Link
                                             key={item.href}
@@ -110,30 +109,6 @@ export function MegaDropdownMenu({ trigger, groups, className }: MegaDropdownMen
                         ))}
                     </div>
 
-                    {/* Separator and Tools Section */}
-                    {toolsGroup && (
-                        <>
-                            <div className="border-t my-3 mx-2" />
-                            <div className="px-2">
-                                <div className="flex items-center gap-2 text-sm font-semibold text-foreground px-2 py-1 mb-1">
-                                    <span>🛠️</span>
-                                    {toolsGroup.title}
-                                </div>
-                                <div className="flex gap-4">
-                                    {toolsGroup.items.map((item) => (
-                                        <Link
-                                            key={item.href}
-                                            to={item.href}
-                                            className="px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-md transition-colors"
-                                            onClick={() => setIsOpen(false)}
-                                        >
-                                            {item.label}
-                                        </Link>
-                                    ))}
-                                </div>
-                            </div>
-                        </>
-                    )}
                 </div>
             )}
         </div>

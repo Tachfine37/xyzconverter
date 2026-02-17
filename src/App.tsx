@@ -16,6 +16,14 @@ const DataConverter = lazy(() => import('./pages/DataConverter').then(module => 
 const ImageResizer = lazy(() => import('./pages/ImageResizer').then(module => ({ default: module.ImageResizer })))
 const ImageCompressor = lazy(() => import('./pages/ImageCompressor').then(module => ({ default: module.ImageCompressor })))
 const PdfSplitter = lazy(() => import('./pages/PdfSplitter').then(module => ({ default: module.PdfSplitter })))
+const CompressPdf = lazy(() => import('./pages/CompressPdf').then(module => ({ default: module.CompressPdf })))
+const PdfToText = lazy(() => import('./pages/PdfToText').then(module => ({ default: module.PdfToText })))
+const RotatePdf = lazy(() => import('./pages/RotatePdf').then(module => ({ default: module.RotatePdf })))
+const ImagesToPdf = lazy(() => import('./pages/ImagesToPdf').then(module => ({ default: module.ImagesToPdf })))
+const WatermarkPdf = lazy(() => import('./pages/WatermarkPdf').then(module => ({ default: module.WatermarkPdf })))
+const PdfToWord = lazy(() => import('./pages/PdfToWord').then(module => ({ default: module.PdfToWord })))
+const PdfToExcel = lazy(() => import('./pages/PdfToExcel').then(module => ({ default: module.PdfToExcel })))
+const PdfToPowerPoint = lazy(() => import('./pages/PdfToPowerPoint').then(module => ({ default: module.PdfToPowerPoint })))
 const AllTools = lazy(() => import('./pages/AllTools').then(module => ({ default: module.AllTools })))
 const QrGenerator = lazy(() => import('./pages/QrGenerator').then(module => ({ default: module.QrGenerator })))
 const QrScanner = lazy(() => import('./pages/QrScanner').then(module => ({ default: module.QrScanner })))
@@ -102,6 +110,14 @@ function App() {
             {/* PDF Tools */}
             <Route path="/merge-pdf" element={<Merge />} />
             <Route path="/split-pdf" element={<PdfSplitter />} />
+            <Route path="/compress-pdf" element={<CompressPdf />} />
+            <Route path="/pdf-to-text" element={<PdfToText />} />
+            <Route path="/rotate-pdf" element={<RotatePdf />} />
+            <Route path="/watermark-pdf" element={<WatermarkPdf />} />
+            <Route path="/pdf-to-word" element={<PdfToWord />} />
+            <Route path="/pdf-to-excel" element={<PdfToExcel />} />
+            <Route path="/pdf-to-powerpoint" element={<PdfToPowerPoint />} />
+            <Route path="/images-to-pdf" element={<ImagesToPdf />} />
 
             {/* PDF to Image Conversions */}
             <Route path="/pdf-to-jpg" element={<Converter />} />

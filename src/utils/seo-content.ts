@@ -578,6 +578,81 @@ export const CONVERSION_CONTENT: Record<string, ConversionSEOContent> = {
             'Free and unlimited'
         ]
     },
+    '/watermark-pdf': {
+        title: "Add Watermark to PDF Online | Free & Secure",
+        description: "Add text or image watermarks to your PDF documents instantly. Customizable opacity, position, and rotation. 100% free and private.",
+        features: [
+            "Text & Image Watermarks",
+            "Custom Opacity & Rotation",
+            "Batch Processing",
+            "No File Upload Required"
+        ],
+        howItWorks: {
+            title: "How to Watermark PDF",
+            steps: [
+                "Upload your PDF file.",
+                "Choose text or image watermark.",
+                "Customize position, opacity, and rotation.",
+                "Download your watermarked PDF."
+            ]
+        },
+        benefits: [
+            "Protect your intellectual property",
+            "Customizable watermark options",
+            "Client-side processing for privacy",
+            "Free and easy to use"
+        ]
+    },
+    '/pdf-to-word': {
+        title: "PDF to Word Converter | Editable DOCX",
+        description: "Convert PDF documents to editable Microsoft Word (.docx) files. Maintain formatting and layout. Free, fast, and secure.",
+        features: [
+            "Convert PDF to DOCX",
+            "Preserve Text Formatting",
+            "Fast Client-Side Processing",
+            "No Registration Needed"
+        ],
+        howItWorks: {
+            title: "How to Convert PDF to Word",
+            steps: [
+                "Upload the PDF you want to convert.",
+                "Click 'Convert to Word'.",
+                "Wait for the conversion to finish.",
+                "Download your editable Word document."
+            ]
+        },
+        benefits: [
+            "Edit PDF content easily",
+            "Maintain original layout",
+            "Secure local conversion",
+            "Compatible with Microsoft Word"
+        ]
+    },
+    '/pdf-to-excel': {
+        title: "PDF to Excel Converter | Extract Tables to XLSX",
+        description: "Convert PDF tables to Microsoft Excel (.xlsx) spreadsheets effortlessly. accurate data extraction. Free and secure.",
+        features: [
+            "Extract Tables to Excel",
+            "Convert PDF to XLSX",
+            "Accurate Data Extraction",
+            "Private & Secure"
+        ],
+        howItWorks: {
+            title: "How to Convert PDF to Excel",
+            steps: [
+                "Select your PDF file with tables.",
+                "Click 'Convert to Excel'.",
+                "The tool extracts tabular data.",
+                "Download your Excel spreadsheet."
+            ]
+        },
+        benefits: [
+            "Analyze PDF data in Excel",
+            "Save time on manual data entry",
+            "Secure and private",
+            "Free unlimited conversions"
+        ]
+    },
     '/split-pdf': {
         title: 'Split PDF Files Online – Free & Secure PDF Splitter',
         description: 'Easily split PDF online with our free PDF splitter. Extract PDF pages instantly with no upload required—100% secure client-side processing ensures your documents never leave your device.',
@@ -629,6 +704,32 @@ export const CONVERSION_CONTENT: Record<string, ConversionSEOContent> = {
             'No file size limits'
         ]
     },
+    '/pdf-to-powerpoint': {
+        title: 'Convert PDF to PowerPoint Online – Free PDF to PPTX',
+        description: 'Convert PDF to PowerPoint (PPTX) online. Turn your PDF pages into editable PowerPoint slides instantly. Free, secure, and works in your browser.',
+        features: [
+            'Convert PDF slides to PowerPoint',
+            'High-fidelity image rendering',
+            'No formatting loss',
+            '100% client-side processing',
+            'Free and unlimited'
+        ],
+        howItWorks: {
+            title: 'How to Convert PDF to PowerPoint',
+            steps: [
+                'Upload your PDF file',
+                'Each page is converted to a high-quality slide',
+                'Download your PowerPoint presentation (.pptx)'
+            ]
+        },
+        benefits: [
+            'Turn read-only PDFs into presentation slides',
+            'Preserve exact visual layout',
+            'Privacy-first - no uploads',
+            'Works with any PDF presentation'
+        ]
+    },
+
     '/data-tools': {
         title: 'Online Data Format Converter – JSON, YAML, XML & Base64 Tools',
         description: 'Easily convert JSON to YAML, JSON to XML, or perform XML to JSON conversions online. Includes a Base64 encoder and decoder. This browser-based tool ensures no upload required—securely process your data locally.',
@@ -656,4 +757,3 @@ export const CONVERSION_CONTENT: Record<string, ConversionSEOContent> = {
         ]
     }
 }
-

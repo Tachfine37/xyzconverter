@@ -69,12 +69,6 @@ export function Header() {
         },
     ]
 
-    const pdfToolsItems = [
-        { label: 'Merge PDFs', href: '/merge-pdf' },
-        { label: 'Split PDF', href: '/split-pdf' },
-        { label: 'PDF to JPG', href: '/pdf-to-jpg' },
-        { label: 'PDF to PNG', href: '/pdf-to-png' },
-    ]
 
     const qrToolsItems = [
         { label: 'QR Generator', href: '/qr-generator' },
@@ -180,7 +174,32 @@ export function Header() {
 
                     <MegaDropdownMenu trigger="Images" groups={imageGroups} />
 
-                    <DropdownMenu trigger="PDF Tools" items={pdfToolsItems} />
+                    <MegaDropdownMenu trigger="PDF Tools" groups={[
+                        {
+                            title: 'PDF Core Tools',
+                            icon: '🛠️',
+                            items: [
+                                { label: 'Merge PDF', href: '/merge-pdf' },
+                                { label: 'Split PDF', href: '/split-pdf' },
+                                { label: 'Compress PDF', href: '/compress-pdf' },
+                                { label: 'Rotate PDF', href: '/rotate-pdf' },
+                                { label: 'Watermark PDF', href: '/watermark-pdf' },
+                            ]
+                        },
+                        {
+                            title: 'PDF Conversion',
+                            icon: '🔄',
+                            items: [
+                                { label: 'PDF to JPG', href: '/pdf-to-jpg' },
+                                { label: 'PDF to PNG', href: '/pdf-to-png' },
+                                { label: 'PDF to Text', href: '/pdf-to-text' },
+                                { label: 'PDF to Word', href: '/pdf-to-word' },
+                                { label: 'PDF to Excel', href: '/pdf-to-excel' },
+                                { label: 'PDF to PowerPoint', href: '/pdf-to-powerpoint' },
+                                { label: 'Images to PDF', href: '/images-to-pdf' },
+                            ]
+                        }
+                    ]} />
 
                     <DropdownMenu trigger="QR Tools" items={qrToolsItems} />
 
@@ -283,17 +302,38 @@ export function Header() {
                                     <ChevronDown className={`w-5 h-5 transition-transform ${activeAccordion === 'pdf' ? 'rotate-180' : ''}`} />
                                 </button>
                                 {activeAccordion === 'pdf' && (
-                                    <div className="pb-4 pl-4 space-y-2 animate-in slide-in-from-top-2">
-                                        {pdfToolsItems.map((item) => (
-                                            <Link
-                                                key={item.href}
-                                                to={item.href}
-                                                className="block py-2 text-muted-foreground hover:text-primary"
-                                                onClick={closeMenu}
-                                            >
-                                                {item.label}
-                                            </Link>
-                                        ))}
+                                    <div className="pb-4 pl-4 space-y-4 animate-in slide-in-from-top-2">
+                                        {/* Core Tools */}
+                                        <div className="space-y-2">
+                                            <div className="flex items-center gap-2 font-medium text-foreground/80">
+                                                <span>🛠️</span>
+                                                <span>PDF Core Tools</span>
+                                            </div>
+                                            <div className="grid grid-cols-1 gap-2 pl-6">
+                                                <Link to="/merge-pdf" className="text-muted-foreground hover:text-primary block py-1" onClick={closeMenu}>Merge PDF</Link>
+                                                <Link to="/split-pdf" className="text-muted-foreground hover:text-primary block py-1" onClick={closeMenu}>Split PDF</Link>
+                                                <Link to="/compress-pdf" className="text-muted-foreground hover:text-primary block py-1" onClick={closeMenu}>Compress PDF</Link>
+                                                <Link to="/rotate-pdf" className="text-muted-foreground hover:text-primary block py-1" onClick={closeMenu}>Rotate PDF</Link>
+                                                <Link to="/watermark-pdf" className="text-muted-foreground hover:text-primary block py-1" onClick={closeMenu}>Watermark PDF</Link>
+                                            </div>
+                                        </div>
+
+                                        {/* Conversion Tools */}
+                                        <div className="space-y-2">
+                                            <div className="flex items-center gap-2 font-medium text-foreground/80">
+                                                <span>🔄</span>
+                                                <span>PDF Conversion</span>
+                                            </div>
+                                            <div className="grid grid-cols-1 gap-2 pl-6">
+                                                <Link to="/pdf-to-jpg" className="text-muted-foreground hover:text-primary block py-1" onClick={closeMenu}>PDF to JPG</Link>
+                                                <Link to="/pdf-to-png" className="text-muted-foreground hover:text-primary block py-1" onClick={closeMenu}>PDF to PNG</Link>
+                                                <Link to="/pdf-to-text" className="text-muted-foreground hover:text-primary block py-1" onClick={closeMenu}>PDF to Text</Link>
+                                                <Link to="/pdf-to-word" className="text-muted-foreground hover:text-primary block py-1" onClick={closeMenu}>PDF to Word</Link>
+                                                <Link to="/pdf-to-excel" className="text-muted-foreground hover:text-primary block py-1" onClick={closeMenu}>PDF to Excel</Link>
+                                                <Link to="/pdf-to-powerpoint" className="text-muted-foreground hover:text-primary block py-1" onClick={closeMenu}>PDF to PowerPoint</Link>
+                                                <Link to="/images-to-pdf" className="text-muted-foreground hover:text-primary block py-1" onClick={closeMenu}>Images to PDF</Link>
+                                            </div>
+                                        </div>
                                     </div>
                                 )}
                             </div>

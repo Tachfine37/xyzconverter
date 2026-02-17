@@ -59,6 +59,16 @@ export const ROUTE_SEO: Record<string, SEOConfig> = {
         title: 'Convert PNG to WEBP - Transparent & Lightweight | xyzconverter',
         description: 'Convert PNG images to WEBP format. Keep transparency while reducing file size by up to 30%. Fast, private, and free.',
     },
+    '/images-to-pdf': {
+        title: 'Images to PDF Converter - JPG & PNG to PDF Online | xyzconverter',
+        description: 'Convert and combine multiple images into a single PDF document. Support for JPG, PNG, and more. Free, secure, and 100% client-side processing.',
+        keywords: 'images to pdf, jpg to pdf, png to pdf, combine images to pdf, convert photos to pdf, online pdf converter',
+    },
+    '/compress-pdf': {
+        title: 'Compress PDF Online - Minimize & Reduce PDF File Size Free | xyzconverter',
+        description: 'Reduce PDF file size online without losing quality. Compress PDF documents securely in your browser. Free, fast, and no file uploads required.',
+        keywords: 'compress pdf, reduce pdf size, shrink pdf, quiet pdf, optimize pdf, pdf compressor online',
+    },
     '/pdf-to-jpg': {
         title: 'Convert PDF to JPG Online - Free & Secure | xyzconverter',
         description: 'Convert PDF documents to JPG images instantly. Extract all pages as high-quality JPG files. No upload required - 100% client-side processing.',
@@ -73,6 +83,33 @@ export const ROUTE_SEO: Record<string, SEOConfig> = {
         title: 'Convert PDF to WebP - Modern Image Format | xyzconverter',
         description: 'Convert PDF to WebP for smaller file sizes with excellent quality. Modern image format with better compression than JPG. 100% client-side.',
         keywords: 'pdf to webp, convert pdf to webp, pdf webp converter, modern image format, pdf optimization',
+    },
+    // PDF Tools
+    '/watermark-pdf': {
+        title: 'Add Watermark to PDF - Free & Secure | xyzconverter',
+        description: 'Add text or image watermarks to your PDF documents instantly. Customizable opacity, position, and rotation. 100% free and private.',
+        keywords: 'watermark pdf, add watermark, pdf watermark online, free pdf watermark, secure pdf tools',
+    },
+    '/pdf-to-word': {
+        title: 'Convert PDF to Word - Editable DOCX | xyzconverter',
+        description: 'Convert PDF documents to editable Microsoft Word (.docx) files. Maintain formatting and layout. Free, fast, and secure client-side conversion.',
+        keywords: 'pdf to word, convert pdf to docx, pdf to docx, editable pdf, free pdf converter',
+    },
+    '/pdf-to-powerpoint': {
+        title: 'Convert PDF to PowerPoint Free - PDF to PPTX Converter',
+        description: 'Turn PDF documents into PowerPoint presentations (.pptx) online. Convert slides with high fidelity. Free, secure, and private - no file uploads required.',
+        keywords: 'pdf to powerpoint, pdf to pptx, convert pdf to slides, free pdf converter, pdf presentation',
+    },
+    '/pdf-to-excel': {
+        title: 'Convert PDF to Excel - Extract Tables to XLSX | xyzconverter',
+        description: 'Convert PDF tables to Microsoft Excel (.xlsx) spreadsheets effortlessly. Accurate data extraction. Free and secure client-side processing.',
+        keywords: 'pdf to excel, convert pdf to xlsx, pdf table extractor, pdf to spreadsheet, free pdf tools',
+    },
+
+    '/pdf-to-text': {
+        title: 'PDF to Text Converter - Extract Text Online for Free | xyzconverter',
+        description: 'Extract text from PDF documents instantly. Convert PDF to TXT online. Free, secure, and 100% client-side processing. Copy or download extracted text.',
+        keywords: 'pdf to text, extract text from pdf, convert pdf to text, pdf to txt, online pdf ocr, scrape pdf text',
     },
     // Data Category Pages
     '/data/json': {

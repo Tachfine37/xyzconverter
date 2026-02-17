@@ -656,9 +656,127 @@ export const PDF_TO_IMAGE_FAQ = [
     {
         question: 'What image quality can I expect?',
         answer: 'Images are rendered at 2x scale for high quality. JPG quality is set to 90%, and PNG is lossless. The output is suitable for professional use.'
+    }
+]
+
+/**
+ * Specific FAQ questions for Compress PDF
+ */
+export const COMPRESS_PDF_FAQ = [
+    {
+        question: 'How do I compress a PDF file?',
+        answer: 'Upload your PDF file to the tool. It will automatically optimized and compressed to reduce file size while maintaining readability.'
     },
     {
-        question: 'Can I convert PDF to PNG or WebP?',
-        answer: 'Yes! You can convert PDF to JPG, PNG, or WebP format. PNG offers lossless quality, while WebP provides smaller file sizes with excellent quality.'
+        question: 'Is it free to compress PDFs?',
+        answer: 'Yes, our PDF compressor is 100% free. You can compress as many files as you need without any limits or hidden processing fees.'
+    },
+    {
+        question: 'Will compression reduce quality?',
+        answer: 'Our tool optimizes the internal structure of the PDF to reduce size. In some cases, it may slightly reduce image quality to achieve better compression, but text remains sharp and readable.'
+    }
+]
+
+/**
+ * Specific FAQ questions for PDF to Text
+ */
+export const PDF_TO_TEXT_FAQ = [
+    {
+        question: 'How do I extract text from PDF?',
+        answer: 'Simply upload your PDF document. Our tool will instantly extract all text content from the file and present it to you for copying or downloading.'
+    },
+    {
+        question: 'Does it work with scanned PDFs?',
+        answer: 'Our tool extracts text layer data. If your PDF is a scanned image without a text layer, you might need OCR software. This tool works best with PDFs created from text documents.'
+    },
+    {
+        question: 'Is my document secure?',
+        answer: 'Absolutely. Text extraction happens entirely in your browser using JavaScript. Your confidential documents are never uploaded to any server.'
+    }
+]
+
+/**
+ * Specific FAQ questions for Rotate PDF
+ */
+export const ROTATE_PDF_FAQ = [
+    {
+        question: 'How do I rotate PDF pages?',
+        answer: 'Upload your PDF and choose the rotation angle (90, 180, or 270 degrees). You can rotate all pages at once and download the corrected document.'
+    },
+    {
+        question: 'Can I rotate specific pages?',
+        answer: 'Currently, our tool rotates the entire document. This is perfect for fixing PDFs that were scanned upside down or sideways.'
+    },
+    {
+        question: 'Is it free?',
+        answer: 'Yes, our rotate PDF tool is completely free and works instantly in your browser without uploading your files.'
+    }
+]
+
+/**
+ * Specific FAQ questions for Images to PDF
+ */
+export const IMAGES_TO_PDF_FAQ = [
+    {
+        question: 'How do I convert images to PDF?',
+        answer: 'Select your JPG or PNG images and drop them into the tool. We will automatically combine them into a single, high-quality PDF document.'
+    },
+    {
+        question: 'Can I reorder images?',
+        answer: 'Yes, you can upload multiple images and they will be added to the PDF in the order you selected them.'
+    },
+    {
+        question: 'Is there a limit on images?',
+        answer: 'There is no strict limit, but for browser performance, we recommend converting reasonable batches of images at a time. The tool is free and processes everything locally.'
+    }
+]
+export const WATERMARK_FAQ = [
+    {
+        question: "Is it safe to watermark PDFs here?",
+        answer: "Yes! All processing happens in your browser. Your files are never uploaded to any server."
+    },
+    {
+        question: "Can I use an image as a watermark?",
+        answer: "Currently, we support text watermarks. Image watermark support is coming soon!"
+    },
+    {
+        question: "Is this tool free?",
+        answer: "Yes, our watermark tool is 100% free with no limits."
+    }
+]
+
+export const PDF_TO_WORD_FAQ = [
+    {
+        question: "Does the converted Word file keep formatting?",
+        answer: "We aim to preserve text and basic layout. Complex formatting might require some adjustments in Word."
+    },
+    {
+        question: "Can I convert scanned PDFs?",
+        answer: "This tool works best with text-based PDFs. Scanned PDFs (images) only contain images and text extraction might not work."
+    }
+]
+
+export const PDF_TO_EXCEL_FAQ = [
+    {
+        question: "How accurate is the table extraction?",
+        answer: "It works well for clear, grid-based tables. Complex or merged cells might need manual cleanup."
+    },
+    {
+        question: "Do you support CSV export?",
+        answer: "Currently we export to .xlsx (Excel), which can be easily saved as CSV from Excel."
+    }
+]
+export const PDF_TO_POWERPOINT_FAQ = [
+    {
+        question: "Does the conversion preserve layout?",
+        answer: "Yes! Our converter renders each PDF page as a high-quality image on a PowerPoint slide, ensuring 100% visual fidelity."
+    },
+    {
+        question: "Is the text editable?",
+        answer: "Currently, the slides are image-based to preserve exact layout. Text is not directly editable, but you can add new text boxes over the slides."
+    },
+    {
+        question: "Is my presentation private?",
+        answer: "Absolutely. The entire conversion happens in your browser. Your PDF never leaves your device."
     }
 ]
