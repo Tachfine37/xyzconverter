@@ -17,8 +17,8 @@ export function BlogCompressPdf() {
             description="Learn 5 proven methods to compress a PDF file — from free browser tools to Adobe Acrobat. Includes a tool comparison table and step-by-step instructions."
             publishDate="February 20, 2026"
             readingTime="6"
-            category="Guides"
-            categoryHref="/blog"
+            category="PDF Tips"
+            categoryHref="/blog/category/pdf-tips"
             ctaPath="/compress-pdf"
             ctaLabel="Compress PDF Free →"
         >

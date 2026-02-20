@@ -17,8 +17,8 @@ export function BlogHeicToJpgWindows() {
             description="Step-by-step guide to convert iPhone HEIC photos to JPG on Windows 10 & 11 instantly — no downloads, no accounts, 100% free."
             publishDate="February 20, 2026"
             readingTime="7"
-            category="Guides"
-            categoryHref="/blog"
+            category="Image Tips"
+            categoryHref="/blog/category/image-tips"
             ctaPath="/heic-to-jpg"
             ctaLabel="Convert HEIC to JPG Free →"
         >

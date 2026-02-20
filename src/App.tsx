@@ -45,6 +45,7 @@ const PasswordGenerator = lazy(() => import('./pages/PasswordGenerator').then(mo
 const Blog = lazy(() => import('./pages/Blog').then(module => ({ default: module.Blog })))
 const BlogHeicToJpgWindows = lazy(() => import('./pages/blog/BlogHeicToJpgWindows').then(module => ({ default: module.BlogHeicToJpgWindows })))
 const BlogCompressPdf = lazy(() => import('./pages/blog/BlogCompressPdf').then(module => ({ default: module.BlogCompressPdf })))
+const BlogCategory = lazy(() => import('./pages/BlogCategory').then(module => ({ default: module.BlogCategory })))
 
 // Image Category Pages
 const HeicCategory = lazy(() => import('./pages/categories/HeicCategory').then(module => ({ default: module.HeicCategory })))
@@ -169,6 +170,7 @@ function App() {
 
             {/* Blog */}
             <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/category/:slug" element={<BlogCategory />} />
             <Route path="/blog/heic-to-jpg-windows" element={<BlogHeicToJpgWindows />} />
             <Route path="/blog/how-to-compress-pdf" element={<BlogCompressPdf />} />
           </Route>

@@ -239,6 +239,10 @@ export function Header() {
                     <Link to="/privacy" className="text-muted-foreground hover:text-foreground transition-colors">
                         Privacy
                     </Link>
+
+                    <Link to="/blog" className="text-muted-foreground hover:text-foreground transition-colors">
+                        Blog
+                    </Link>
                 </nav>
 
                 {/* Actions */}
@@ -464,6 +468,14 @@ export function Header() {
                                 onClick={closeMenu}
                             >
                                 How it Works
+                            </Link>
+
+                            <Link
+                                to="/blog"
+                                className="flex items-center py-3 text-lg font-medium border-b border-border/50"
+                                onClick={closeMenu}
+                            >
+                                Blog
                             </Link>
 
                             <Link
