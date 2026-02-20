@@ -42,6 +42,8 @@ const CaseConverter = lazy(() => import('./pages/CaseConverter').then(module => 
 const RemoveExtraSpaces = lazy(() => import('./pages/RemoveExtraSpaces').then(module => ({ default: module.RemoveExtraSpaces })))
 const SlugGenerator = lazy(() => import('./pages/SlugGenerator').then(module => ({ default: module.SlugGenerator })))
 const PasswordGenerator = lazy(() => import('./pages/PasswordGenerator').then(module => ({ default: module.PasswordGenerator })))
+const Blog = lazy(() => import('./pages/Blog').then(module => ({ default: module.Blog })))
+const BlogHeicToJpgWindows = lazy(() => import('./pages/blog/BlogHeicToJpgWindows').then(module => ({ default: module.BlogHeicToJpgWindows })))
 
 // Image Category Pages
 const HeicCategory = lazy(() => import('./pages/categories/HeicCategory').then(module => ({ default: module.HeicCategory })))
@@ -163,6 +165,10 @@ function App() {
 
             {/* Fallback/Legacy Route */}
             <Route path="/convert/:conversion" element={<Converter />} />
+
+            {/* Blog */}
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/heic-to-jpg-windows" element={<BlogHeicToJpgWindows />} />
           </Route>
         </Routes>
       </Suspense>

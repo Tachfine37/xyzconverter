@@ -97,7 +97,11 @@ const routes = [
     { path: '/how-it-works', priority: '0.6', changefreq: 'monthly' },
     { path: '/about', priority: '0.5', changefreq: 'monthly' },
     { path: '/privacy', priority: '0.5', changefreq: 'yearly' },
-    { path: '/terms', priority: '0.5', changefreq: 'yearly' }
+    { path: '/terms', priority: '0.5', changefreq: 'yearly' },
+
+    // Blog
+    { path: '/blog', priority: '0.8', changefreq: 'weekly' },
+    { path: '/blog/heic-to-jpg-windows', priority: '0.8', changefreq: 'monthly' },
 ];
 
 // Generate sitemap XML
