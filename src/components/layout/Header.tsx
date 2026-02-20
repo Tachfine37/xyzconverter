@@ -192,7 +192,7 @@ export function Header() {
                 </Link>
 
                 {/* Desktop Nav */}
-                <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
+                <nav className="hidden xl:flex items-center gap-4 2xl:gap-6 text-sm font-medium">
                     <Link to="/tools" className="text-muted-foreground hover:text-foreground transition-colors">
                         Tools
                     </Link>
@@ -251,7 +251,7 @@ export function Header() {
 
                     {/* Mobile Menu Button */}
                     <button
-                        className="md:hidden p-2 -mr-2 text-foreground hover:bg-accent hover:text-accent-foreground rounded-md transition-colors"
+                        className="xl:hidden p-2 -mr-2 text-foreground hover:bg-accent hover:text-accent-foreground rounded-md transition-colors"
                         onClick={() => setIsMobileMenuOpen(true)}
                         aria-label="Open menu"
                     >
@@ -262,7 +262,7 @@ export function Header() {
 
             {/* Mobile Menu Overlay - Portaled to body to avoid containing block issues with backdrop-filter */}
             {isMobileMenuOpen && createPortal(
-                <div className="fixed inset-0 z-[100] bg-background md:hidden flex flex-col animate-in slide-in-from-right-full duration-300">
+                <div className="fixed inset-0 z-[100] bg-background xl:hidden flex flex-col animate-in slide-in-from-right-full duration-300">
                     <div className="container max-w-6xl mx-auto h-20 flex items-center justify-between px-4 border-b">
                         <Link to="/" className="group transition-all duration-300" onClick={closeMenu}>
                             <span className="text-lg font-semibold tracking-tight bg-gradient-to-r from-blue-500 to-violet-600 bg-clip-text text-transparent">XYZCONVERTER</span>
