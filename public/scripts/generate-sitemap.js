@@ -64,7 +64,6 @@ const routes = [
     { path: '/pdf-to-excel', priority: '0.8', changefreq: 'monthly' },
     { path: '/pdf-to-powerpoint', priority: '0.8', changefreq: 'monthly' },
     { path: '/word-to-pdf', priority: '0.9', changefreq: 'monthly' },
-    { path: '/excel-to-pdf', priority: '0.8', changefreq: 'monthly' },
     { path: '/pdf-to-powerpoint', priority: '0.8', changefreq: 'monthly' },
     { path: '/pdf-to-jpg', priority: '0.8', changefreq: 'monthly' },
     { path: '/pdf-to-png', priority: '0.8', changefreq: 'monthly' },

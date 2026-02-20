@@ -25,7 +25,6 @@ const PdfToWord = lazy(() => import('./pages/PdfToWord').then(module => ({ defau
 const PdfToExcel = lazy(() => import('./pages/PdfToExcel').then(module => ({ default: module.PdfToExcel })))
 const PdfToPowerPoint = lazy(() => import('./pages/PdfToPowerPoint').then(module => ({ default: module.PdfToPowerPoint })))
 const WordToPdf = lazy(() => import('./pages/WordToPdf').then(module => ({ default: module.WordToPdf })))
-const ExcelToPdf = lazy(() => import('./pages/ExcelToPdf').then(module => ({ default: module.ExcelToPdf })))
 const AllTools = lazy(() => import('./pages/AllTools').then(module => ({ default: module.AllTools })))
 const TextToSpeech = lazy(() => import('./pages/TextToSpeech').then(module => ({ default: module.TextToSpeech })))
 const RemoveLineBreaks = lazy(() => import('./pages/RemoveLineBreaks').then(module => ({ default: module.RemoveLineBreaks })))
@@ -135,7 +134,6 @@ function App() {
             <Route path="/pdf-to-powerpoint" element={<PdfToPowerPoint />} />
             <Route path="/images-to-pdf" element={<ImagesToPdf />} />
             <Route path="/word-to-pdf" element={<WordToPdf />} />
-            <Route path="/excel-to-pdf" element={<ExcelToPdf />} />
 
             {/* PDF to Image Conversions */}
             <Route path="/pdf-to-jpg" element={<Converter />} />

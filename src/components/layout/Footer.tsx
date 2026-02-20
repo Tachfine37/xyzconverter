@@ -30,7 +30,6 @@ export function Footer() {
                             <li><Link to="/password-generator" className="hover:text-primary transition-colors">Password Generator</Link></li>
                             <li><Link to="/crop-image" className="hover:text-primary transition-colors">Crop Image</Link></li>
                             <li><Link to="/word-to-pdf" className="hover:text-primary transition-colors">Word to PDF</Link></li>
-                            <li><Link to="/excel-to-pdf" className="hover:text-primary transition-colors">Excel to PDF</Link></li>
                         </ul>
                     </div>
 

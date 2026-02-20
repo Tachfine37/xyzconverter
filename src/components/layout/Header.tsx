@@ -224,7 +224,6 @@ export function Header() {
                                 { label: 'PDF to PowerPoint', href: '/pdf-to-powerpoint' },
                                 { label: 'Images to PDF', href: '/images-to-pdf' },
                                 { label: 'Word to PDF', href: '/word-to-pdf' },
-                                { label: 'Excel to PDF', href: '/excel-to-pdf' },
                             ]
                         }
                     ]} />
