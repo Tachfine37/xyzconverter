@@ -97,6 +97,7 @@ export function BlogPost({
 
                     {/* Article */}
                     <article className="
+                        blog-article
                         prose prose-slate dark:prose-invert max-w-none
                         prose-base
                         prose-headings:font-bold prose-headings:tracking-tight
