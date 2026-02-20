@@ -232,17 +232,6 @@ export function Header() {
 
                     <MegaDropdownMenu trigger="Data Tools" groups={dataGroups} />
 
-                    <Link to="/how-it-works" className="text-muted-foreground hover:text-foreground transition-colors">
-                        How it Works
-                    </Link>
-
-                    <Link to="/privacy" className="text-muted-foreground hover:text-foreground transition-colors">
-                        Privacy
-                    </Link>
-
-                    <Link to="/blog" className="text-muted-foreground hover:text-foreground transition-colors">
-                        Blog
-                    </Link>
                 </nav>
 
                 {/* Actions */}
@@ -462,29 +451,6 @@ export function Header() {
                                 )}
                             </div>
 
-                            <Link
-                                to="/how-it-works"
-                                className="flex items-center py-3 text-lg font-medium border-b border-border/50"
-                                onClick={closeMenu}
-                            >
-                                How it Works
-                            </Link>
-
-                            <Link
-                                to="/blog"
-                                className="flex items-center py-3 text-lg font-medium border-b border-border/50"
-                                onClick={closeMenu}
-                            >
-                                Blog
-                            </Link>
-
-                            <Link
-                                to="/privacy"
-                                className="flex items-center py-3 text-lg font-medium border-b border-border/50"
-                                onClick={closeMenu}
-                            >
-                                PrivacyPolicy
-                            </Link>
                         </nav>
                     </div>
                 </div>
