@@ -1,3 +1,4 @@
+import { usePageSEO } from '@/utils/seo'
 import { useState, useEffect } from 'react'
 import QRCode from 'qrcode'
 import { Download, Settings2, ShieldCheck, Zap, Shield, Image as ImageIcon, CheckCircle, Wifi, Mail, Link as LinkIcon, Type } from 'lucide-react'
@@ -6,12 +7,12 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { Textarea } from '@/components/ui/textarea'
-import { Helmet } from 'react-helmet-async'
 
 type QrType = 'url' | 'text' | 'email' | 'wifi'
 
 export function QrGenerator() {
-    const [qrType, setQrType] = useState<QrType>('url')
+    usePageSEO()
+const [qrType, setQrType] = useState<QrType>('url')
     const [qrValue, setQrValue] = useState('')
     const [qrImage, setQrImage] = useState<string | null>(null)
 
@@ -106,10 +107,7 @@ export function QrGenerator() {
 
     return (
         <div className="container max-w-4xl mx-auto px-4 py-12">
-            <Helmet>
-                <title>Free QR Code Generator - URL, Text, Email, WiFi | XYZCONVERTER</title>
-                <meta name="description" content="Generate free QR codes instantly for URLs, WiFi, Text & Email. No sign-up required. High-quality PNG/SVG download. 100% private & client-side." />
-            </Helmet>
+            
 
             <div className="text-center mb-12 space-y-4">
                 <h1 className="text-3xl md:text-5xl font-bold tracking-tight">Free QR Code Generator Online - URL, Text, Email, WiFi</h1>

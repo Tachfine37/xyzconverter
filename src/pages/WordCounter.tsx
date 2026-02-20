@@ -1,13 +1,14 @@
+import { usePageSEO } from '@/utils/seo'
 import { useState, useEffect } from 'react'
 import { Copy, Trash2, Clock, Info, PenTool, GraduationCap, Search, Smartphone } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/textarea'
-import { Helmet } from 'react-helmet-async'
 import { toast } from 'sonner'
 import { RelatedTools, RELATED_TOOLS_MAP } from '@/components/seo/RelatedTools'
 
 export function WordCounter() {
-    const [text, setText] = useState('')
+    usePageSEO()
+const [text, setText] = useState('')
     const [stats, setStats] = useState({
         words: 0,
         chars: 0,
@@ -49,10 +50,7 @@ export function WordCounter() {
 
     return (
         <div className="container max-w-5xl mx-auto px-4 py-8 md:py-12">
-            <Helmet>
-                <title>Free Online Word Counter Tool - Count Words & Characters | XYZCONVERTER</title>
-                <meta name="description" content="Count words, characters, sentences, and paragraphs instantly with our free online word counter. Real-time analysis, reading time estimation, and no upload required." />
-            </Helmet>
+            
 
             <div className="text-center mb-8 space-y-4">
                 <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground">Free Online Word Counter Tool</h1>

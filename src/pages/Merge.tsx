@@ -1,3 +1,4 @@
+import { usePageSEO } from '@/utils/seo'
 import { useState, useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import { FileText, Download, X } from 'lucide-react'
@@ -11,7 +12,8 @@ import { FAQSection } from "@/components/seo/FAQSection"
 import { RelatedTools, RELATED_TOOLS_MAP } from "@/components/seo/RelatedTools"
 
 export function Merge() {
-    const location = useLocation()
+    usePageSEO()
+const location = useLocation()
     const [files, setFiles] = useState<File[]>([])
     const { isMerging, mergedPdfUrl, mergePdfs, reset } = usePdfMerge()
 

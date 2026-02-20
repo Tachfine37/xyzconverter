@@ -1,15 +1,16 @@
+import { usePageSEO } from '@/utils/seo'
 import { useState, useEffect } from 'react'
 import { Copy, RefreshCw, ShieldCheck, ShieldAlert, Shield, ArrowRight, Link as LinkIcon, Lock, Settings2 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Slider } from '@/components/ui/slider'
-import { Helmet } from 'react-helmet-async'
 import { toast } from 'sonner'
 import { Link } from 'react-router-dom'
 
 export function PasswordGenerator() {
-    const [password, setPassword] = useState('')
+    usePageSEO()
+const [password, setPassword] = useState('')
     const [length, setLength] = useState([16])
     const [includeUppercase, setIncludeUppercase] = useState(true)
     const [includeLowercase, setIncludeLowercase] = useState(true)
@@ -95,42 +96,7 @@ export function PasswordGenerator() {
 
     return (
         <div className="container max-w-5xl mx-auto px-4 py-8 md:py-12">
-            <Helmet>
-                <title>Free Strong Password Generator - Secure & Random | XYZCONVERTER</title>
-                <meta name="description" content="Generate strong, secure, and random passwords instantly. Customizable length and character sets. 100% client-side for maximum security." />
-                <link rel="canonical" href="https://xyzconverter.com/password-generator" />
-
-                {/* Open Graph */}
-                <meta property="og:title" content="Free Strong Password Generator - Secure & Random | XYZCONVERTER" />
-                <meta property="og:description" content="Generate strong, secure, and random passwords instantly. Customizable length and character sets. 100% client-side for maximum security." />
-                <meta property="og:url" content="https://xyzconverter.com/password-generator" />
-                <meta property="og:type" content="website" />
-
-                {/* Twitter */}
-                <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content="Free Strong Password Generator - Secure & Random | XYZCONVERTER" />
-                <meta name="twitter:description" content="Generate strong, secure, and random passwords instantly. Customizable length and characters. 100% client-side security." />
-
-                {/* Structured Data */}
-                <script type="application/ld+json">
-                    {`
-                        {
-                            "@context": "https://schema.org",
-                            "@type": "WebApplication",
-                            "name": "Strong Password Generator",
-                            "url": "https://xyzconverter.com/password-generator",
-                            "applicationCategory": "UtilityApplication",
-                            "operatingSystem": "Any",
-                            "offers": {
-                                "@type": "Offer",
-                                "price": "0",
-                                "priceCurrency": "USD"
-                            },
-                            "description": "Generate strong, secure, and random passwords instantly with this free online tool. 100% client-side security."
-                        }
-                    `}
-                </script>
-            </Helmet>
+            
 
             <div className="text-center mb-8 space-y-4">
                 <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground">Strong Password Generator</h1>

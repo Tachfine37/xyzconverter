@@ -9,6 +9,7 @@ import { Button } from '@/components/ui/button'
 import { ArrowRight } from 'lucide-react'
 import { getActionsForFile } from '@/utils/file-actions'
 import type { FileAction, ConversionOption } from '@/utils/file-actions'
+import { usePageSEO } from '@/utils/seo'
 
 type Step = 'upload' | 'action-picker' | 'processing' | 'complete'
 
@@ -19,8 +20,9 @@ export function Home() {
     const [conversionOption, setConversionOption] = useState<ConversionOption | undefined>(undefined)
     const [availableActions, setAvailableActions] = useState<FileAction[]>([])
 
+    usePageSEO()
+
     useEffect(() => {
-        document.title = 'xyzconverter - Privacy-First File Converter'
         analytics.pageView('home')
     }, [])
 

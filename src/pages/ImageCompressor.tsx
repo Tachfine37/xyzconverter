@@ -1,3 +1,4 @@
+import { usePageSEO } from '@/utils/seo'
 import { useState, useEffect, useCallback, useRef } from 'react'
 import { Download, Upload, RotateCcw, Image as ImageIcon, ZoomIn, ZoomOut } from 'lucide-react'
 import { Button } from '@/components/ui/button'
@@ -35,7 +36,8 @@ const getSizeReduction = (original: number, compressed: number): string => {
 }
 
 export function ImageCompressor() {
-    const [state, setState] = useState<CompressionState>({
+    usePageSEO()
+const [state, setState] = useState<CompressionState>({
         originalFile: null,
         originalSize: 0,
         originalDimensions: null,

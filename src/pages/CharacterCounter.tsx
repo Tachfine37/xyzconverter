@@ -1,12 +1,13 @@
+import { usePageSEO } from '@/utils/seo'
 import { useState, useEffect } from 'react'
 import { Copy, Trash2, Clock, Info, Twitter, Instagram, Facebook, MessageSquare } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/textarea'
-import { Helmet } from 'react-helmet-async'
 import { toast } from 'sonner'
 
 export function CharacterCounter() {
-    const [text, setText] = useState('')
+    usePageSEO()
+const [text, setText] = useState('')
     const [stats, setStats] = useState({
         words: 0,
         chars: 0,
@@ -48,10 +49,7 @@ export function CharacterCounter() {
 
     return (
         <div className="container max-w-5xl mx-auto px-4 py-8 md:py-12">
-            <Helmet>
-                <title>Free Online Character Counter Tool - Count Characters & Words | XYZCONVERTER</title>
-                <meta name="description" content="Count characters (with and without spaces), words, sentences, and paragraphs instantly. Perfect for checking Twitter, SMS, and SEO limits. Free & Secure." />
-            </Helmet>
+            
 
             <div className="text-center mb-8 space-y-4">
                 <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground">Free Online Character Counter Tool</h1>

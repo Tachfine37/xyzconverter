@@ -1,13 +1,14 @@
+import { usePageSEO } from '@/utils/seo'
 import { useState } from 'react'
 import { Copy, Trash2, Eraser, AlignLeft, Type, ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/textarea'
-import { Helmet } from 'react-helmet-async'
 import { toast } from 'sonner'
 import { Link } from 'react-router-dom'
 
 export function RemoveExtraSpaces() {
-    const [text, setText] = useState('')
+    usePageSEO()
+const [text, setText] = useState('')
 
     const handleCopy = () => {
         if (!text) return
@@ -48,10 +49,7 @@ export function RemoveExtraSpaces() {
 
     return (
         <div className="container max-w-5xl mx-auto px-4 py-8 md:py-12">
-            <Helmet>
-                <title>Remove Extra Spaces - Free Online Text Cleaner | XYZCONVERTER</title>
-                <meta name="description" content="Clean your text instantly. Remove extra spaces, empty lines, and line breaks online. Free, secure, and easy to use." />
-            </Helmet>
+            
 
             <div className="text-center mb-8 space-y-4">
                 <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground">Remove Extra Spaces</h1>

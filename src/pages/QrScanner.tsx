@@ -1,13 +1,14 @@
+import { usePageSEO } from '@/utils/seo'
 import { useState, useEffect, useRef } from 'react'
 import { Html5Qrcode } from 'html5-qrcode'
 import { Camera, CameraOff, Image as ImageIcon, UploadCloud, CheckCircle2, Copy, ExternalLink, Check } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/textarea'
-import { Helmet } from 'react-helmet-async'
 import { toast } from 'sonner'
 
 export function QrScanner() {
-    const [isScanning, setIsScanning] = useState(false)
+    usePageSEO()
+const [isScanning, setIsScanning] = useState(false)
     const [scanResult, setScanResult] = useState<string | null>(null)
     const [cameraError, setCameraError] = useState<string | null>(null)
     const scannerRef = useRef<Html5Qrcode | null>(null)
@@ -106,10 +107,7 @@ export function QrScanner() {
 
     return (
         <div className="container max-w-4xl mx-auto px-4 py-12">
-            <Helmet>
-                <title>Free QR Code Scanner - Scan Online with Camera or Image | XYZCONVERTER</title>
-                <meta name="description" content="Scan QR codes instantly online using your camera or by uploading an image. 100% free, private, and secure. No app installation required." />
-            </Helmet>
+            
 
             <div className="text-center mb-12 space-y-4">
                 <h1 className="text-3xl md:text-5xl font-bold tracking-tight">Free QR Code Scanner Online</h1>

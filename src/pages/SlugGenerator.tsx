@@ -1,16 +1,17 @@
+import { usePageSEO } from '@/utils/seo'
 import { useState, useEffect } from 'react'
 import { Copy, Trash2, Link as LinkIcon, Settings2, ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/textarea'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
-import { Helmet } from 'react-helmet-async'
 import { toast } from 'sonner'
 import { Link } from 'react-router-dom'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 
 export function SlugGenerator() {
-    const [text, setText] = useState('')
+    usePageSEO()
+const [text, setText] = useState('')
     const [slug, setSlug] = useState('')
     const [separator, setSeparator] = useState('-')
     const [removeNumbers, setRemoveNumbers] = useState(false)
@@ -55,10 +56,7 @@ export function SlugGenerator() {
 
     return (
         <div className="container max-w-5xl mx-auto px-4 py-8 md:py-12">
-            <Helmet>
-                <title>Free URL Slug Generator - SEO Friendly Link Creator | XYZCONVERTER</title>
-                <meta name="description" content="Generate pure, SEO-friendly URL slugs from any text. Remove special characters, numbers, and extra spaces instantly. Free online slug creator." />
-            </Helmet>
+            
 
             <div className="text-center mb-8 space-y-4">
                 <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground">URL Slug Generator</h1>

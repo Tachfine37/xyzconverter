@@ -14,7 +14,7 @@ interface SEOConfig {
 }
 
 export const DEFAULT_SEO: SEOConfig = {
-    title: 'xyzconverter - Privacy-First File Converter',
+    title: 'XYZConverter – Free Online File Converter | No Upload',
     description: 'Free, fast, and private file converter. Convert HEIC, WEBP, PNG to JPG or PDF entirely in your browser. No uploads, no tracking.',
     canonical: 'https://xyzconverter.com',
     ogType: 'website',
@@ -163,6 +163,50 @@ export const ROUTE_SEO: Record<string, SEOConfig> = {
         title: 'Random Text Generator - Strings & Words | xyzconverter',
         description: 'Generate random text, strings, and passwords. Customize length and character types (letters, numbers, symbols). Secure and client-side.',
         keywords: 'random text generator, random string generator, password generator, random words, generate random characters, security tools',
+    },
+    '/word-counter': {
+        title: 'Free Online Word Counter Tool - Count Words & Characters | XYZCONVERTER',
+        description: 'Count words, characters, sentences, and paragraphs instantly with our free online word counter. Real-time analysis, reading time estimation, and no upload required.',
+    },
+    '/remove-extra-spaces': {
+        title: 'Remove Extra Spaces Online - Clean Whitespace | XYZCONVERTER',
+        description: 'Remove extra spaces, trailing whitespace, and empty lines from your text online. Instantly clean and format your text. Free, fast, and secure.',
+    },
+    '/case-converter': {
+        title: 'Free Title Case & Text Case Converter Tool | XYZCONVERTER',
+        description: 'Convert text to UPPERCASE, lowercase, Title Case, Sentence case, and more. Free online text case converter. No data storage, 100% private.',
+    },
+    '/character-counter': {
+        title: 'Free Online Character Counter - Without Spaces | XYZCONVERTER',
+        description: 'Count characters (with and without spaces), words, sentences, and paragraphs instantly. Perfect for checking Twitter, SMS, and SEO limits. Free & Secure.',
+    },
+    '/slug-generator': {
+        title: 'Free URL Slug Generator - SEO Friendly Link Creator | XYZCONVERTER',
+        description: 'Generate pure, SEO-friendly URL slugs from any text. Remove special characters, numbers, and extra spaces instantly. Free online slug creator.',
+    },
+    '/qr-generator': {
+        title: 'Free QR Code Generator - URL, Text, Email, WiFi | XYZCONVERTER',
+        description: 'Generate free QR codes instantly for URLs, WiFi, Text & Email. No sign-up required. High-quality PNG/SVG download. 100% private & client-side.',
+    },
+    '/qr-scanner': {
+        title: 'Free QR Code Scanner - Scan Online with Camera or Image | XYZCONVERTER',
+        description: 'Scan QR codes instantly online using your camera or by uploading an image. 100% free, private, and secure. No app installation required.',
+    },
+    '/password-generator': {
+        title: 'Free Strong Password Generator - Secure & Random | XYZCONVERTER',
+        description: 'Generate strong, secure, and random passwords instantly. Customizable length and character sets. 100% client-side for maximum security.',
+    },
+    '/rotate-pdf': {
+        title: 'Rotate PDF Online – Rotate PDF Pages Free | xyzconverter',
+        description: 'Rotate PDF pages online securely. Fix upside down or sideways PDF pages instantly in your browser. No upload required.',
+    },
+    '/compress-image': {
+        title: 'Image Compressor Online – Reduce File Size Free',
+        description: 'Compress JPG, PNG, WEBP, and SVG images online for free. Reduce image file size without losing quality. 100% private and secure client-side compression.',
+    },
+    '/merge-pdf': {
+        title: 'Merge PDF Files Online – Free & Secure PDF Combiner',
+        description: 'Combine multiple PDF files into one document instantly. Free online PDF merger with no file size limits or watermarks. Secure client-side processing.',
     }
 }
 

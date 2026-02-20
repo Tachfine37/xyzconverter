@@ -1,6 +1,6 @@
+import { usePageSEO } from '@/utils/seo'
 import { useState } from 'react'
 import { FileText, Download, RotateCcw, RotateCw } from 'lucide-react'
-import { Helmet } from 'react-helmet-async'
 
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
@@ -12,7 +12,8 @@ import { toast } from 'sonner'
 import { analytics } from '@/lib/analytics'
 
 export function RotatePdf() {
-    const [file, setFile] = useState<File | null>(null)
+    usePageSEO()
+const [file, setFile] = useState<File | null>(null)
     const [isProcessing, setIsProcessing] = useState(false)
     const [resultUrl, setResultUrl] = useState<string | null>(null)
     const [rotation, setRotation] = useState<90 | 180 | 270>(90)
@@ -56,10 +57,7 @@ export function RotatePdf() {
 
     return (
         <div className="container max-w-4xl mx-auto py-12 px-4 space-y-8">
-            <Helmet>
-                <title>Rotate PDF Online – Rotate PDF Pages Free | xyzconverter</title>
-                <meta name="description" content="Rotate PDF pages online securely. Fix upside down or sideways PDF pages instantly in your browser. No upload required." />
-            </Helmet>
+            
 
             <div className="space-y-4 text-center">
                 <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-primary-700">Rotate PDF Online</h1>

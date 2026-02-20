@@ -1,12 +1,13 @@
+import { usePageSEO } from '@/utils/seo'
 import { useState } from 'react'
 import { Copy, Trash2, ArrowRightLeft } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/textarea'
-import { Helmet } from 'react-helmet-async'
 import { toast } from 'sonner'
 
 export function CaseConverter() {
-    const [text, setText] = useState('')
+    usePageSEO()
+const [text, setText] = useState('')
 
     const handleCopy = () => {
         if (!text) return
@@ -69,10 +70,7 @@ export function CaseConverter() {
 
     return (
         <div className="container max-w-5xl mx-auto px-4 py-8 md:py-12">
-            <Helmet>
-                <title>Free Online Case Converter Tool - Uppercase, Lowercase, Title Case | XYZCONVERTER</title>
-                <meta name="description" content="Convert text between Uppercase, Lowercase, Title Case, Sentence Case, and more instantly. Free online text case converter tool." />
-            </Helmet>
+            
 
             <div className="text-center mb-8 space-y-4">
                 <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground">Free Online Case Converter</h1>
