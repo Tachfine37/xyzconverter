@@ -780,3 +780,62 @@ export const PDF_TO_POWERPOINT_FAQ = [
         answer: "Absolutely. The entire conversion happens in your browser. Your PDF never leaves your device."
     }
 ]
+
+export const TEXT_TO_SPEECH_FAQ = [
+    {
+        question: "Is this text to speech tool free?",
+        answer: "Yes, it uses your browser's built-in speech synthesis capabilities, which are completely free to use."
+    },
+    {
+        question: "Can I download the audio?",
+        answer: "Currently, this tool is for playback only. Browser security restrictions make direct audio download difficult without server processing (which we avoid for privacy)."
+    },
+    {
+        question: "What voices are available?",
+        answer: "The available voices depend on your operating system and browser. Most modern devices include several high-quality male and female voices."
+    }
+]
+
+export const REMOVE_LINE_BREAKS_FAQ = [
+    {
+        question: "Does this remove all formatting?",
+        answer: "It specifically targets line breaks (newlines). You can choose to replace them with spaces (to make a paragraph) or nothing (to compact text)."
+    },
+    {
+        question: "Is my text saved?",
+        answer: "No. Your text is processed temporarily in your browser memory and is cleared when you refresh or leave the page."
+    }
+]
+
+export const REVERSE_TEXT_FAQ = [
+    {
+        question: "Can I reverse words but keep them in order?",
+        answer: "Yes, we have a 'Reverse Words' mode that keeps the word order but flips the letters allowed within each word."
+    },
+    {
+        question: "Why would I use this?",
+        answer: "It's popular for social media posts, creating puzzles, or simple encryption (obfuscation) of text spoilers."
+    }
+]
+
+export const LOREM_IPSUM_FAQ = [
+    {
+        question: "What is Lorem Ipsum?",
+        answer: "Lorem Ipsum is standard placeholder text used in the printing and typesetting industry. It looks like Latin but is actually nonsense text."
+    },
+    {
+        question: "Is the text unique?",
+        answer: "We use a standard generator algorithm to create randomized Lorem Ipsum text that looks natural and non-repetitive."
+    }
+]
+
+export const RANDOM_TEXT_FAQ = [
+    {
+        question: "Is this safe for passwords?",
+        answer: "Yes! We use the browser's cryptographically secure random number generator (window.crypto), making it safe for generating strong passwords."
+    },
+    {
+        question: "Is the generated text stored?",
+        answer: "Never. The generation happens locally on your device and is never sent to our servers."
+    }
+]

@@ -136,6 +136,33 @@ export const ROUTE_SEO: Record<string, SEOConfig> = {
         title: 'Base64 Encoder & Decoder - Free Online Tool | xyzconverter',
         description: 'Free Base64 encoder and decoder. Encode text to Base64, decode Base64 to text, validate Base64 strings. Perfect for data URIs, API authentication, email encoding. 100% secure and private.',
         keywords: 'base64 encoder, base64 decoder, base64 converter, encode base64, decode base64, base64 validator, data uri, base64 tools',
+    },
+
+    // Text Tools
+    '/text-to-speech': {
+        title: 'Text to Speech Online - Free TTS Reader | xyzconverter',
+        description: 'Convert text to speech online for free. Listen to any text with natural-sounding voices. Adjustable speed and pitch. Works entirely in your browser.',
+        keywords: 'text to speech, tts online, free text to speech, read text aloud, voice generator, speech synthesis, online tts reader',
+    },
+    '/remove-line-breaks': {
+        title: 'Remove Line Breaks Online - Text Cleaner | xyzconverter',
+        description: 'Remove line breaks from text online. Convert multi-line text to a single line or paragraph. Perfect for cleaning up copied text or code snippets.',
+        keywords: 'remove line breaks, remove newlines, text cleaner, line break remover, flatten text, remove return characters',
+    },
+    '/reverse-text': {
+        title: 'Reverse Text Generator - Flip Text Online | xyzconverter',
+        description: 'Reverse text instantly. Flip wording, reverse letters, or reverse order of words. Fun tool for puzzles, coding, and social media.',
+        keywords: 'reverse text, flip text, backwards text, mirror text, reverse string, reverse words, text reverser',
+    },
+    '/lorem-ipsum-generator': {
+        title: 'Lorem Ipsum Generator - Dummy Text | xyzconverter',
+        description: 'Generate Lorem Ipsum placeholder text for web design and publishing. Customize number of paragraphs, sentences, or words. Copy instantly.',
+        keywords: 'lorem ipsum generator, dummy text, placeholder text, lipsum generator, latin text generator, web design tools',
+    },
+    '/random-text-generator': {
+        title: 'Random Text Generator - Strings & Words | xyzconverter',
+        description: 'Generate random text, strings, and passwords. Customize length and character types (letters, numbers, symbols). Secure and client-side.',
+        keywords: 'random text generator, random string generator, password generator, random words, generate random characters, security tools',
     }
 }
 

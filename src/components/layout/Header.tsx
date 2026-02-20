@@ -75,14 +75,39 @@ export function Header() {
         { label: 'QR Scanner', href: '/qr-scanner' },
     ]
 
-    const textToolsItems = [
-        { label: 'Word Counter', href: '/word-counter' },
-        { label: 'Character Counter', href: '/character-counter' },
-        { label: 'Case Converter', href: '/case-converter' },
-        { label: 'Remove Extra Spaces', href: '/remove-extra-spaces' },
-        { label: 'Slug Generator', href: '/slug-generator' },
-        { label: 'Password Generator', href: '/password-generator' },
+    const textGroups: MenuGroup[] = [
+        {
+            title: 'Text Utilities',
+            icon: '📝',
+            items: [
+                { label: 'Word Counter', href: '/word-counter' },
+                { label: 'Character Counter', href: '/character-counter' },
+                { label: 'Case Converter', href: '/case-converter' },
+                { label: 'Remove Extra Spaces', href: '/remove-extra-spaces' },
+                { label: 'Remove Line Breaks', href: '/remove-line-breaks' },
+                { label: 'Reverse Text', href: '/reverse-text' },
+            ]
+        },
+        {
+            title: 'Generators',
+            icon: '⚡',
+            items: [
+                { label: 'Lorem Ipsum Generator', href: '/lorem-ipsum-generator' },
+                { label: 'Random Text Generator', href: '/random-text-generator' },
+                { label: 'Password Generator', href: '/password-generator' },
+                { label: 'Slug Generator', href: '/slug-generator' },
+            ]
+        },
+        {
+            title: 'Audio',
+            icon: '🔊',
+            items: [
+                { label: 'Text to Speech', href: '/text-to-speech' },
+            ]
+        }
     ]
+
+
 
 
     // Data tools grouped by format
@@ -203,7 +228,7 @@ export function Header() {
 
                     <DropdownMenu trigger="QR Tools" items={qrToolsItems} />
 
-                    <DropdownMenu trigger="Text Tools" items={textToolsItems} />
+                    <MegaDropdownMenu trigger="Text Tools" groups={textGroups} />
 
                     <MegaDropdownMenu trigger="Data Tools" groups={dataGroups} />
 
@@ -373,16 +398,26 @@ export function Header() {
                                     <ChevronDown className={`w-5 h-5 transition-transform ${activeAccordion === 'text' ? 'rotate-180' : ''}`} />
                                 </button>
                                 {activeAccordion === 'text' && (
-                                    <div className="pb-4 pl-4 space-y-2 animate-in slide-in-from-top-2">
-                                        {textToolsItems.map((item) => (
-                                            <Link
-                                                key={item.href}
-                                                to={item.href}
-                                                className="block py-2 text-muted-foreground hover:text-primary"
-                                                onClick={closeMenu}
-                                            >
-                                                {item.label}
-                                            </Link>
+                                    <div className="pb-4 pl-4 space-y-4 animate-in slide-in-from-top-2">
+                                        {textGroups.map((group) => (
+                                            <div key={group.title} className="space-y-2">
+                                                <div className="flex items-center gap-2 font-medium text-foreground/80">
+                                                    <span>{group.icon}</span>
+                                                    <span>{group.title}</span>
+                                                </div>
+                                                <div className="grid grid-cols-1 gap-2 pl-6">
+                                                    {group.items.map((item) => (
+                                                        <Link
+                                                            key={item.label + item.href}
+                                                            to={item.href}
+                                                            className="text-muted-foreground hover:text-primary block py-1"
+                                                            onClick={closeMenu}
+                                                        >
+                                                            {item.label}
+                                                        </Link>
+                                                    ))}
+                                                </div>
+                                            </div>
                                         ))}
                                     </div>
                                 )}

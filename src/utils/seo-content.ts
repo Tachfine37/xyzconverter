@@ -755,5 +755,141 @@ export const CONVERSION_CONTENT: Record<string, ConversionSEOContent> = {
             'Supports multiple formats - JSON, YAML, XML, Base64',
             'Developer friendly - clean output'
         ]
+    },
+
+    '/text-to-speech': {
+        title: 'Text to Speech - Convert Text to Audio Online',
+        description: 'Turn any text into lifelike speech using your browser\'s built-in voices. Perfect for proofreading, accessibility, or listening to long articles on the go.',
+        features: [
+            'Natural sounding voices - uses browser Web Speech API',
+            'Multiple languages supported (dependent on browser)',
+            'Adjustable speed and pitch controls',
+            'No character limit - read long texts',
+            '100% private - text is processed locally'
+        ],
+        howItWorks: {
+            title: 'How to Use Text to Speech',
+            steps: [
+                'Paste or type your text into the box',
+                'Select a voice from the dropdown menu',
+                'Click "Play" to start listening',
+                'Adjust speed and pitch to your liking'
+            ]
+        },
+        benefits: [
+            'Accessibility - great for visual impairments',
+            'Productivity - listen while you multi-task',
+            'Proofreading - hear errors you might miss reading',
+            'Free and unlimited - no subscription needed',
+            'Secure - privacy-first processing'
+        ]
+    },
+
+    '/remove-line-breaks': {
+        title: 'Remove Line Breaks - Clean Up Text Formatting',
+        description: 'Quickly remove line breaks and newlines from your text. Useful for fixing text copied from PDFs, emails, or websites that has weird formatting.',
+        features: [
+            'Instantly remove line breaks',
+            'Replace with spaces or commas',
+            'Preserve paragraph breaks (optional)',
+            'One-click copy to clipboard',
+            'Works entirely in your browser'
+        ],
+        howItWorks: {
+            title: 'How to Remove Line Breaks',
+            steps: [
+                'Paste your text with line breaks',
+                'Choose how to replace breaks (space, comma, none)',
+                'Click "Remove Line Breaks"',
+                'Copy the cleaned text instantly'
+            ]
+        },
+        benefits: [
+            'Fix formatting - clean up copied text',
+            'Save time - no manual deleting',
+            'Flexible options - customize output',
+            'Privacy-first - data stays on your device'
+        ]
+    },
+
+    '/reverse-text': {
+        title: 'Reverse Text Generator - Flip Words and Letters',
+        description: 'Instantly reverse text, flip words, or mirror lettering. A fun and useful tool for social media, puzzles, data encoding, or just for fun.',
+        features: [
+            'Reverse entire text string',
+            'Reverse order of words only',
+            'Flip text upside down (if supported)',
+            'One-click copy result',
+            'Instant real-time processing'
+        ],
+        howItWorks: {
+            title: 'How to Reverse Text',
+            steps: [
+                'Type or paste your text',
+                'Select "Reverse Text" or "Reverse Words"',
+                'See the result change instantly',
+                'Copy the reversed text'
+            ]
+        },
+        benefits: [
+            'Creative fun - for social media posts',
+            'Encoding - simple text obfuscation',
+            'Problem solving - verify palindromes',
+            'Free and fast - instant results'
+        ]
+    },
+
+    '/lorem-ipsum-generator': {
+        title: 'Lorem Ipsum Generator - Custom Placeholder Text',
+        description: 'Generate custom Lorem Ipsum placeholder text for your design projects. Choose the number of paragraphs, sentences, or words you need.',
+        features: [
+            'Generate paragraphs, sentences, or words',
+            'Start with "Lorem ipsum..." (optional)',
+            'Copy to clipboard instantly',
+            'Clean, standard Latin text',
+            'No limits on generation'
+        ],
+        howItWorks: {
+            title: 'How to Generate Lorem Ipsum',
+            steps: [
+                'Select unit (Paragraphs, Sentences, Words)',
+                'Enter the quantity you need',
+                'Click "Generate"',
+                'Copy the text for your project'
+            ]
+        },
+        benefits: [
+            'Design ready - standard placeholder text',
+            'Customizable - get exactly the amount you need',
+            'Fast workflow - instant generation',
+            'Free tool for designers and developers'
+        ]
+    },
+
+    '/random-text-generator': {
+        title: 'Random Text Generator - Secure Strings & Passwords',
+        description: 'Generate random strings, characters, or text. Useful for creating strong passwords, API keys, test data, or random selections.',
+        features: [
+            'Customizable length',
+            'Include specific character types (A-Z, a-z, 0-9, !@#)',
+            'Secure cryptographic randomness',
+            'Generate multiple strings at once',
+            '100% client-side - safe for passwords'
+        ],
+        howItWorks: {
+            title: 'How to Generate Random Text',
+            steps: [
+                'Set the desired length of the string',
+                'Select character types to include',
+                'Click "Generate"',
+                'Copy your secure random text'
+            ]
+        },
+        benefits: [
+            'Security - create strong passwords',
+            'Testing - generate distinct test data',
+            'Privacy - generated locally, never sent to server',
+            'Flexible - customize exactly what you need'
+        ]
     }
 }

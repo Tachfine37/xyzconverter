@@ -25,6 +25,15 @@ const PdfToWord = lazy(() => import('./pages/PdfToWord').then(module => ({ defau
 const PdfToExcel = lazy(() => import('./pages/PdfToExcel').then(module => ({ default: module.PdfToExcel })))
 const PdfToPowerPoint = lazy(() => import('./pages/PdfToPowerPoint').then(module => ({ default: module.PdfToPowerPoint })))
 const AllTools = lazy(() => import('./pages/AllTools').then(module => ({ default: module.AllTools })))
+const TextToSpeech = lazy(() => import('./pages/TextToSpeech').then(module => ({ default: module.TextToSpeech })))
+const RemoveLineBreaks = lazy(() => import('./pages/RemoveLineBreaks').then(module => ({ default: module.RemoveLineBreaks })))
+const ReverseText = lazy(() => import('./pages/ReverseText').then(module => ({ default: module.ReverseText })))
+const LoremIpsumGenerator = lazy(() => import('./pages/LoremIpsumGenerator').then(module => ({ default: module.LoremIpsumGenerator })))
+const RandomTextGenerator = lazy(() => import('./pages/RandomTextGenerator').then(module => ({ default: module.RandomTextGenerator })))
+
+// ... existing lazy imports
+
+
 const QrGenerator = lazy(() => import('./pages/QrGenerator').then(module => ({ default: module.QrGenerator })))
 const QrScanner = lazy(() => import('./pages/QrScanner').then(module => ({ default: module.QrScanner })))
 const WordCounter = lazy(() => import('./pages/WordCounter').then(module => ({ default: module.WordCounter })))
@@ -142,6 +151,11 @@ function App() {
             <Route path="/remove-extra-spaces" element={<RemoveExtraSpaces />} />
             <Route path="/slug-generator" element={<SlugGenerator />} />
             <Route path="/password-generator" element={<PasswordGenerator />} />
+            <Route path="/text-to-speech" element={<TextToSpeech />} />
+            <Route path="/remove-line-breaks" element={<RemoveLineBreaks />} />
+            <Route path="/reverse-text" element={<ReverseText />} />
+            <Route path="/lorem-ipsum-generator" element={<LoremIpsumGenerator />} />
+            <Route path="/random-text-generator" element={<RandomTextGenerator />} />
 
             {/* Image Tools */}
             <Route path="/resize-image" element={<ImageResizer />} />

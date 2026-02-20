@@ -65,7 +65,9 @@ export function PdfToPowerPoint() {
             const pdf = await loadingTask.promise
             const numPages = pdf.numPages
 
-            const pres = new pptxgen();
+            // Handle potential ESM/CJS interop issues with pptxgenjs v4
+            const PptxGenJS = (pptxgen as any).default || pptxgen;
+            const pres = new PptxGenJS();
 
             for (let i = 1; i <= numPages; i++) {
                 const page = await pdf.getPage(i)
