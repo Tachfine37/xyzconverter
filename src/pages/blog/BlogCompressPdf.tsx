@@ -21,6 +21,12 @@ export function BlogCompressPdf() {
             categoryHref="/blog/category/pdf-tips"
             ctaPath="/compress-pdf"
             ctaLabel="Compress PDF Free →"
+            relatedLinks={[
+                { label: 'Merge PDF', href: '/merge-pdf' },
+                { label: 'Split PDF', href: '/split-pdf' },
+                { label: 'Rotate PDF', href: '/rotate-pdf' },
+                { label: 'PDF to Text', href: '/pdf-to-text' },
+            ]}
         >
             <p>
                 Large PDF files cause headaches every day — bounced email attachments, slow uploads, storage limits,

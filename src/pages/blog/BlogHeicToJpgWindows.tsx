@@ -21,6 +21,12 @@ export function BlogHeicToJpgWindows() {
             categoryHref="/blog/category/image-tips"
             ctaPath="/heic-to-jpg"
             ctaLabel="Convert HEIC to JPG Free →"
+            relatedLinks={[
+                { label: 'HEIC to PNG', href: '/heic-to-png' },
+                { label: 'HEIC to PDF', href: '/heic-to-pdf' },
+                { label: 'Compress Images', href: '/compress-image' },
+                { label: 'All Image Tools', href: '/tools' },
+            ]}
         >
             <p>
                 You just transferred photos from your iPhone to your Windows PC and suddenly see a bunch of <strong>.heic</strong> files
