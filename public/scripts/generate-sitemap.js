@@ -102,6 +102,7 @@ const routes = [
     // Blog
     { path: '/blog', priority: '0.8', changefreq: 'weekly' },
     { path: '/blog/heic-to-jpg-windows', priority: '0.8', changefreq: 'monthly' },
+    { path: '/blog/how-to-compress-pdf', priority: '0.8', changefreq: 'monthly' },
 ];
 
 // Generate sitemap XML

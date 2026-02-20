@@ -4,6 +4,15 @@ import { ArrowRight, Calendar, Clock } from 'lucide-react'
 
 const POSTS = [
     {
+        slug: 'how-to-compress-pdf',
+        title: '5 Ways to Compress a PDF Without Losing Quality (2026)',
+        description: '5 proven methods to compress a PDF file — from free browser tools to Adobe Acrobat. Includes a tool comparison table and step-by-step instructions.',
+        date: 'February 20, 2026',
+        readingTime: '6',
+        category: 'Guides',
+        href: '/blog/how-to-compress-pdf',
+    },
+    {
         slug: 'heic-to-jpg-windows',
         title: 'How to Convert iPhone HEIC Photos to JPG on Windows (Free, No Software)',
         description: 'Step-by-step guide to convert iPhone HEIC photos to JPG on Windows 10 & 11 without installing any software. Works online, free, and private.',
