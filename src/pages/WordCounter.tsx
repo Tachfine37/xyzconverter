@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/textarea'
 import { Helmet } from 'react-helmet-async'
 import { toast } from 'sonner'
+import { RelatedTools, RELATED_TOOLS_MAP } from '@/components/seo/RelatedTools'
 
 export function WordCounter() {
     const [text, setText] = useState('')
@@ -225,6 +226,9 @@ export function WordCounter() {
                     ))}
                 </div>
             </section>
+
+            {/* Related Tools */}
+            <RelatedTools tools={RELATED_TOOLS_MAP['/word-counter'] || []} />
         </div>
     )
 }

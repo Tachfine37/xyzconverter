@@ -8,6 +8,7 @@ import { SmartDropzone } from '@/components/feature/smart-dropzone'
 import { usePdfMerge } from '@/hooks/use-pdf-merge'
 import { MERGE_PDF_FAQ } from "@/utils/structured-data"
 import { FAQSection } from "@/components/seo/FAQSection"
+import { RelatedTools, RELATED_TOOLS_MAP } from "@/components/seo/RelatedTools"
 
 export function Merge() {
     const location = useLocation()
@@ -172,6 +173,9 @@ export function Merge() {
 
             {/* FAQ Section */}
             <FAQSection faqs={MERGE_PDF_FAQ} />
+
+            {/* Related Tools */}
+            <RelatedTools tools={RELATED_TOOLS_MAP['/merge-pdf'] || []} />
         </div>
     )
 }
