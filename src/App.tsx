@@ -24,6 +24,8 @@ const WatermarkPdf = lazy(() => import('./pages/WatermarkPdf').then(module => ({
 const PdfToWord = lazy(() => import('./pages/PdfToWord').then(module => ({ default: module.PdfToWord })))
 const PdfToExcel = lazy(() => import('./pages/PdfToExcel').then(module => ({ default: module.PdfToExcel })))
 const PdfToPowerPoint = lazy(() => import('./pages/PdfToPowerPoint').then(module => ({ default: module.PdfToPowerPoint })))
+const WordToPdf = lazy(() => import('./pages/WordToPdf').then(module => ({ default: module.WordToPdf })))
+const ExcelToPdf = lazy(() => import('./pages/ExcelToPdf').then(module => ({ default: module.ExcelToPdf })))
 const AllTools = lazy(() => import('./pages/AllTools').then(module => ({ default: module.AllTools })))
 const TextToSpeech = lazy(() => import('./pages/TextToSpeech').then(module => ({ default: module.TextToSpeech })))
 const RemoveLineBreaks = lazy(() => import('./pages/RemoveLineBreaks').then(module => ({ default: module.RemoveLineBreaks })))
@@ -46,6 +48,7 @@ const Blog = lazy(() => import('./pages/Blog').then(module => ({ default: module
 const BlogHeicToJpgWindows = lazy(() => import('./pages/blog/BlogHeicToJpgWindows').then(module => ({ default: module.BlogHeicToJpgWindows })))
 const BlogCompressPdf = lazy(() => import('./pages/blog/BlogCompressPdf').then(module => ({ default: module.BlogCompressPdf })))
 const BlogCategory = lazy(() => import('./pages/BlogCategory').then(module => ({ default: module.BlogCategory })))
+const CropImage = lazy(() => import('./pages/CropImage').then(module => ({ default: module.CropImage })))
 
 // Image Category Pages
 const HeicCategory = lazy(() => import('./pages/categories/HeicCategory').then(module => ({ default: module.HeicCategory })))
@@ -131,6 +134,8 @@ function App() {
             <Route path="/pdf-to-excel" element={<PdfToExcel />} />
             <Route path="/pdf-to-powerpoint" element={<PdfToPowerPoint />} />
             <Route path="/images-to-pdf" element={<ImagesToPdf />} />
+            <Route path="/word-to-pdf" element={<WordToPdf />} />
+            <Route path="/excel-to-pdf" element={<ExcelToPdf />} />
 
             {/* PDF to Image Conversions */}
             <Route path="/pdf-to-jpg" element={<Converter />} />
@@ -164,6 +169,7 @@ function App() {
             {/* Image Tools */}
             <Route path="/resize-image" element={<ImageResizer />} />
             <Route path="/compress-image" element={<ImageCompressor />} />
+            <Route path="/crop-image" element={<CropImage />} />
 
             {/* Fallback/Legacy Route */}
             <Route path="/convert/:conversion" element={<Converter />} />

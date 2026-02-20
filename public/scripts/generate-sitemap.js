@@ -63,6 +63,9 @@ const routes = [
     { path: '/pdf-to-word', priority: '0.9', changefreq: 'monthly' },
     { path: '/pdf-to-excel', priority: '0.8', changefreq: 'monthly' },
     { path: '/pdf-to-powerpoint', priority: '0.8', changefreq: 'monthly' },
+    { path: '/word-to-pdf', priority: '0.9', changefreq: 'monthly' },
+    { path: '/excel-to-pdf', priority: '0.8', changefreq: 'monthly' },
+    { path: '/pdf-to-powerpoint', priority: '0.8', changefreq: 'monthly' },
     { path: '/pdf-to-jpg', priority: '0.8', changefreq: 'monthly' },
     { path: '/pdf-to-png', priority: '0.8', changefreq: 'monthly' },
     { path: '/pdf-to-webp', priority: '0.8', changefreq: 'monthly' },
@@ -92,6 +95,7 @@ const routes = [
     // Image Tools
     { path: '/resize-image', priority: '0.7', changefreq: 'monthly' },
     { path: '/compress-image', priority: '0.8', changefreq: 'monthly' },
+    { path: '/crop-image', priority: '0.8', changefreq: 'monthly' },
 
     // Informational Pages
     { path: '/how-it-works', priority: '0.6', changefreq: 'monthly' },
