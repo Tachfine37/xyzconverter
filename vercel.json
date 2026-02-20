@@ -1,4 +1,7 @@
 {
+    "framework": "vite",
+    "buildCommand": "npm run build",
+    "outputDirectory": "dist",
     "installCommand": "npm install --legacy-peer-deps",
     "headers": [
         {
@@ -10,7 +13,7 @@
                 },
                 {
                     "key": "X-Frame-Options",
-                    "value": "DENY"
+                    "value": "SAMEORIGIN"
                 },
                 {
                     "key": "X-XSS-Protection",
@@ -23,6 +26,24 @@
                 {
                     "key": "Permissions-Policy",
                     "value": "camera=(), microphone=(), geolocation=()"
+                }
+            ]
+        },
+        {
+            "source": "/assets/(.*)",
+            "headers": [
+                {
+                    "key": "Cache-Control",
+                    "value": "public, max-age=31536000, immutable"
+                }
+            ]
+        },
+        {
+            "source": "/(.*)\\.(png|jpg|jpeg|gif|webp|svg|ico|woff2|woff)",
+            "headers": [
+                {
+                    "key": "Cache-Control",
+                    "value": "public, max-age=31536000, immutable"
                 }
             ]
         },
@@ -51,36 +72,11 @@
                     "value": "public, max-age=86400, must-revalidate"
                 }
             ]
-        },
-        {
-            "source": "/assets/(.*)",
-            "headers": [
-                {
-                    "key": "Cache-Control",
-                    "value": "public, max-age=31536000, immutable"
-                }
-            ]
-        },
-        {
-            "source": "/(.*)\\.(png|jpg|jpeg|gif|webp|svg|ico)",
-            "headers": [
-                {
-                    "key": "Cache-Control",
-                    "value": "public, max-age=31536000, immutable"
-                }
-            ]
-        }
-    ],
-    "redirects": [
-        {
-            "source": "/:path((?!.*\\.).*)/",
-            "destination": "/:path",
-            "permanent": true
         }
     ],
     "rewrites": [
         {
-            "source": "/(.*)",
+            "source": "/((?!assets/).*)",
             "destination": "/index.html"
         }
     ],
