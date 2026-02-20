@@ -14,13 +14,13 @@ interface SEOConfig {
 }
 
 export const DEFAULT_SEO: SEOConfig = {
-    title: 'xyzconverter - Privacy-First Image Converter',
-    description: 'Free, fast, and private image converter. Convert HEIC, WEBP, PNG to JPG or PDF entirely in your browser. No uploads, no tracking.',
+    title: 'xyzconverter - Privacy-First File Converter',
+    description: 'Free, fast, and private file converter. Convert HEIC, WEBP, PNG to JPG or PDF entirely in your browser. No uploads, no tracking.',
     canonical: 'https://xyzconverter.com',
     ogType: 'website',
     ogImage: 'https://xyzconverter.com/og-image.png',
     twitterCard: 'summary_large_image',
-    keywords: 'image converter, heic to jpg, webp to jpg, png to pdf, pdf merge, privacy-first, client-side',
+    keywords: 'file converter, image converter, pdf tools, privacy-first, client-side, heic to jpg, webp to jpg',
     author: 'xyzconverter'
 }
 

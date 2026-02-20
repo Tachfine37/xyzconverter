@@ -19,7 +19,7 @@ export function Home() {
     const [availableActions, setAvailableActions] = useState<FileAction[]>([])
 
     useEffect(() => {
-        document.title = 'xyzconverter - Privacy-First Image Converter'
+        document.title = 'xyzconverter - Privacy-First File Converter'
         analytics.pageView('home')
     }, [])
 
