@@ -18,6 +18,8 @@ export default defineConfig({
     }
   },
   build: {
+    target: 'esnext',
+    reportCompressedSize: false,
     rollupOptions: {
       output: {
         manualChunks: {
@@ -32,19 +34,26 @@ export default defineConfig({
             'tailwind-merge',
             'sonner'
           ],
-          'vendor-file': [
-            'heic2any',
-            'pdf-lib',
-            'jspdf',
-            'react-easy-crop',
-            'fast-xml-parser',
-            'js-yaml'
-          ]
+          // Heavy libs — each isolated so they only load when the matching tool page is visited
+          'lib-pdf': ['pdf-lib'],
+          'lib-jspdf': ['jspdf'],
+          'lib-heic': ['heic2any'],
+          'lib-crop': ['react-easy-crop'],
+          'lib-xml': ['fast-xml-parser'],
+          'lib-yaml': ['js-yaml'],
         }
       }
     },
-    chunkSizeWarningLimit: 1000,
+    chunkSizeWarningLimit: 500,
     sourcemap: false,
-    minify: 'terser'
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: true,
+        drop_debugger: true,
+        passes: 2,
+        pure_funcs: ['console.log', 'console.info', 'console.debug', 'console.warn'],
+      },
+    },
   }
 })

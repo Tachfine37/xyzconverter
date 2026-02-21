@@ -42,13 +42,49 @@
   <meta property="twitter:image" content="https://xyzconverter.com/og-image.png">
   <meta property="twitter:image:alt" content="xyzconverter - Privacy-First File Converter">
 
-  <!-- Resource Hints -->
+  <!-- Resource Hints: preconnect to critical domains -->
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
   <link rel="dns-prefetch" href="https://fonts.googleapis.com">
 
   <!-- Robots -->
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <meta name="googlebot" content="index, follow">
+
+  <!-- Critical CSS: paint the page background before JS loads to avoid flash -->
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0
+    }
+
+    html {
+      color-scheme: dark light;
+      font-family: system-ui, -apple-system, sans-serif;
+      -webkit-text-size-adjust: 100%
+    }
+
+    body {
+      background: #09090b;
+      color: #fafafa;
+      min-height: 100vh;
+      overflow-x: hidden
+    }
+
+    #root {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh
+    }
+
+    /* Prevent layout shift while JS boots */
+    #root:empty::before {
+      content: '';
+      display: block;
+      height: 100vh
+    }
+  </style>
 
   <!-- Structured Data (JSON-LD) -->
   <script type="application/ld+json">
@@ -84,7 +120,7 @@
     },
     "softwareVersion": "1.0",
     "datePublished": "2024-01-01",
-    "dateModified": "2026-02-05"
+    "dateModified": "2026-02-21"
   }
   </script>
 </head>
