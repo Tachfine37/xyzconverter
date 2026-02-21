@@ -5,6 +5,8 @@ import { Hero } from '@/components/home/Hero'
 import { FileActionPicker } from '@/components/home/FileActionPicker'
 import { InlineProcessor } from '@/components/home/InlineProcessor'
 import { ToolsGrid } from '@/components/home/ToolsGrid'
+import { ComparisonTable } from '@/components/home/ComparisonTable'
+import { BuiltForEveryone } from '@/components/home/BuiltForEveryone'
 import { Button } from '@/components/ui/button'
 import { ArrowRight } from 'lucide-react'
 import { getActionsForFile } from '@/utils/file-actions'
@@ -59,6 +61,10 @@ export function Home() {
             {step === 'upload' && (
                 <>
                     <Hero onFileUploaded={handleFileUploaded} />
+
+                    <BuiltForEveryone />
+
+                    <ComparisonTable />
 
                     {/* Tools Grid - SEO internal linking section */}
                     <ToolsGrid />
