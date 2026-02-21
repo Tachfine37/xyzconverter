@@ -7,12 +7,14 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { Textarea } from '@/components/ui/textarea'
+import { FAQSection } from '@/components/seo/FAQSection'
+import { QR_GENERATOR_FAQ } from '@/utils/structured-data'
 
 type QrType = 'url' | 'text' | 'email' | 'wifi'
 
 export function QrGenerator() {
     usePageSEO()
-const [qrType, setQrType] = useState<QrType>('url')
+    const [qrType, setQrType] = useState<QrType>('url')
     const [qrValue, setQrValue] = useState('')
     const [qrImage, setQrImage] = useState<string | null>(null)
 
@@ -107,7 +109,7 @@ const [qrType, setQrType] = useState<QrType>('url')
 
     return (
         <div className="container max-w-4xl mx-auto px-4 py-12">
-            
+
 
             <div className="text-center mb-12 space-y-4">
                 <h1 className="text-3xl md:text-5xl font-bold tracking-tight">Free QR Code Generator Online - URL, Text, Email, WiFi</h1>
@@ -376,6 +378,8 @@ const [qrType, setQrType] = useState<QrType>('url')
                     </div>
                 </div>
             </section>
+
+            <FAQSection faqs={QR_GENERATOR_FAQ} />
         </div>
     )
 }

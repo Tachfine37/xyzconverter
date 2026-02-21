@@ -48,8 +48,10 @@ export const ROUTE_SEO: Record<string, SEOConfig> = {
         description: 'Easily convert PNG images to PDF files. Drag and drop to merge multiple PNGs into one secure PDF document. No software installation needed.',
     },
     '/image-to-pdf': {
-        title: 'Image to PDF Converter - JPG, PNG, HEIC, WEBP',
-        description: 'Universal Image to PDF converter. Turn your photos and graphics into professional PDF documents instantly and securely.',
+        title: 'Images to PDF Converter – JPG & PNG to PDF Online | xyzconverter',
+        description: 'Convert and combine multiple images into a single PDF document. Support for JPG, PNG, WebP and more. Free, secure, and 100% client-side processing.',
+        canonical: 'https://xyzconverter.com/images-to-pdf',
+        keywords: 'image to pdf, images to pdf, jpg to pdf, png to pdf, combine images to pdf, convert photos to pdf',
     },
     '/jpg-to-webp': {
         title: 'Convert JPG to WEBP - Optimise Images for Web | xyzconverter',
@@ -207,7 +209,42 @@ export const ROUTE_SEO: Record<string, SEOConfig> = {
     '/merge-pdf': {
         title: 'Merge PDF Files Online – Free & Secure PDF Combiner',
         description: 'Combine multiple PDF files into one document instantly. Free online PDF merger with no file size limits or watermarks. Secure client-side processing.',
-    }
+    },
+    '/resize-image': {
+        title: 'Resize Image Online – Free Image Resizer Tool | xyzconverter',
+        description: 'Resize images online for free. Change image dimensions, crop, rotate, and flip. Works in your browser with no upload required. JPG, PNG, WebP supported.',
+        keywords: 'resize image, image resizer, resize image online, change image size, resize photo, crop image, image dimensions',
+    },
+    '/crop-image': {
+        title: 'Crop Image Online – Free Image Cropper | xyzconverter',
+        description: 'Crop images online for free. Trim and cut any JPG, PNG, or WebP image instantly in your browser. No watermarks, no upload, 100% private.',
+        keywords: 'crop image, image cropper, crop photo online, crop jpg, crop png, free image crop, trim image',
+    },
+    '/word-to-pdf': {
+        title: 'Word to PDF Converter – Convert DOCX to PDF Online Free | xyzconverter',
+        description: 'Convert Microsoft Word (.docx) documents to PDF format instantly in your browser. 100% free, secure, and no upload required.',
+        keywords: 'word to pdf, docx to pdf, convert word to pdf, free word converter, docx converter online',
+    },
+    '/split-pdf': {
+        title: 'Split PDF Online – Extract PDF Pages Free | xyzconverter',
+        description: 'Split PDF files online for free. Extract specific pages or split into multiple documents. Secure, client-side processing with no file uploads.',
+        keywords: 'split pdf, pdf splitter, extract pdf pages, divide pdf, separate pdf pages, free pdf splitter',
+    },
+    '/tools': {
+        title: 'All Free Online Tools – File Converters & Utilities | xyzconverter',
+        description: 'Browse all free online tools by xyzconverter. PDF tools, image converters, text utilities, QR code tools and more. 100% private, no uploads.',
+        keywords: 'online tools, file converter, pdf tools, image converter, free tools online, xyzconverter tools',
+    },
+    '/how-it-works': {
+        title: 'How It Works – Private, Browser-Based File Processing | xyzconverter',
+        description: 'Learn how xyzconverter processes your files entirely in your browser. No upload, no server, no tracking. Your data never leaves your device.',
+        keywords: 'how it works, client-side processing, browser based, privacy tools, no upload, secure file converter',
+    },
+    '/data-tools': {
+        title: 'Free Data Converter Tools – JSON, CSV, YAML, XML, Base64 | xyzconverter',
+        description: 'Free online data converter tools for developers. Convert JSON to CSV, YAML to JSON, encode Base64, validate XML and more. 100% client-side, no data uploaded.',
+        keywords: 'data converter, json converter, csv converter, yaml converter, xml converter, base64 encoder, developer tools, online data tools',
+    },
 }
 
 export function usePageSEO(override?: Partial<SEOConfig>) {

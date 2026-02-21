@@ -13,7 +13,7 @@ import { analytics } from '@/lib/analytics'
 
 export function RotatePdf() {
     usePageSEO()
-const [file, setFile] = useState<File | null>(null)
+    const [file, setFile] = useState<File | null>(null)
     const [isProcessing, setIsProcessing] = useState(false)
     const [resultUrl, setResultUrl] = useState<string | null>(null)
     const [rotation, setRotation] = useState<90 | 180 | 270>(90)
@@ -57,7 +57,7 @@ const [file, setFile] = useState<File | null>(null)
 
     return (
         <div className="container max-w-4xl mx-auto py-12 px-4 space-y-8">
-            
+
 
             <div className="space-y-4 text-center">
                 <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-primary-700">Rotate PDF Online</h1>
@@ -149,6 +149,46 @@ const [file, setFile] = useState<File | null>(null)
 
             <div className="py-12 border-t">
                 <FAQSection faqs={ROTATE_PDF_FAQ} />
+            </div>
+
+            {/* SEO Content Section */}
+            <div className="mt-8 border-t pt-12 space-y-12 max-w-4xl mx-auto">
+                <section>
+                    <h2 className="text-2xl font-semibold mb-6">How to Rotate a PDF Online</h2>
+                    <ol className="space-y-4">
+                        {[
+                            { step: '1', title: 'Upload your PDF', desc: 'Drag and drop your PDF file into the upload box or click to browse your files.' },
+                            { step: '2', title: 'Choose rotation angle', desc: 'Select your desired rotation: 90° clockwise, 180° (upside down), or 270° clockwise.' },
+                            { step: '3', title: 'Click "Rotate PDF"', desc: 'Hit the rotate button and your PDF will be processed instantly in your browser.' },
+                            { step: '4', title: 'Download your rotated PDF', desc: 'Once done, click download to save your properly oriented PDF document.' },
+                        ].map(({ step, title, desc }) => (
+                            <li key={step} className="flex gap-4 items-start">
+                                <span className="shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">{step}</span>
+                                <div>
+                                    <h3 className="font-semibold mb-1">{title}</h3>
+                                    <p className="text-muted-foreground">{desc}</p>
+                                </div>
+                            </li>
+                        ))}
+                    </ol>
+                </section>
+
+                <section>
+                    <h2 className="text-2xl font-semibold mb-6">Why Use Our Free PDF Rotator?</h2>
+                    <div className="grid md:grid-cols-2 gap-6">
+                        {[
+                            { title: '100% Free & No Registration', desc: 'Rotate as many PDFs as you need without creating an account or paying anything.' },
+                            { title: 'Permanent Rotation', desc: 'Unlike some viewers, our tool permanently rotates the PDF pages so they open correctly every time.' },
+                            { title: 'Complete Privacy', desc: 'Your PDF is processed locally in your browser — it never leaves your device or gets uploaded to any server.' },
+                            { title: 'All Devices Supported', desc: 'Works on Windows, Mac, iOS, and Android. No software installation needed — just your browser.' },
+                        ].map(({ title, desc }) => (
+                            <div key={title} className="p-5 rounded-lg border bg-card">
+                                <h3 className="font-semibold mb-2">{title}</h3>
+                                <p className="text-muted-foreground text-sm">{desc}</p>
+                            </div>
+                        ))}
+                    </div>
+                </section>
             </div>
         </div>
     )

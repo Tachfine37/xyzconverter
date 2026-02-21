@@ -8,10 +8,12 @@ import { Label } from '@/components/ui/label'
 import { toast } from 'sonner'
 import { Link } from 'react-router-dom'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
+import { FAQSection } from '@/components/seo/FAQSection'
+import { SLUG_GENERATOR_FAQ } from '@/utils/structured-data'
 
 export function SlugGenerator() {
     usePageSEO()
-const [text, setText] = useState('')
+    const [text, setText] = useState('')
     const [slug, setSlug] = useState('')
     const [separator, setSeparator] = useState('-')
     const [removeNumbers, setRemoveNumbers] = useState(false)
@@ -56,7 +58,7 @@ const [text, setText] = useState('')
 
     return (
         <div className="container max-w-5xl mx-auto px-4 py-8 md:py-12">
-            
+
 
             <div className="text-center mb-8 space-y-4">
                 <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground">URL Slug Generator</h1>
@@ -219,22 +221,7 @@ const [text, setText] = useState('')
                 </div>
             </section>
 
-            {/* FAQ Section */}
-            <section className="max-w-3xl mx-auto mb-20">
-                <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-center mb-8 md:mb-10">Frequently Asked Questions</h2>
-                <div className="space-y-4">
-                    {[
-                        { q: "What is the best separator for SEO?", a: "Hyphens (-) are generally considered the best separator for SEO because Google treats them as spaces." },
-                        { q: "Should I remove stop words from slugs?", a: "Yes, removing common words like 'a', 'the', 'and' can make your URL shorter and more focused on keywords." },
-                        { q: "Does this tool work with non-English characters?", a: "Yes, it generally works by removing special characters, but for best results in URLs, it's recommended to transliterate non-English characters to simple ASCII." }
-                    ].map((faq, i) => (
-                        <div key={i} className="border rounded-lg p-5 bg-white hover:border-primary/50 transition-colors shadow-sm">
-                            <h3 className="font-semibold text-lg mb-2">{faq.q}</h3>
-                            <p className="text-muted-foreground">{faq.a}</p>
-                        </div>
-                    ))}
-                </div>
-            </section>
+            <FAQSection faqs={SLUG_GENERATOR_FAQ} />
         </div>
     )
 }

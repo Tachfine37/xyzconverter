@@ -5,10 +5,12 @@ import { Camera, CameraOff, Image as ImageIcon, UploadCloud, CheckCircle2, Copy,
 import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/textarea'
 import { toast } from 'sonner'
+import { FAQSection } from '@/components/seo/FAQSection'
+import { QR_SCANNER_FAQ } from '@/utils/structured-data'
 
 export function QrScanner() {
     usePageSEO()
-const [isScanning, setIsScanning] = useState(false)
+    const [isScanning, setIsScanning] = useState(false)
     const [scanResult, setScanResult] = useState<string | null>(null)
     const [cameraError, setCameraError] = useState<string | null>(null)
     const scannerRef = useRef<Html5Qrcode | null>(null)
@@ -107,7 +109,7 @@ const [isScanning, setIsScanning] = useState(false)
 
     return (
         <div className="container max-w-4xl mx-auto px-4 py-12">
-            
+
 
             <div className="text-center mb-12 space-y-4">
                 <h1 className="text-3xl md:text-5xl font-bold tracking-tight">Free QR Code Scanner Online</h1>
@@ -213,22 +215,7 @@ const [isScanning, setIsScanning] = useState(false)
                 </div>
             </section>
 
-            {/* FAQ Section */}
-            <section className="max-w-2xl mx-auto">
-                <h2 className="text-2xl font-bold tracking-tight mb-8 text-center">Frequently Asked Questions</h2>
-                <div className="space-y-4">
-                    {[
-                        { q: 'Is it safe to scan QR codes here?', a: 'Yes. All scanning is done locally in your browser using JavaScript. We do not upload your images or camera stream to any server.' },
-                        { q: 'Why isn\'t my camera working?', a: 'Please ensure you have granted camera permissions to your browser. If you denied it previously, check your browser settings to reset permissions for this site.' },
-                        { q: 'Does it work on iPhone and Android?', a: 'Yes! Our scanner works on all modern mobile devices and desktops with a webcam.' }
-                    ].map((faq, i) => (
-                        <div key={i} className="border rounded-lg p-6 bg-white shadow-sm">
-                            <h3 className="font-semibold text-lg mb-2">{faq.q}</h3>
-                            <p className="text-muted-foreground">{faq.a}</p>
-                        </div>
-                    ))}
-                </div>
-            </section>
+            <FAQSection faqs={QR_SCANNER_FAQ} />
         </div>
     )
 }

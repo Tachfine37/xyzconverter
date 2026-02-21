@@ -839,3 +839,158 @@ export const RANDOM_TEXT_FAQ = [
         answer: "Never. The generation happens locally on your device and is never sent to our servers."
     }
 ]
+
+export const CROP_IMAGE_FAQ = [
+    {
+        question: 'How do I crop an image online for free?',
+        answer: 'Upload any JPG, PNG, or WebP image to our cropper. Drag to pan, use the slider to zoom, then resize the crop box to your desired area. Click "Apply Crop" and download the result — completely free with no watermarks.'
+    },
+    {
+        question: 'Is my photo uploaded to a server?',
+        answer: 'No. All cropping happens directly in your browser using HTML5 Canvas. Your image never leaves your device, making it the most private way to crop photos online.'
+    },
+    {
+        question: 'What image formats can I crop?',
+        answer: 'You can crop JPG/JPEG, PNG, and WebP images. The output keeps the same format as your original file to preserve quality and transparency.'
+    },
+    {
+        question: 'Can I crop to a specific aspect ratio?',
+        answer: 'Currently our cropper supports free-form cropping so you can select any region you like. This gives you maximum flexibility for any use case.'
+    }
+]
+
+export const WORD_TO_PDF_FAQ = [
+    {
+        question: 'How do I convert Word to PDF online?',
+        answer: 'Upload your .docx file, and our tool will convert it to a PDF document instantly in your browser. No Microsoft Word installation or account required.'
+    },
+    {
+        question: 'Does it preserve formatting?',
+        answer: 'Yes. Our converter maintains text, headings, paragraphs, and basic styling from your Word document when creating the PDF output.'
+    },
+    {
+        question: 'Is my document kept private?',
+        answer: 'Absolutely. The conversion runs entirely in your browser using client-side JavaScript. Your Word file is never uploaded to any server.'
+    },
+    {
+        question: 'What Word formats are supported?',
+        answer: 'We support .docx files (Microsoft Word 2007 and later). For older .doc files, save them as .docx in Word first, then upload.'
+    }
+]
+
+export const CASE_CONVERTER_FAQ = [
+    {
+        question: 'What text cases can I convert between?',
+        answer: 'You can convert to UPPERCASE, lowercase, Title Case, Sentence case, aLtErNaTiNg CaSe, iNVERSE cASE, and Capitalized Case — all with one click.'
+    },
+    {
+        question: 'Can I use this for code variable naming?',
+        answer: 'Yes! Title Case and Capitalized Case are great starting points for camelCase or PascalCase variable names. Paste in your text and convert instantly.'
+    },
+    {
+        question: 'Is there a character limit?',
+        answer: 'No hard limit. The tool processes text locally in your browser, so it can handle very long documents without issues.'
+    }
+]
+
+export const CHARACTER_COUNTER_FAQ = [
+    {
+        question: 'How does the character counter work?',
+        answer: 'Simply paste or type text into the box. The tool instantly counts characters (with and without spaces), words, sentences, paragraphs, and estimates reading time.'
+    },
+    {
+        question: 'Does it count spaces as characters?',
+        answer: 'We show both counts: total characters including spaces and characters excluding spaces, so you have the exact numbers for any platform limit.'
+    },
+    {
+        question: 'Can I check social media character limits?',
+        answer: 'Yes! We display limits for Twitter/X (280), Instagram captions (2,200), Facebook posts (63,206), and more — with a visual indicator showing how close you are.'
+    },
+    {
+        question: 'Is my text stored or sent anywhere?',
+        answer: 'Never. All counting happens locally in your browser. Your text is processed in memory and cleared when you leave the page.'
+    }
+]
+
+export const REMOVE_EXTRA_SPACES_FAQ = [
+    {
+        question: 'What does "remove extra spaces" do?',
+        answer: 'It collapses multiple consecutive spaces into a single space, trims leading/trailing whitespace, and can optionally remove empty lines or all line breaks from your text.'
+    },
+    {
+        question: 'Can I also remove line breaks?',
+        answer: 'Yes. We offer separate options to remove extra spaces only, remove all spaces, remove line breaks, remove empty lines, and trim each line — all in one tool.'
+    },
+    {
+        question: 'Will this fix text copied from PDFs?',
+        answer: 'Often yes. PDF-copied text frequently has extra spaces and line breaks. Our tool cleans these up in one click, giving you clean, readable text.'
+    }
+]
+
+export const SLUG_GENERATOR_FAQ = [
+    {
+        question: 'What is a URL slug?',
+        answer: 'A slug is the URL-friendly version of a title or text. It converts spaces to hyphens, removes special characters, and lowercases everything (e.g., "My Blog Post" becomes "my-blog-post").'
+    },
+    {
+        question: 'Why are slugs important for SEO?',
+        answer: 'Clean, descriptive URL slugs help search engines understand page content and improve click-through rates. Users also prefer readable URLs over random character strings.'
+    },
+    {
+        question: 'Does it handle non-English characters?',
+        answer: 'Yes. Our generator transliterates accented and special characters (é→e, ñ→n) to create ASCII-safe slugs that work in any browser or CMS.'
+    }
+]
+
+export const PASSWORD_GENERATOR_FAQ = [
+    {
+        question: 'How secure are the generated passwords?',
+        answer: "Very secure. We use the browser's built-in cryptographic random number generator (crypto.getRandomValues) which produces truly unpredictable values — the same technology used by password managers."
+    },
+    {
+        question: 'Are my passwords stored anywhere?',
+        answer: 'Never. Passwords are generated entirely on your device and exist only in your browser memory. We have no server, database, or analytics that could capture them.'
+    },
+    {
+        question: 'How long should my password be?',
+        answer: 'Security experts recommend at least 12-16 characters with a mix of uppercase, lowercase, numbers, and symbols. Our tool lets you customize length up to 128 characters.'
+    },
+    {
+        question: 'Can I generate multiple passwords at once?',
+        answer: 'Yes. Generate as many passwords as you need — each one is created fresh with cryptographic randomness. Use different passwords for different accounts for maximum security.'
+    }
+]
+
+export const QR_GENERATOR_FAQ = [
+    {
+        question: 'How do I create a QR code for free?',
+        answer: 'Type or paste any URL, text, email, phone number, or Wi-Fi credentials into our generator. A QR code is created instantly that you can download as a PNG image.'
+    },
+    {
+        question: 'Do the QR codes expire?',
+        answer: 'No. QR codes generated here are static — they encode the data directly in the image pattern. They will work forever and never expire, with no subscription needed.'
+    },
+    {
+        question: 'Can I use these for commercial purposes?',
+        answer: 'Absolutely. The QR codes you generate are yours to use however you like — on business cards, flyers, product packaging, menus, or any other application.'
+    },
+    {
+        question: 'Is the QR code generated privately?',
+        answer: 'Yes. The QR code is generated entirely in your browser. The URL or data you enter is never sent to our servers.'
+    }
+]
+
+export const QR_SCANNER_FAQ = [
+    {
+        question: 'How do I scan a QR code on my computer?',
+        answer: 'Upload a screenshot or photo containing a QR code, or use your webcam to scan it in real-time. Our tool detects and decodes the QR code instantly in your browser.'
+    },
+    {
+        question: 'What types of QR codes can it read?',
+        answer: 'Our scanner reads all standard QR code types including URLs, plain text, email addresses, phone numbers, Wi-Fi credentials, vCards, and more.'
+    },
+    {
+        question: 'Does it work with blurry or small QR codes?',
+        answer: 'Our decoder handles most readable QR codes, but for best results use a clear, well-lit image. If using a webcam, hold the QR code steady and close to the camera.'
+    }
+]

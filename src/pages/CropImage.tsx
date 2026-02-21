@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom'
 import { usePageSEO } from '@/utils/seo'
 import Cropper from 'react-easy-crop'
 import { toast } from 'sonner'
+import { FAQSection } from '@/components/seo/FAQSection'
+import { CROP_IMAGE_FAQ } from '@/utils/structured-data'
 
 interface Point { x: number; y: number }
 interface Area { x: number; y: number; width: number; height: number }
@@ -227,6 +229,8 @@ export function CropImage() {
                     </ul>
                 </section>
             </div>
+
+            <FAQSection faqs={CROP_IMAGE_FAQ} />
         </div>
     )
 }

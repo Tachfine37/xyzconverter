@@ -8,6 +8,8 @@ import mammoth from 'mammoth'
 import html2canvas from 'html2canvas'
 import { jsPDF } from 'jspdf'
 import { toast } from 'sonner'
+import { FAQSection } from '@/components/seo/FAQSection'
+import { WORD_TO_PDF_FAQ } from '@/utils/structured-data'
 
 const formatBytes = (bytes: number) => {
     if (bytes === 0) return '0 B'
@@ -256,6 +258,8 @@ export function WordToPdf() {
                     </ul>
                 </section>
             </div>
+
+            <FAQSection faqs={WORD_TO_PDF_FAQ} />
         </div>
     )
 }

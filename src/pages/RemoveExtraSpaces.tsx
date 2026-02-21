@@ -5,10 +5,12 @@ import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/textarea'
 import { toast } from 'sonner'
 import { Link } from 'react-router-dom'
+import { FAQSection } from '@/components/seo/FAQSection'
+import { REMOVE_EXTRA_SPACES_FAQ } from '@/utils/structured-data'
 
 export function RemoveExtraSpaces() {
     usePageSEO()
-const [text, setText] = useState('')
+    const [text, setText] = useState('')
 
     const handleCopy = () => {
         if (!text) return
@@ -49,7 +51,7 @@ const [text, setText] = useState('')
 
     return (
         <div className="container max-w-5xl mx-auto px-4 py-8 md:py-12">
-            
+
 
             <div className="text-center mb-8 space-y-4">
                 <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground">Remove Extra Spaces</h1>
@@ -175,22 +177,7 @@ const [text, setText] = useState('')
                 </div>
             </section>
 
-            {/* FAQ Section */}
-            <section className="max-w-3xl mx-auto mb-20">
-                <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-center mb-8 md:mb-10">Frequently Asked Questions</h2>
-                <div className="space-y-4">
-                    {[
-                        { q: "Does this tool work locally?", a: "Yes, all processing happens in your browser. Your text is never sent to any server." },
-                        { q: "What does 'Trim Each Line' do?", a: "It removes spaces from the very beginning and the very end of each line, but keeps spaces between words." },
-                        { q: "Can I undo changes?", a: "Currently no, but you can paste your text again to start over. We recommend keeping a copy of your original text." }
-                    ].map((faq, i) => (
-                        <div key={i} className="border rounded-lg p-5 bg-white hover:border-primary/50 transition-colors shadow-sm">
-                            <h3 className="font-semibold text-lg mb-2">{faq.q}</h3>
-                            <p className="text-muted-foreground">{faq.a}</p>
-                        </div>
-                    ))}
-                </div>
-            </section>
+            <FAQSection faqs={REMOVE_EXTRA_SPACES_FAQ} />
         </div>
     )
 }

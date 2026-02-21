@@ -4,10 +4,12 @@ import { Copy, Trash2, Clock, Info, Twitter, Instagram, Facebook, MessageSquare 
 import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/textarea'
 import { toast } from 'sonner'
+import { FAQSection } from '@/components/seo/FAQSection'
+import { CHARACTER_COUNTER_FAQ } from '@/utils/structured-data'
 
 export function CharacterCounter() {
     usePageSEO()
-const [text, setText] = useState('')
+    const [text, setText] = useState('')
     const [stats, setStats] = useState({
         words: 0,
         chars: 0,
@@ -49,7 +51,7 @@ const [text, setText] = useState('')
 
     return (
         <div className="container max-w-5xl mx-auto px-4 py-8 md:py-12">
-            
+
 
             <div className="text-center mb-8 space-y-4">
                 <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground">Free Online Character Counter Tool</h1>
@@ -200,30 +202,7 @@ const [text, setText] = useState('')
                 </div>
             </section>
 
-            {/* FAQ Section */}
-            <section className="max-w-3xl mx-auto mb-20">
-                <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-center mb-8 md:mb-10">Frequently Asked Questions</h2>
-
-                <div className="space-y-4">
-                    <div className="border rounded-lg p-5 bg-white hover:border-primary/50 transition-colors shadow-sm">
-                        <h3 className="font-semibold text-lg mb-2">Are spaces counted as characters?</h3>
-                        <p className="text-muted-foreground">Yes, in most contexts. Our tool shows you two numbers: total
-                            characters (with spaces) and characters without spaces, so you have all the data you need.</p>
-                    </div>
-
-                    <div className="border rounded-lg p-5 bg-white hover:border-primary/50 transition-colors shadow-sm">
-                        <h3 className="font-semibold text-lg mb-2">Does this tool work locally?</h3>
-                        <p className="text-muted-foreground">Yes. Your privacy is guaranteed. No text is sent to any server;
-                            everything is calculated instantly in your web browser.</p>
-                    </div>
-
-                    <div className="border rounded-lg p-5 bg-white hover:border-primary/50 transition-colors shadow-sm">
-                        <h3 className="font-semibold text-lg mb-2">Is there a limit on text length?</h3>
-                        <p className="text-muted-foreground">There is no practical limit. You can paste entire documents, and
-                            the character counter will process them immediately.</p>
-                    </div>
-                </div>
-            </section>
+            <FAQSection faqs={CHARACTER_COUNTER_FAQ} />
         </div>
     )
 }

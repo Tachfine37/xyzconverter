@@ -7,10 +7,12 @@ import { Label } from '@/components/ui/label'
 import { Slider } from '@/components/ui/slider'
 import { toast } from 'sonner'
 import { Link } from 'react-router-dom'
+import { FAQSection } from '@/components/seo/FAQSection'
+import { PASSWORD_GENERATOR_FAQ } from '@/utils/structured-data'
 
 export function PasswordGenerator() {
     usePageSEO()
-const [password, setPassword] = useState('')
+    const [password, setPassword] = useState('')
     const [length, setLength] = useState([16])
     const [includeUppercase, setIncludeUppercase] = useState(true)
     const [includeLowercase, setIncludeLowercase] = useState(true)
@@ -96,7 +98,7 @@ const [password, setPassword] = useState('')
 
     return (
         <div className="container max-w-5xl mx-auto px-4 py-8 md:py-12">
-            
+
 
             <div className="text-center mb-8 space-y-4">
                 <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground">Strong Password Generator</h1>
@@ -284,35 +286,7 @@ const [password, setPassword] = useState('')
                 </div>
             </section>
 
-            {/* FAQ Section */}
-            <section className="max-w-3xl mx-auto mb-20">
-                <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-center mb-8 md:mb-10">Frequently Asked Questions</h2>
-                <div className="space-y-4">
-                    {[
-                        {
-                            q: "Is this password generator safe?",
-                            a: "Yes, absolutely. This tool runs 100% in your browser using JavaScript. The passwords you generate are never sent to our servers or stored anywhere. You can even disconnect your internet and use it offline."
-                        },
-                        {
-                            q: "How long should my password be?",
-                            a: "Security experts recommend a minimum of 12 characters. For highly sensitive accounts, 16-20 characters is even better. Each additional character exponentially increases the time required to crack a password."
-                        },
-                        {
-                            q: "Why should I use symbols and numbers?",
-                            a: "Adding numbers and symbols increases the 'entropy' or randomness of your password. It expands the set of possible characters, making brute-force attacks significantly harder and slower."
-                        },
-                        {
-                            q: "Can I use these passwords for my bank account?",
-                            a: "Yes. The random passwords generated here are cryptographically strong and excellent for banking, email, and other sensitive services where security is paramount."
-                        }
-                    ].map((faq, i) => (
-                        <div key={i} className="border rounded-lg p-5 bg-white hover:border-primary/50 transition-colors shadow-sm">
-                            <h3 className="font-semibold text-lg mb-2">{faq.q}</h3>
-                            <p className="text-muted-foreground">{faq.a}</p>
-                        </div>
-                    ))}
-                </div>
-            </section>
+            <FAQSection faqs={PASSWORD_GENERATOR_FAQ} />
 
             <section className="mt-16 mb-12">
                 <h2 className="text-2xl font-bold tracking-tight mb-8">Related Tools</h2>

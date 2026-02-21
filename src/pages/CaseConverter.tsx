@@ -4,10 +4,12 @@ import { Copy, Trash2, ArrowRightLeft } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/textarea'
 import { toast } from 'sonner'
+import { FAQSection } from '@/components/seo/FAQSection'
+import { CASE_CONVERTER_FAQ } from '@/utils/structured-data'
 
 export function CaseConverter() {
     usePageSEO()
-const [text, setText] = useState('')
+    const [text, setText] = useState('')
 
     const handleCopy = () => {
         if (!text) return
@@ -70,7 +72,7 @@ const [text, setText] = useState('')
 
     return (
         <div className="container max-w-5xl mx-auto px-4 py-8 md:py-12">
-            
+
 
             <div className="text-center mb-8 space-y-4">
                 <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground">Free Online Case Converter</h1>
@@ -178,22 +180,7 @@ const [text, setText] = useState('')
                 </div>
             </section>
 
-            {/* FAQ Section */}
-            <section className="max-w-3xl mx-auto mb-20">
-                <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-center mb-8 md:mb-10">Frequently Asked Questions</h2>
-                <div className="space-y-4">
-                    {[
-                        { q: "Is the text conversion private?", a: "Yes, absolutely. All conversions happen directly in your browser using JavaScript. Your text is never sent to our servers." },
-                        { q: "Is there a limit to how much text I can convert?", a: "No, there is no practical limit. You can paste large documents and converting them will be nearly instant." },
-                        { q: "Can I use this for coding variables?", a: "While this tool handles standard text, for coding cases like camelCase or snake_case, check out our other developer tools." }
-                    ].map((faq, i) => (
-                        <div key={i} className="border rounded-lg p-5 bg-white hover:border-primary/50 transition-colors shadow-sm">
-                            <h3 className="font-semibold text-lg mb-2">{faq.q}</h3>
-                            <p className="text-muted-foreground">{faq.a}</p>
-                        </div>
-                    ))}
-                </div>
-            </section>
+            <FAQSection faqs={CASE_CONVERTER_FAQ} />
         </div>
     )
 }
