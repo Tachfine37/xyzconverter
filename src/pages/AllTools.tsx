@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { ArrowRight, FileImage, FileType, FileText, Database } from 'lucide-react'
+import { ArrowRight, FileImage, FileType, FileText, Database, Type, QrCode, Lock, Music, Hash, LayoutTemplate, Replace, RotateCw, FileArchive, Scissors, Settings2, Cpu } from 'lucide-react'
 import { Card } from '@/components/ui/card'
 import { useEffect } from 'react'
 import { analytics } from '@/lib/analytics'
@@ -64,7 +64,35 @@ const categories = [
         description: "Edit and optimize your images.",
         items: [
             { path: '/resize-image', icon: FileImage, label: 'Image Resizer' },
-            { path: '/compress-image', icon: FileImage, label: 'Image Compressor' },
+            { path: '/compress-image', icon: FileArchive, label: 'Image Compressor' },
+            { path: '/crop-image', icon: Scissors, label: 'Crop Image' },
+        ]
+    },
+    {
+        title: "QR Tools",
+        icon: "📱",
+        description: "Generate and scan QR codes.",
+        items: [
+            { path: '/qr-generator', icon: QrCode, label: 'QR Generator' },
+            { path: '/qr-scanner', icon: QrCode, label: 'QR Scanner' },
+        ]
+    },
+    {
+        title: "Text & Utilities",
+        icon: "📝",
+        description: "Essential text processing and generation tools.",
+        items: [
+            { path: '/word-counter', icon: Hash, label: 'Word Counter' },
+            { path: '/character-counter', icon: Hash, label: 'Character Counter' },
+            { path: '/case-converter', icon: Type, label: 'Case Converter' },
+            { path: '/remove-extra-spaces', icon: Settings2, label: 'Remove Extra Spaces' },
+            { path: '/slug-generator', icon: LayoutTemplate, label: 'Slug Generator' },
+            { path: '/text-to-speech', icon: Music, label: 'Text to Speech' },
+            { path: '/remove-line-breaks', icon: Replace, label: 'Remove Line Breaks' },
+            { path: '/reverse-text', icon: RotateCw, label: 'Reverse Text' },
+            { path: '/lorem-ipsum-generator', icon: Type, label: 'Lorem Ipsum Generator' },
+            { path: '/random-text-generator', icon: Cpu, label: 'Random Text Generator' },
+            { path: '/password-generator', icon: Lock, label: 'Password Generator' },
         ]
     },
     {
@@ -73,9 +101,18 @@ const categories = [
         description: "Manage documents safely.",
         items: [
             { path: '/merge-pdf', icon: FileText, label: 'Merge PDFs' },
-            { path: '/split-pdf', icon: FileText, label: 'Split PDF' },
-            { path: '/pdf-to-jpg', icon: FileText, label: 'PDF to JPG' },
-            { path: '/pdf-to-png', icon: FileText, label: 'PDF to PNG' },
+            { path: '/split-pdf', icon: Scissors, label: 'Split PDF' },
+            { path: '/compress-pdf', icon: FileArchive, label: 'Compress PDF' },
+            { path: '/rotate-pdf', icon: RotateCw, label: 'Rotate PDF' },
+            { path: '/watermark-pdf', icon: FileText, label: 'Watermark PDF' },
+            { path: '/pdf-to-jpg', icon: FileImage, label: 'PDF to JPG' },
+            { path: '/pdf-to-png', icon: FileImage, label: 'PDF to PNG' },
+            { path: '/pdf-to-word', icon: FileText, label: 'PDF to Word' },
+            { path: '/pdf-to-excel', icon: FileText, label: 'PDF to Excel' },
+            { path: '/pdf-to-powerpoint', icon: FileText, label: 'PDF to PowerPoint' },
+            { path: '/pdf-to-text', icon: Type, label: 'PDF to Text' },
+            { path: '/word-to-pdf', icon: FileText, label: 'Word to PDF' },
+            { path: '/images-to-pdf', icon: FileText, label: 'Images to PDF' },
         ]
     },
     {
