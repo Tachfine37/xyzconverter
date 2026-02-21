@@ -1,6 +1,6 @@
 import { useCallback, useState } from 'react'
 import { useDropzone } from 'react-dropzone'
-import { Upload, ShieldCheck, Zap, Code2 } from 'lucide-react'
+import { Upload, ShieldCheck, Zap, Code2, Star } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
 import { isFileSupported } from '@/utils/file-actions'
@@ -49,10 +49,24 @@ export function Hero({ onFileUploaded }: HeroProps) {
                         XYZConverter is your ultimate browser-based file converter. Convert files online instantly and securely directly on your device with no upload required.
                     </p>
 
-                    {/* Desktop Intro (Full) */}
                     <p className="hidden md:block text-base md:text-lg text-gray-300 font-light max-w-4xl mx-auto leading-relaxed">
                         XYZConverter is your ultimate browser-based file converter, expertly designed to help you convert files online instantly without ever compromising your privacy. Experience truly secure file conversion where all complex processing happens directly on your device—with absolutely no upload required to any remote server. This unique client-side approach ensures your sensitive data remains 100% confidential while delivering fast file conversion speeds that traditional server-based tools simply cannot match. Whether you need to convert PDF to JPG for easy sharing, transform documents, or convert images online across formats like PNG, WebP, SVG, and HEIC, our versatile tool handles it all seamlessly. Say goodbye to frustrating file size limits, mandatory registration forms, and long waiting times. With XYZConverter, you get a powerful, professional-grade solution that works perfectly on both desktop and mobile devices. It is the safest, most efficient way to manage your digital workflow, letting you convert, compress, and edit files with ease. Try the best free tool to convert files online today and enjoy immediate, high-quality results with zero privacy risks.
                     </p>
+
+                    {/* Social Proof */}
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
+                        <div className="flex items-center gap-1 bg-white/5 px-4 py-2 rounded-full border border-white/10">
+                            <div className="flex items-center gap-1 border-r border-white/20 pr-4">
+                                {[1, 2, 3, 4, 5].map((i) => (
+                                    <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-500" />
+                                ))}
+                                <span className="font-bold text-white ml-1 text-sm">4.9/5</span>
+                            </div>
+                            <div className="pl-4 text-sm text-gray-300">
+                                Trusted by <span className="text-white font-semibold">15,000+</span> users weekly
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 {/* Main Conversion Block */}
